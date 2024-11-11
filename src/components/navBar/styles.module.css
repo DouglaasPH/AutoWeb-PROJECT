@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+.navBar {
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2vh;
+    background-color: white;
+    height: 6vh;
+}
+
+.divLogo {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3%;
+    gap: 0.4vh;
+}
+
+.divLogo:hover {
+    cursor: pointer;
+}
+
+
+.logoMarcaImg {
+    height: 80%;
+    width: 35%;
+    border-radius: 5vh;
+}
+
+.logoMarcaName {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3vh;
+}
+
+.divLogin {
+    margin-right: 5%;
+    width: 9%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.7vh;
+}
+
+
+.b {
+    font-weight: 600;
+    display: flex;
+    width: 8vh;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: white;
+    gap: 0.5vh;
+}
+
+.b:hover {
+    cursor: pointer;
+}
+
+.fontHeart {
+    padding-top: 2%;
+    font-size: 3vh;;
+}
+
+.fontUser {
+    font-size: 2.5vh;
+    padding-bottom: 0.5vh;
+}
+
+.divInfo {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 10vh;
+}
+
+.buttonInfo {
+    height: 165%;
+    width: 50%;
+    padding-top: 10%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: 500;
+    background-color: white;
+    border: none;
+    border: 2px solid white;
+}
+
+.buttonInfo:hover {
+    border-bottom: 2px solid #dc1edc;
+    cursor: pointer;
+}
