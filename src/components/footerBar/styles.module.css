@@ -1,0 +1,95 @@
+.containerFooter {
+    display: flex;
+    flex-direction: column;
+    background-color: #2E2D37;
+    height: 100%;
+}
+
+/*     height: 27vh; */
+
+.sectionInfo {
+    padding: 1.5% 2% 1% 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divLogo {
+    display: flex;
+    justify-content: center;
+    width: 3%;
+    height: 90%;
+}
+
+.imgLogo {
+    height: 100%;
+    width: 80%;
+    border-radius: 5vh;
+}
+
+.divLinks {
+    display: flex;
+    justify-content: space-between;
+    width: 33%;
+    height: 90%;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+}
+
+.linkUm, .linkDois {
+    width: 13%;
+}
+
+.linkTres, .linkQuatro {
+    width: 22%;
+}
+
+.divRedesSociais {
+    width: 14%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icone {
+    color: white;
+    font-size: 120%;
+}
+
+.sectionCopyright {
+    margin: 0 2% 0 2%;
+    padding-top: 0.5%;
+    border-top: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    height: 30%;
+}
+
+.pCopyright {
+    color: white;
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+.linkCopyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;
+    width: 20%;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;    
+}

@@ -1,0 +1,60 @@
+@keyframes slideInLeft {
+    from {
+        transform: translateX(5%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.containerComprar {
+    animation-name: slideInLeft;
+    animation-duration: 0.1s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-duration: normal;
+    animation-fill-mode: none;
+    
+    position: fixed;
+    top: 10%;
+    left: 46.6%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 11.5%;
+    height: 35%;
+}
+
+.buttonCarroUsado, 
+.buttonCarroNovo, 
+.buttonMotoUsada, 
+.buttonMotoNova, 
+.buttonVistoriado {
+    height: 20%;
+    background: white;
+    border: none;
+    display: flex;
+    gap: 5%;
+    align-items: center;
+     font-size: 80%;
+    font-weight: 400;
+}
+
+.buttonCarroUsado:hover,
+.buttonCarroNovo:hover,
+.buttonMotoUsada:hover,
+.buttonMotoNova:hover,
+.buttonVistoriado:hover {
+    z-index: 999;
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.icone {
+    width: 20%;
+    height: 40%;
+    font-size: 120%;
+    margin-left: 6%;
+}
