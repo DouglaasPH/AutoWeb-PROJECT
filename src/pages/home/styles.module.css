@@ -1,6 +1,43 @@
-.imagensPassando {
+/*.containerImg {
     position: fixed;
-    top: 20%;
+    height: 60%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.propagandaImg {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.moverParaEsquerda {
+    transform: translateX(-100%);
+}*/
+
+.containerHome {
+    position: relative;
+    width: 100vw;
     height: 100vh;
-    width: 100vh;
+    overflow: hidden;
+}
+
+.carousel {
+    /*position: relative;*/
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+}
+
+.imageContainer {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 400%;
+    height: 100%;
+}
+
+.carouselImage {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
 }

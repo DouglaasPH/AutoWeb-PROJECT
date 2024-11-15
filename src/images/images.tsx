@@ -1,6 +1,6 @@
 import logoMarcaDoSite from './logo-marca.png';
 import imagemUm from './imagens-para-home/carro-1.jpg';
-import imagemDois from './imagens-para-home/carro-2.jfif';
+import imagemDois from './imagens-para-home/carro-2.png';
 import imagemTres from './imagens-para-home/carro-3.jpg';
 import imagemQuatro from './imagens-para-home/carro-4.jpg';
 
