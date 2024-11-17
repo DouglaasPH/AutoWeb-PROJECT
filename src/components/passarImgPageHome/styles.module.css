@@ -1,0 +1,18 @@
+.carousel {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.imageContainer {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 405%;
+    height: 100%;
+}
+
+.carouselImage {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}   

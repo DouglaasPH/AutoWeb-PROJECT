@@ -1,0 +1,145 @@
+.containerDePesquisa {
+    position: absolute;
+    background-color: white;
+    border-radius: 1vh;
+    width: 74%;
+    height: 20%;
+    top: 34%;
+    left: 13%;
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+}
+
+.agrupamentoUm {
+    margin: 4vh 5vh 0 5vh;
+    height: 6vh;
+    display: flex;
+    gap: 2%;
+}
+
+.agrupamentoUmButton {
+    background-color: white;
+    border: none;
+    border-bottom: 2px solid white;
+    width: 15%;
+    height: 100%;
+    color: #8f8f8f;
+    font-size: 2.7vh;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.agrupamentoUmButton:hover {
+    color: #333333;
+    cursor: pointer;
+}
+
+.ativarFocoGrupUm {
+    color: #333333;
+    border-bottom: 2px solid #1e90ff;
+}
+
+
+
+.agrupamentoDois {
+    margin: 0 5vh 0 5vh;
+    height: 8vh;
+}
+
+.agrupamentoDoisButton {
+    background-color: white;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    width: 9%;
+    height: 100%;
+    color: #333333;
+    font-size: 2.7vh;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.agrupamentoDoisButton:nth-child(1) {
+    border-left: 1px solid #e0e0e0;
+    border-right: none;
+    border-radius: 1.5vh 0 0 1.5vh;
+}
+
+.agrupamentoDoisButton:nth-child(2) {
+    border-left: none;
+    border-right: none;
+
+}
+
+.agrupamentoDoisButton:nth-child(3) {
+    border-left: none;
+    border-right: 1px solid #e0e0e0;
+    border-radius: 0 1.5vh 1.5vh 0;
+}
+
+.agrupamentoDoisButton:hover {
+    cursor: pointer;
+}
+
+.ativarFocoGrupDois {
+    background-color: #1e90ff;
+    color: white;
+}
+
+
+.agrupamentoTres {
+    margin: 0 5vh 4vh 5vh;
+    height: 9vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerEntradaDeTexto {
+    width: 65%;
+    display: flex;
+    align-items: center;
+}
+
+.buttonEntradaDeTexto {
+    background-color: white;
+    border: 0.3vh solid #e0e0e0;
+    border-right: none;
+    border-radius: 1vh 0 0 1vh;
+    height: 9vh;
+    width: 7%;
+    font-size: 3vh;
+}
+
+.buttonEntradaDeTexto:hover {
+    cursor: pointer;
+}
+
+.inputEntradaDeTexto {
+    border: 0.3vh solid #e0e0e0;
+    border-left: none;
+    border-radius: 0 1vh 1vh 0;
+    height: 8.7vh;
+    width: 100%;
+    font-size: 2.2vh;
+    color: #e0e0e0;
+    font-weight: 700;
+    outline: none;
+}
+
+.inputEntradaDeTexto:focus {
+    color: #313133;
+}
+
+.buttonVerOfertas {
+    width: 30%;
+    background-color: #1e90ff;
+    border-radius: 1vh;
+    border: none;
+    font-size: 2.5vh;
+    font-weight: 600;
+    color: white;
+}
+
+.buttonVerOfertas:hover {
+    cursor: pointer;
+}
