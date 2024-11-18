@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import "../../App.css";
 import Carrossel from "../../components/passarImgPageHome/Carrossel";
 import BarraDePesquisa from "./components/barraDePesquisa/BarraDePesquisa";
-
+import UltimasPesquisas from "./components/ultimasPesquisas/UltimasPesquisas";
 
 function Home() {    
     
@@ -11,6 +11,7 @@ function Home() {
             <Carrossel />
             <BarraDePesquisa />
             <main className={styles.containerContent}>
+                <UltimasPesquisas />
                 <div className={styles.containerLojasOficiais}></div>
             </main>
         </div>

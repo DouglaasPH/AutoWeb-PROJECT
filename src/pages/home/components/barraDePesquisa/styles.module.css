@@ -21,12 +21,13 @@
 .agrupamentoUmButton {
     background-color: white;
     border: none;
+    padding-bottom: 1vh;
     border-bottom: 2px solid white;
     width: 15%;
     height: 100%;
     color: #8f8f8f;
     font-size: 2.7vh;
-    font-weight: 700;
+    font-weight: 800;
     transition: all 0.3s;
 }
 
@@ -37,7 +38,7 @@
 
 .ativarFocoGrupUm {
     color: #333333;
-    border-bottom: 2px solid #1e90ff;
+    border-bottom: 0.5vh solid #1e90ff;
 }
 
 
@@ -138,8 +139,10 @@
     font-size: 2.5vh;
     font-weight: 600;
     color: white;
+    transition: all 0.3s;
 }
 
 .buttonVerOfertas:hover {
     cursor: pointer;
+    background-color: #0069cf;
 }
