@@ -1,0 +1,73 @@
+.containerCategorias {
+    position: absolute;
+    left: 7.1%;
+    top: 74%;
+    width: 85%;
+    height: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    overflow: hidden;
+}
+
+.titulo {
+    font-size: 100%;
+    color: white;
+}
+
+.containerTiposDeCategoria {
+    display: flex;
+    gap: 0.5%;
+    transition: transform 1s ease-in-out ;
+    width: 700%;
+    height: 84%;
+}
+
+.containerTipoDaCategoria {
+    height: 100%;
+    width: 2.4571%;
+    background: rgb(30, 144, 255);
+    background: linear-gradient(148deg, rgba(30, 144, 255, 1) 30%, rgba(0, 0, 0, 1) 80%);    
+    border-radius: 10%;
+}
+
+.containerTipoDaCategoria:hover {
+    cursor: pointer;
+}
+
+.nomeDaCategoria {
+    color: white;
+    width: 70%;
+    font-size: 150%;
+    font-weight: 600;
+    margin: 25% 0 0 10%;
+}
+
+
+
+
+.setaDireita, .setaEsquerda {
+    position: absolute;
+    top: 55%;
+    background: white;
+    padding: 0.5%;
+    height: 7%;
+    width: 1.6%;
+    border-radius: 100%;
+    z-index: 99;
+    opacity: 0.8;
+    transition: transform 1s ease-in-out;
+}
+
+.setaDireita {
+    left: 97.4%;
+}
+
+.setaEsquerda {
+    left: 0.1%;
+}
+
+.setaDireita:hover, .setaEsquerda:hover {
+    opacity: 1;
+    cursor: pointer;
+}

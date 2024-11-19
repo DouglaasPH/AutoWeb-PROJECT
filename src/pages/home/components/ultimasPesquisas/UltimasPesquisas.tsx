@@ -2,6 +2,8 @@ import styles from "./styles.module.css";
 import "../../../../App.css";
 import classNames from "classnames";
 
+// últimas buscas comporta até 5 visualizações de histórico por vez
+
 function UltimasPesquisas() {
     return (
         <div className={styles.containerUltimasPesquisas}>
@@ -59,7 +61,6 @@ function UltimasPesquisas() {
                         <p className={classNames("fonte", styles.nomeDoEstado)}>Pernambuco</p>
                     </div>
                 </div>
-
             </div>
         </div>
 

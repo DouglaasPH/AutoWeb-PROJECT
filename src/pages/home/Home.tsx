@@ -3,6 +3,7 @@ import "../../App.css";
 import Carrossel from "../../components/passarImgPageHome/Carrossel";
 import BarraDePesquisa from "./components/barraDePesquisa/BarraDePesquisa";
 import UltimasPesquisas from "./components/ultimasPesquisas/UltimasPesquisas";
+import Categorias from "./components/barraCategorias/Categorias";
 
 function Home() {    
     
@@ -12,7 +13,7 @@ function Home() {
             <BarraDePesquisa />
             <main className={styles.containerContent}>
                 <UltimasPesquisas />
-                <div className={styles.containerLojasOficiais}></div>
+                <Categorias />
             </main>
         </div>
     )
