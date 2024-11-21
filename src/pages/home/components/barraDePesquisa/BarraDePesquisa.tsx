@@ -5,7 +5,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 import { useState } from "react";
 
-function BarraDePesquisa() {
+function Pesquisa() {
     const [indexButtonBorderAtivo, setIndexButtonBorderAtivo] = useState(0);
     const [indexButtonBackgroundAtivo, setIndexBackgroundAtivo] = useState(0);
     const [valorInput, setValorInput] = useState("");
@@ -59,4 +59,4 @@ function BarraDePesquisa() {
     )
 }
 
-export default BarraDePesquisa;
+export default Pesquisa;

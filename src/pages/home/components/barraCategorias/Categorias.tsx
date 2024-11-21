@@ -27,21 +27,27 @@ function Categorias() {
                 <h3 className={classNames("fonte", styles.titulo)}>Categorias</h3>
             </div>
 
-            {moverCategorias < 0 ? 
-                <FontAwesomeIcon icon={faArrowLeft} className={styles.setaEsquerda} onClick={irParaEsquerda} style
-                    ={{ opacity: 1 }} /> : null            
-            }
-            <div className={styles.containerTiposDeCategoria} style={{ transform: `translateX(${moverCategorias * 3}%)`}}>
-                {categoriasArray.map((categoria) => (
-                    <div className={styles.containerTipoDaCategoria}>
-                        <h4 className={classNames("fonte", styles.nomeDaCategoria)}>{categoria}</h4>
-                    </div>
-                ))}
+
+            <div className={styles.containerSetasECategorias}>
+                {moverCategorias < 0 ?
+                    <div className={styles.containerSetaEsquerda} onClick={irParaEsquerda} >
+                        <FontAwesomeIcon icon={faArrowLeft} className={styles.setaEsquerda} />
+                    </div> : null}
+
+                <div className={styles.containerCategoriasParaMargem}>
+                    <div className={styles.containerTiposDeCategoria} style={{ transform: `translateX(${moverCategorias * 14.55}%)` }}>
+                        {categoriasArray.map((categoria) => (
+                            <div className={styles.containerTipoDaCategoria}>
+                                <h4 className={classNames("fonte", styles.nomeDaCategoria)}>{categoria}</h4>
+                            </div>
+                        ))}
+                    </div>                   
+                </div>
+                {moverCategorias >= -1 ? 
+                    <div className={styles.containerSetaDireita} onClick={irParaDireita}>
+                        <FontAwesomeIcon icon={faArrowRight} className={styles.setaDireita} />
+                    </div> : null}
             </div>
-            {moverCategorias >= -1  ? 
-                <FontAwesomeIcon icon={faArrowRight} className={styles.setaDireita} onClick={irParaDireita} style
-                    ={{ opacity: 1 }} /> : null           
-}
         </div>
     )
 }

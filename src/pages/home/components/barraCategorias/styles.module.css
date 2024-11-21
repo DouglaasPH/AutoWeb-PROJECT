@@ -1,31 +1,46 @@
 .containerCategorias {
-    position: absolute;
-    left: 7.1%;
-    top: 74%;
-    width: 85%;
-    height: 23%;
+    width: 86%;
+    height: 9%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;    
     overflow: hidden;
 }
 
+/*.containerTitulo {
+    margin-left: 1%;
+}*/
+
 .titulo {
     font-size: 100%;
     color: white;
 }
 
-.containerTiposDeCategoria {
+.containerSetasECategorias {
     display: flex;
-    gap: 0.5%;
-    transition: transform 1s ease-in-out ;
-    width: 700%;
-    height: 84%;
+    align-items: center;
+    height: 80%;
 }
 
-.containerTipoDaCategoria {
+.containerCategoriasParaMargem {
+    height: 110%;
+    width: 140%;
+    overflow: hidden;
+    margin: 0 0.7% 0 0.7%;
+}
+
+.containerTiposDeCategoria {
+    display: flex;
+    justify-content: space-between;
+    transition: transform 1s ease-in-out ;
+    width: 141.63%; /*141.33 */
     height: 100%;
-    width: 2.4571%;
+}
+
+
+.containerTipoDaCategoria {
+    height: 95%;
+    width: 13%; /*2.614% */
     background: rgb(30, 144, 255);
     background: linear-gradient(148deg, rgba(30, 144, 255, 1) 30%, rgba(0, 0, 0, 1) 80%);    
     border-radius: 10%;
@@ -43,31 +58,35 @@
     margin: 25% 0 0 10%;
 }
 
-
-
-
-.setaDireita, .setaEsquerda {
+.containerSetaEsquerda, .containerSetaDireita {
     position: absolute;
-    top: 55%;
-    background: white;
-    padding: 0.5%;
-    height: 7%;
-    width: 1.6%;
+    height: 1%;
+    width: 2.4%;
     border-radius: 100%;
-    z-index: 99;
+    z-index: 999;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 0.8;
     transition: transform 1s ease-in-out;
 }
 
-.setaDireita {
-    left: 97.4%;
+.containerSetaDireita {
+    left: 90.4%;
+
 }
 
+.setaDireita, 
 .setaEsquerda {
-    left: 0.1%;
+    background: white;
+    padding: 0.5%;
+    height: 45%;
+    width: 45%;
+    border: none;
 }
-
-.setaDireita:hover, .setaEsquerda:hover {
+.containerSetaEsquerda:hover,
+.containerSetaDireita:hover {
     opacity: 1;
     cursor: pointer;
 }

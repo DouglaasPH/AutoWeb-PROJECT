@@ -1,9 +1,9 @@
 .containerUltimasPesquisas {
-    position: absolute;
+    /*position: absolute;
     left: 12.8%;
-    top: 55%;
+    top: 55%;*/
     width: 74.5%;
-    height: 13.5%;
+    height: 7%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,7 +20,7 @@
 
 .containerHistorico {
     height: 75%;
-    margin-left: 2.5vh;
+    margin: 2.5vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

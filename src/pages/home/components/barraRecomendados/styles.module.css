@@ -1,0 +1,174 @@
+.containerRecomendados {
+    width: 86%;
+    height: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/*.containerTitulo {
+    margin-left: 1%;
+}*/
+
+.titulo {
+    font-size: 100%;
+    color: white;
+}
+
+.containerSetasERecomendados {
+    display: flex;
+    align-items: center;
+    height: 91%;
+}
+
+.containerRecomendadosParaMargem {
+    height: 100%;
+    width: 140%;
+    overflow: hidden;
+    margin: 0 0.7% 0 0.7%;
+}
+
+.containerRecomendadosDiversos {
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.5s ease-in-out;
+    width: 120.139721%;
+    /*141.33 */
+    height: 100%;
+}
+
+.containerCadaRecomendado {
+    height: 100%;
+    width: 16%;
+    background-color: #f7f7f7;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerCadaRecomendado:hover {
+    cursor: pointer;
+}
+
+.containerImagens {
+    border-radius: 5%;
+    height: 50%;
+    background: green;
+}
+
+.containerInformacoesDoRecomendado {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4%;
+}
+
+.containerEspecificacaoMaisPesquisada {
+    height: 34%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modeloDoCarro {
+    font-weight: 600;
+}
+
+.modeloDoCarro, 
+.especificacaDoCarro, 
+.tipoDeTransmissao, 
+.anoDoAutomovel {
+    text-transform: uppercase;
+    font-size: 74%;
+}
+
+.kilometragemDoAutomovel, .localDoAutomovel {
+    font-size: 74%;
+}
+
+.valorDoCarro {
+    color: #5c5c5c;
+}
+
+.adicionarAutomovelAosFavoritos {
+    font-size: 100%;
+}
+
+.localDoAutomovel {
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
+}
+
+.adicionarAutomovelAosFavoritos:hover {
+    cursor: pointer;
+}
+
+.especificacaDoCarro, 
+.tipoDeTransmissao, 
+.anoDoAutomovel, 
+.kilometragemDoAutomovel, 
+.localDoAutomovel, 
+.adicionarAutomovelAosFavoritos {
+    color: #a3a3a3;
+    font-weight: 650;
+}
+
+.valorDoCarro {
+    font-size: 150%;
+    font-weight: 400;
+}
+
+.containerAnoEKilometragemDoAutomovel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerLocalDoAutomovelEAddFavoritos {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10% 0 10%;
+    border-top: 0.01vh solid #d6d6d6;
+}
+
+.containerSetaEsquerda,
+.containerSetaDireita {
+    position: absolute;
+    height: 1%;
+    width: 2.4%;
+    border-radius: 100%;
+    z-index: 999;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.4;
+    transition: transform 1s ease-in-out;
+}
+
+.containerSetaDireita {
+    left: 90.4%;
+
+}
+
+.containerSetaEsquerda:hover,
+.containerSetaDireita:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.setaDireita,
+.setaEsquerda {
+    background: white;
+    padding: 0.5%;
+    height: 45%;
+    width: 45%;
+    border: none;
+}

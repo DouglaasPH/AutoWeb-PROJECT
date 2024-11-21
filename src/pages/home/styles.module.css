@@ -5,6 +5,11 @@
 }
 
 .containerContent {
-    background-color: #1f1f1f;
-    height: 100vh;
+    height: 400vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1%;
+    margin-top: 14%;
 }
