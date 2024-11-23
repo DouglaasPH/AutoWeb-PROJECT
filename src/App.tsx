@@ -2,12 +2,13 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 import Home from "./pages/home/Home";
 import NavBar from "./components/navBar/NavBar";
 import Login from "./pages/login/Login";
+import FooterBar from "./components/footerBar/FooterBar";
 
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
   <Route>
     <Route path="/">
-      <Route index element={<> <NavBar /> <Home /> </>} />
+      <Route index element={<> <NavBar /> <Home /> <FooterBar/> </>} />
       <Route path="login" element={<> <NavBar /> <Login/> </>} />
     </Route>
   </Route>

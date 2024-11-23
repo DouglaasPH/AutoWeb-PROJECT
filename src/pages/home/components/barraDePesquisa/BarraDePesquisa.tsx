@@ -8,6 +8,7 @@ import { useState } from "react";
 function Pesquisa() {
     const [indexButtonBorderAtivo, setIndexButtonBorderAtivo] = useState(0);
     const [indexButtonBackgroundAtivo, setIndexBackgroundAtivo] = useState(0);
+    const [placeholder, setPlaceholder] = useState("do carro");
     const [valorInput, setValorInput] = useState("");
 
     function colorirBorderButton(index) {
@@ -26,6 +27,11 @@ function Pesquisa() {
         setValorInput("");
     };    
 
+    function mudarPlaceholder(index: number) {
+        if (index === 0) setPlaceholder("do carro");
+        if (index >= 1) setPlaceholder("da moto");
+    }
+
     return (
                     <div className={styles.containerDePesquisa}>
                 <div className={styles.agrupamentoUm}>
@@ -33,7 +39,7 @@ function Pesquisa() {
                         <button
                             key={index}
                             className={classNames("fonte", styles.agrupamentoUmButton, { [styles.ativarFocoGrupUm]: indexButtonBorderAtivo === index })}
-                            onClick={() => colorirBorderButton(index)}    
+                            onClick={() =>  {colorirBorderButton(index); mudarPlaceholder(index)}}
                         >{label}</button>
                     ))}
                 </div>
@@ -51,7 +57,7 @@ function Pesquisa() {
                         <button className={classNames("fonte", styles.buttonEntradaDeTexto)}>
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </button>
-                        <input type="text" value={valorInput} className={classNames("fonte", styles.inputEntradaDeTexto)} placeholder="Digite marca ou modelo do carro" onBlur={limparInput} onChange={inserirValorInput} />
+                        <input type="text" value={valorInput} className={classNames("fonte", styles.inputEntradaDeTexto)} placeholder={`Digite marca ou modelo ${placeholder}`} onBlur={limparInput} onChange={inserirValorInput} />
                     </div>
                     <button className={classNames("fonte", styles.buttonVerOfertas)}>VER OFERTAS (398.349)</button>
                 </div>

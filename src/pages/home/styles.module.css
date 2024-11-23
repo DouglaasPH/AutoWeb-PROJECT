@@ -5,11 +5,12 @@
 }
 
 .containerContent {
-    height: 400vh;
+    height: 150vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: 1%;
-    margin-top: 14%;
+    margin-top: 16%;
+    margin-bottom: 8%;
 }

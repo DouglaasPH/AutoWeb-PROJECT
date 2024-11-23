@@ -1,9 +1,9 @@
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
-import carroUm from "../../images/imagens-para-home/carro-1.jpg";
-import carroDois from "../../images/imagens-para-home/carro-2.png";
-import carroTres from "../../images/imagens-para-home/carro-3.jpg";
-import carroQuatro from "../../images/imagens-para-home/carro-4.jpg";
+import carroUm from "../../images/imagens-para-home/anuncio-carrossel/anuncio-1.jpg";
+import carroDois from "../../images/imagens-para-home/anuncio-carrossel/anuncio-2.png";
+import carroTres from "../../images/imagens-para-home/anuncio-carrossel/anuncio-3.jpg";
+import carroQuatro from "../../images/imagens-para-home/anuncio-carrossel/anuncio-4.jpg";
 
 const imagensArray = [
     carroUm,

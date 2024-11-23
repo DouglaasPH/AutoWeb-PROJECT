@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
+import VerImagens from "./components/verImagens/VerImagens";
 
 const especificacoesMaisPesquisadas = {
     marcaEModelo: "Chevrolet Onix",
@@ -12,6 +13,7 @@ const especificacoesMaisPesquisadas = {
     tipoDeTransmissao: "automatico",
     ano: ["2020/2021", "2021/2022", "2022/2023", "2023/2024"]
 }
+
 
 
 
@@ -25,10 +27,15 @@ type Recomendacao = {
 const recomendadosObjeto: Record<string, Recomendacao> = {
     recomendacaoUm: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
     recomendacaoDois: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
-    recomendacaoTres: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" }, 
+    recomendacaoTres: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
     recomendacaoQuatro: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
     recomendacaoCinco: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
-    recomendacaoSeis: {valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499"},    
+    recomendacaoSeis: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
+    recomendacaoSete: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
+    recomendacaoOito: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
+    recomendacaoNove: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
+    recomendacaoDez: { valor: "86.900", ano: "2022/2023", local: "Recife - PE", kilometragem: "39.499" },
+    
 };
 
 const chavesDoObjetoRecomendados = Object.keys(recomendadosObjeto);
@@ -53,10 +60,11 @@ function Recomendados() {
                     </div> : null}
 
             <div className={styles.containerRecomendadosParaMargem}>
-            <div className={styles.containerRecomendadosDiversos} style={{ transform: `translateX(${moverRecomendados * 16.8}%)` }}>
+            <div className={styles.containerRecomendadosDiversos} style={{ transform: `translateX(${moverRecomendados * 10}%)` }}>
                 {chavesDoObjetoRecomendados.map((recomendadoAtual) => (
                     <div className={styles.containerCadaRecomendado}>
                         <div className={styles.containerImagens}>
+                            <VerImagens />
                         </div>
 
                         <div className={styles.containerInformacoesDoRecomendado}>
@@ -84,16 +92,13 @@ function Recomendados() {
                 ))}
             </div>
             </div>
-            {moverRecomendados >= 0 ? 
+            {moverRecomendados >= -4 ? 
                 <div className={styles.containerSetaDireita} onClick={irParaDireita}>
                     <FontAwesomeIcon icon={faArrowRight} className={styles.setaDireita} />
                 </div> : null}            
                 
-            </div>
-
-
+            </div>    
         </div>
     )
 }
-
 export default Recomendados;

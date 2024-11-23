@@ -1,8 +1,6 @@
 import styles from "./styles.module.css";
 import "../../App.css";
 import { imagens } from "../../images/images";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faLinkedin, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import classNames from "classnames";
 
 
@@ -12,6 +10,7 @@ function FooterBar() {
             <section className={styles.sectionInfo}>
                 <div className={styles.divLogo}>
                     <img src={imagens["logoMarcaDoSite"]} alt="logo marca do site" className={styles.imgLogo} />
+                    <p className={classNames("fonteLogo", styles.nameLogo)}>AutoWeb</p>
                 </div>
 
                 <div className={styles.divLinks}>
@@ -19,24 +18,6 @@ function FooterBar() {
                     <a href="" className={classNames("fonte", styles.link, styles.linkDois)}>Vender</a>
                     <a href="" className={classNames("fonte", styles.link, styles.linkTres)}>Quem somos</a>
                     <a href="" className={classNames("fonte", styles.link, styles.linkQuatro)}>Atendimento</a>
-                </div>
-
-                <div className={styles.divRedesSociais}>
-                    <a href="" className={classNames("fonte", styles.icone)}>
-                        <FontAwesomeIcon icon={faFacebook} />
-                    </a>
-                    <a href="" className={classNames("fonte", styles.icone)}>
-                        <FontAwesomeIcon icon={faInstagram} /> 
-                    </a>
-                    <a href="" className={classNames("fonte", styles.icone)}>
-                        <FontAwesomeIcon icon={faXTwitter} />
-                    </a>
-                    <a href="" className={classNames("fonte", styles.icone)}>
-                        <FontAwesomeIcon icon={faLinkedin} />
-                    </a>
-                    <a href="" className={classNames("fonte", styles.icone)}>
-                        <FontAwesomeIcon icon={faYoutube} />
-                    </a>
                 </div>
             </section>
 

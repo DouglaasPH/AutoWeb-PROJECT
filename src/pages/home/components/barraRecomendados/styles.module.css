@@ -1,6 +1,6 @@
 .containerRecomendados {
-    width: 86%;
-    height: 18%;
+    width: 84%;
+    height: 46%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -33,14 +33,14 @@
     display: flex;
     justify-content: space-between;
     transition: transform 0.5s ease-in-out;
-    width: 120.139721%;
+    width: 200%; /* 120.139721%*/
     /*141.33 */
     height: 100%;
 }
 
 .containerCadaRecomendado {
     height: 100%;
-    width: 16%;
+    width: 9.5%;
     background-color: #f7f7f7;
     border-radius: 5%;
     display: flex;
@@ -53,7 +53,7 @@
 }
 
 .containerImagens {
-    border-radius: 5%;
+    border-radius: 5% 5% 0 0;
     height: 50%;
     background: green;
 }
@@ -141,20 +141,20 @@
 .containerSetaEsquerda,
 .containerSetaDireita {
     position: absolute;
-    height: 1%;
+    height: 1.8%;
     width: 2.4%;
     border-radius: 100%;
     z-index: 999;
-    background-color: white;
+    background-color: #ededed;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0.4;
+    opacity: 0.8;
     transition: transform 1s ease-in-out;
 }
 
 .containerSetaDireita {
-    left: 90.4%;
+    left: 89.4%;
 
 }
 
@@ -166,7 +166,7 @@
 
 .setaDireita,
 .setaEsquerda {
-    background: white;
+    background: #ededed;
     padding: 0.5%;
     height: 45%;
     width: 45%;

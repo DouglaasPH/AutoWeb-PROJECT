@@ -3,8 +3,8 @@
     background-color: white;
     border-radius: 1vh;
     width: 74%;
-    height: 7%;
-    top: 11%;
+    height: 14%;
+    top: 22%;
     left: 13%;
     display: flex;
     flex-direction: column;
@@ -12,8 +12,8 @@
 }
 
 .agrupamentoUm {
-    margin: 4vh 5vh 0 5vh;
-    height: 6vh;
+    margin: 3% 4% 0 3.5%;
+    height: 14%;
     display: flex;
     gap: 2%;
 }
@@ -21,12 +21,12 @@
 .agrupamentoUmButton {
     background-color: white;
     border: none;
-    padding-bottom: 1vh;
+    padding-bottom: 1%;
     border-bottom: 2px solid white;
     width: 15%;
     height: 100%;
     color: #8f8f8f;
-    font-size: 2.7vh;
+    font-size: 98%;
     font-weight: 800;
     transition: all 0.3s;
 }
@@ -44,8 +44,8 @@
 
 
 .agrupamentoDois {
-    margin: 0 5vh 0 5vh;
-    height: 8vh;
+    margin: 0 3% 0 3.5%;
+    height: 17%;
 }
 
 .agrupamentoDoisButton {
@@ -55,7 +55,7 @@
     width: 9%;
     height: 100%;
     color: #333333;
-    font-size: 2.7vh;
+    font-size: 90%;
     font-weight: 700;
     transition: all 0.3s;
 }
@@ -63,7 +63,7 @@
 .agrupamentoDoisButton:nth-child(1) {
     border-left: 1px solid #e0e0e0;
     border-right: none;
-    border-radius: 1.5vh 0 0 1.5vh;
+    border-radius: 1vh 0 0 1vh;
 }
 
 .agrupamentoDoisButton:nth-child(2) {
@@ -75,7 +75,7 @@
 .agrupamentoDoisButton:nth-child(3) {
     border-left: none;
     border-right: 1px solid #e0e0e0;
-    border-radius: 0 1.5vh 1.5vh 0;
+    border-radius: 0 1vh 1vh 0;
 }
 
 .agrupamentoDoisButton:hover {
