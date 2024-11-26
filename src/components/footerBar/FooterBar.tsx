@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import "../../App.css";
-import { imagens } from "../../images/images";
+import { imagens } from "../../assets/images";
 import classNames from "classnames";
 
 

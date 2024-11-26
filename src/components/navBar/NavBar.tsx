@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { imagens } from "../../images/images";
+import { imagens } from "../../assets/images";
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import styles from "./styles.module.css";
 import '../../App.css';

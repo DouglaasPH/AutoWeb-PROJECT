@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import "../../App.css";
-import Carrossel from "../../components/passarImgPageHome/Carrossel";
+import Carrossel from "./components/passarImgPageHome/Carrossel";
 import Pesquisa from "./components/barraDePesquisa/BarraDePesquisa";
 import UltimasPesquisas from "./components/ultimasPesquisas/UltimasPesquisas";
 import Categorias from "./components/barraCategorias/Categorias";
