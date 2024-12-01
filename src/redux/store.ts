@@ -5,6 +5,7 @@ const initialState = {
     tipoDoAutomovelParaPesquisaAtual: "",
     marcaAtual: "",
     modeloAtual: "",
+    email: "",
 }
 
 
@@ -16,6 +17,8 @@ const rootReducer = (state = initialState, action: { type: string; payload: stri
             return { ...state, marcaAtual: action.payload };
                 case "pesquisar/modelo":
             return { ...state, modeloAtual: action.payload };
+        case "redefinir-senha/emailParaRedefinirSenha":
+            return { ...state, email: action.payload };
         default:
             return state;
     }

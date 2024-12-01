@@ -1,6 +1,6 @@
 import { faCar, faMotorcycle, faWarehouse } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "./styles.module.css";
+import styles from "./dropDownVender.module.css";
 import "../../../App.css";
 import classNames from "classnames";
 
@@ -16,7 +16,7 @@ export default function DropDownVender() {
                 Vender moto
             </button>
             <button className={classNames("fonte", styles.buttonGerenciar)}>
-                <FontAwesomeIcon icon={faWarehouse} className={styles.icone} />                
+                <FontAwesomeIcon icon={faWarehouse} className={styles.icone} />
                 Gerenciar meu anúncio
             </button>
         </div>

@@ -6,13 +6,17 @@ import classNames from "classnames";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
+import { useDispatch } from "react-redux";
+import { emailParaRedefinirSenha } from "../../../redux/sliceRedefinirSenha";
 
-function RedefinirSenha() {
+function RedefinirSenhaPage() {
     const email = useRef(null);
     const [emailValido, setEmailValido] = useState(true);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     function validarEmail() {
+        console.log(email.current.value)
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!regex.test(email.current.value)) {
             setEmailValido(false);
@@ -21,6 +25,11 @@ function RedefinirSenha() {
 
     function voltarPagina() {
         navigate(-1);
+    }
+
+    function irParaVerificarCodigoPage() {
+        dispatch(emailParaRedefinirSenha(email.current.value));
+        navigate("verificar-codigo")
     }
 
     return (
@@ -48,12 +57,12 @@ function RedefinirSenha() {
                     <p className={classNames("fonte", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
                 </div>
                 <div className={styles.containerButtons}>
-                    <button className={classNames("fonte", styles.buttonCancelar)}>Cancelar</button>
-                    <button className={classNames("fonte", styles.buttonRedefinirSenha)}>Redefinir Senha</button>
+                    <button className={classNames("fonte", styles.buttonCancelar)} onClick={voltarPagina}>Cancelar</button>
+                    <button className={classNames("fonte", styles.buttonRedefinirSenha)} onClick={irParaVerificarCodigoPage}>Redefinir Senha</button>
                 </div>
             </div>
         </div >
     )
 }
 
-export default RedefinirSenha;
+export default RedefinirSenhaPage;

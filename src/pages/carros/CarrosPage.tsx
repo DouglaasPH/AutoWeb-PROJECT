@@ -1,8 +1,8 @@
 import Filtros from "./Filtros/Filttros";
-import styles from "./carros.module.css";
+import styles from "./carrosPage.module.css";
 
 
-function Carros() {
+function CarrosPage() {
     return (
         <div>
             <Filtros />
@@ -10,4 +10,4 @@ function Carros() {
     )
 }
 
-export default Carros;
+export default CarrosPage;

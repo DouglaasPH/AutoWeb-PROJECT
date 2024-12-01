@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import styles from "./categorias.module.css";
 import "../../../../App.css";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,7 +20,7 @@ function Categorias() {
     const irParaEsquerda = () => setMoverCategorias(1 + moverCategorias)
     const irParaDireita = () => setMoverCategorias(-1 + moverCategorias);
 
-        
+
     return (
         <div className={styles.containerCategorias}>
             <div className={styles.containerTitulo}>
@@ -41,9 +41,9 @@ function Categorias() {
                                 <h4 className={classNames("fonte", styles.nomeDaCategoria)}>{categoria}</h4>
                             </div>
                         ))}
-                    </div>                   
+                    </div>
                 </div>
-                {moverCategorias >= -1 ? 
+                {moverCategorias >= -1 ?
                     <div className={styles.containerSetaDireita} onClick={irParaDireita}>
                         <FontAwesomeIcon icon={faArrowRight} className={styles.setaDireita} />
                     </div> : null}

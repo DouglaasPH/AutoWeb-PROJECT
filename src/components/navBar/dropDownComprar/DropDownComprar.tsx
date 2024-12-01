@@ -1,6 +1,6 @@
 import { faCar, faCarOn, faFileCircleCheck, faMotorcycle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "./styles.module.css";
+import styles from "./dropDownComprar.module.css";
 import "../../../App.css";
 import classNames from "classnames";
 

@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface PesquisasState {
+interface interfaceState {
     tipoDoAutomovelParaPesquisa: string;
     marca: string;
     modelo: string;
 }
 
-const initialState: PesquisasState = {
+const initialState: interfaceState = {
     tipoDoAutomovelParaPesquisa: "",
     marca: "",
     modelo: "",

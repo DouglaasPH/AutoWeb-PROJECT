@@ -1,6 +1,6 @@
 import styles from "./login.module.css";
 import "../../App.css";
-import FooterBar from "../../components/footerBar/FooterBar";
+import FooterBar from "../../components/footerBar/FooterBar.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import classNames from "classnames";
@@ -9,9 +9,12 @@ import requisicaoEntrar from "./requisicoesLogin.ts";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../components/spinner/spinner.tsx";
+import { useNavigate } from "react-router-dom";
 
 
-function Login() {
+
+function LoginPage() {
+    const navigate = useNavigate();
     const email = useRef(null);
     const senha = useRef(null);
     const [emailValido, setEmailValido] = useState(true);
@@ -53,6 +56,11 @@ function Login() {
                 console.log(value);
             }, 1000);
         }
+    }
+
+    function irParaRedefinirSenhaPage(event: { preventDefault: () => void; }) {
+        event.preventDefault();
+        navigate("redefinir-senha");
     }
 
     return (
@@ -108,7 +116,7 @@ function Login() {
                     </article>
 
                     <article className={styles.containerEqueceuENaoTemContaOuSenha}>
-                        <a href="" className={classNames("fonte", styles.descricaoEsqueceuSenha)}>Esqueceu a senha?</a>
+                        <a href="" className={classNames("fonte", styles.descricaoEsqueceuSenha)} onClick={irParaRedefinirSenhaPage}>Esqueceu a senha?</a>
                         <p className={classNames("fonte", styles.descricaoNaoTemConta)}>Você não tem conta? <a href="" className={classNames("fonte", styles.criarConta)}>Criar conta</a></p>
                     </article>
                 </div>
@@ -121,4 +129,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default LoginPage;

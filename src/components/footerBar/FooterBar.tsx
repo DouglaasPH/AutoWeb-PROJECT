@@ -1,10 +1,10 @@
-import styles from "./styles.module.css";
+import styles from "./footerBar.module.css";
 import "../../App.css";
 import { imagens } from "../../assets/images";
 import classNames from "classnames";
 
 
-function FooterBar() { 
+function FooterBar() {
     return (
         <footer className={styles.containerFooter}>
             <section className={styles.sectionInfo}>
@@ -23,7 +23,7 @@ function FooterBar() {
 
             <section className={styles.sectionCopyright}>
                 <p className={classNames("fonte", styles.pCopyright)}>© 2024 AutoWeb S.A. Todos os direitos reservados.</p>
-                <a href="" className={classNames("fonte", styles.linkCopyright)}>Termos de uso e Política de Privacidade</a>                
+                <a href="" className={classNames("fonte", styles.linkCopyright)}>Termos de uso e Política de Privacidade</a>
             </section>
         </footer>
     )

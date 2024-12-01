@@ -1,7 +1,7 @@
 import { faUser } from "@fortawesome/free-regular-svg-icons"
-import { faPeopleGroup, faShieldHalved} from "@fortawesome/free-solid-svg-icons"
+import { faPeopleGroup, faShieldHalved } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "./styles.module.css";
+import styles from "./dropDownAjuda.module.css";
 import "../../../App.css";
 import classNames from "classnames";
 

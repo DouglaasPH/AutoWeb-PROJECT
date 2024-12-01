@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import styles from "./ultimasPesquisas.module.css";
 import "../../../../App.css";
 import classNames from "classnames";
 

@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import styles from "./homePage.module.css";
 import "../../App.css";
 import Carrossel from "./components/passarImgPageHome/Carrossel";
 import Pesquisa from "./components/barraDePesquisa/BarraDePesquisa";
@@ -7,8 +7,8 @@ import Categorias from "./components/barraCategorias/Categorias";
 import Recomendados from "./components/barraRecomendados/BarraRecomendados";
 
 
-function Home() {    
-    
+function HomePage() {
+
     return (
         <div className={styles.containerHome}>
             <Carrossel />
@@ -22,4 +22,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default HomePage;

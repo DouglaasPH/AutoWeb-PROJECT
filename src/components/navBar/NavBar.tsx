@@ -1,28 +1,52 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { imagens } from "../../assets/images";
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
-import styles from "./styles.module.css";
+import styles from "./navBar.module.css";
 import '../../App.css';
 import classNames from "classnames";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DropDownComprar from "./dropDownComprar/DropDownComprar";
 import DropDownVender from "./dropDownVender/DropDownVender";
 import DropDownAjuda from "./dropDownAjuda/DropDownAjuda";
+import { useNavigate } from "react-router-dom";
+import { dadosDaConta } from "../../system/login";
+import DropDownMinhaConta from "./dropDownMinhaConta/DropDownMinhaConta";
+
 
 function NavBar() {
+    const navigate = useNavigate();
+    const [estadoDeLogin, setEstadoDeLogin] = useState("");
+
+    useEffect(() => {
+        const dados = localStorage.getItem("estado-de-login");
+        setEstadoDeLogin(String(dados));
+        console.log(estadoDeLogin, "useEffect", dados)
+    }, []);
+
     const [isOpenComprar, setIsOpenComprar] = useState(false);
-    const [isOpenVender, setIsOpenVender] = useState(false);    
-    const [isOpenAjuda, setIsOpenAjuda] = useState(false);    
-    
+    const [isOpenVender, setIsOpenVender] = useState(false);
+    const [isOpenAjuda, setIsOpenAjuda] = useState(false);
+
     function chamarDropDownComprar() {
         setIsOpenComprar(!isOpenComprar);
     };
     function chamarDropDownVender() {
-        setIsOpenVender(!isOpenVender);        
+        setIsOpenVender(!isOpenVender);
     };
     function chamarDropDownAjuda() {
-        setIsOpenAjuda(!isOpenAjuda);        
+        setIsOpenAjuda(!isOpenAjuda);
     };
+
+    function irParaContaOuLogin() {
+        console.log("jklsdfjkl")
+        if (estadoDeLogin === "true") {
+            // TODO interface para conta
+            return console.log("estado de login = true", estadoDeLogin)
+        } else {
+            console.log("ir para redefinir senha")
+            navigate("login");
+        }
+    }
 
     return (
         <nav className={styles.navBar}>
@@ -49,11 +73,13 @@ function NavBar() {
                 </div>
             </div>
 
-            <div className={styles.divLogin}>
+            <div className={styles.divLogin} onClick={irParaContaOuLogin}>
                 <button className={classNames("fonte", styles.b)}>
                     <FontAwesomeIcon icon={faUser} className={styles.fontUser} />
-                    Entrar
+                    {estadoDeLogin === "true" ? dadosDaConta.user : "Entrar"}
                 </button>
+                {estadoDeLogin === "true" ? <DropDownMinhaConta /> : null}
+
                 <button className={classNames("fonte", styles.b)}>
                     <FontAwesomeIcon icon={faHeart} className={styles.fontHeart} />
                 </button>

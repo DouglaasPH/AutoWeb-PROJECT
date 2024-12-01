@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import styles from "./barraDePesquisa.module.css";
 import "../../../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";

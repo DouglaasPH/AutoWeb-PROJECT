@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import styles from "./carrossel.module.css";
 import { useEffect, useState } from "react";
 import carroUm from "../../../../assets/imagens-para-home/anuncio-carrossel/anuncio-1.jpg";
 import carroDois from "../../../../assets/imagens-para-home/anuncio-carrossel/anuncio-2.png";
@@ -26,18 +26,18 @@ function Carrossel() {
     }, []);
 
     return (
-                    <div className={styles.carousel}>
-                <div className={styles.imageContainer} style={{ transform: `translateX(-${currentIndex * 100}vw)` }}>
-                    {imagensArray.map((src, index) => (
-                        <img
-                            key={index}
-                            src={src}
-                            alt={`Imagem ${index + 1}`}
-                            className={styles.carouselImage}
-                        />
-                    ))}
-                </div>
+        <div className={styles.carousel}>
+            <div className={styles.imageContainer} style={{ transform: `translateX(-${currentIndex * 100}vw)` }}>
+                {imagensArray.map((src, index) => (
+                    <img
+                        key={index}
+                        src={src}
+                        alt={`Imagem ${index + 1}`}
+                        className={styles.carouselImage}
+                    />
+                ))}
             </div>
+        </div>
 
     )
 }
