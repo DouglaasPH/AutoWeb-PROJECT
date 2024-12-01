@@ -1,0 +1,146 @@
+.backgroundAzul {
+    height: 35vh;
+    background-color: #1e90ff;
+}
+
+.backgroundBranco {
+    margin: 0;
+    padding: 0;
+    height: 48vh;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.containerText{
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 16.9%;
+}
+
+.comentario {
+    font-size: 78%;
+    font-weight: 500;
+    text-align: center;
+    height: 100%;
+}
+
+.circuloDeInterrogacao {
+    font-size: 100%;
+}
+
+.link {
+    color: #1e90ff;
+}
+
+.link:hover {
+    cursor: pointer;
+}
+
+.containerForm {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    height: 35%;
+    width: 35%;
+    background: white;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.containerX {
+    display: flex;
+    justify-content: end;
+}
+
+.x {
+    font-size: 130%;
+}
+
+.x:hover {
+    cursor: pointer;
+}
+
+.containerDescricao {
+    padding-right: 20%;
+    font-weight: 400;
+    font-size: 160%;
+}
+
+.input {
+    width: 95%;
+    height: 90%;
+    border: 0.4vh solid #e0e0e0;
+    border-radius: 1vh;
+    padding-left: 4.5%;
+    font-size: 80%;
+}
+
+.input:focus {
+    border-color: #c700c7;
+    outline: none;
+}
+
+.labelEmail {
+    position: absolute;
+    top: 57.7%;
+    left: 9%;
+    background-color: white;
+    color: #858585;
+    font-size: 52%;
+    padding: 0 0.5% 0 0.5%;
+}
+
+.iconeEmail {
+    position: absolute;
+    right: 7.7%;
+    top: 63.4%;
+    padding: 0.2%;
+    color: #c700c7;
+}
+
+.paragrafoEmailInvalido {
+    margin-left: 2%;
+    font-size: 60%;
+    font-weight: 500;
+    color: #c700c7;
+}
+
+.containerButtons {
+    height: 15%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.buttonCancelar {
+    background-color: white;
+    font-weight: 700;
+    font-size: 75%;
+    padding: 0 3% 0 3%;
+    border: none;
+    border-radius: 1vh;
+    color: #1e90ff;
+}
+
+.buttonRedefinirSenha {
+    background-color: #1e90ff;
+    font-weight: 700;
+    font-size: 75%;
+    padding: 0 3% 0 3%;
+    border: none;
+    border-radius: 1vh;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
