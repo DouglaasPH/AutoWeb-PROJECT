@@ -1,0 +1,171 @@
+.containerPrincipal {
+    position: absolute;
+    top: 25%;
+    display: flex;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+}
+
+.containerRegistro {
+    background: white;
+    border-radius: 2%;
+    padding: 2%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerX {
+    display: flex;
+    justify-content: end;
+}
+
+.x {
+    font-size: 130%;
+}
+
+.x:hover {
+    cursor: pointer;
+}
+
+.containerTitulo {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    font-size: 170%;
+    font-weight: 400;
+}
+
+.articleForm {
+    height: 60%;
+    margin-bottom: 4%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    background: #fafaf100;
+    height: 100%;
+    width: 73%;
+}
+
+.input {
+    width: 95%;
+    height: 100%;
+    border: 0.4vh solid #e0e0e0;
+    border-radius: 1vh;
+    padding-left: 3.4%;
+    font-size: 80%;
+}
+
+.input:focus {
+    border-color: #c700c7;
+    outline: none;
+}
+
+.labelNomeCompleto {
+    position: absolute;
+    top: 26.5%;
+    left: 38%;
+    background-color: white;
+    color: #858585;
+    font-size: 52%;
+    padding: 0 0.5% 0 0.5%;
+}
+
+.labelEmail {
+    position: absolute;
+    top: 40.85%;
+    left: 38%;
+    background-color: white;
+    color: #858585;
+    font-size: 52%;
+    padding: 0 0.5% 0 0.5%;
+}
+
+.iconeNomeCompleto {
+    position: absolute;
+    right: 38.5%;
+    top: 29.6%;
+    padding: 0.2%;
+    color: #c700c7;
+}
+
+.iconeEmail {
+    position: absolute;
+    right: 38.5%;
+    top: 43.7%;
+    padding: 0.2%;
+    color: #c700c7;
+}
+
+.paragrafoEmailInvalido,
+.paragrafoSenhaInvalido {
+    margin-left: 2%;
+    font-size: 60%;
+    font-weight: 500;
+    color: #c700c7;
+}
+
+.containerCertificaoMaioridade {
+    display: flex;
+    justify-content: center;
+}
+
+.certificacaoMaioridade {
+    font-size: 66%;
+    font-weight: 500;
+    width: 88%;
+}
+
+.buttonCadastrar {
+    width: 100%;
+    height: 20%;
+    background-color: #1e90ff;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 100%;
+    border-radius: 1vh;
+}
+
+.buttonCadastrar:hover {
+    cursor: pointer;
+}
+
+
+.containerJaTemContaECertificacao {
+    width: 100%;
+    height: 10%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.descricaoJaTemConta {
+    color: #373737;
+    font-weight: 500;
+    font-size: 75%;
+}
+
+.descricaoCertificaoDoApp {
+    font-weight: 500;
+    font-size: 70%;
+}
+
+.buttonEntrarConta {
+    color: #1e90ff;
+}

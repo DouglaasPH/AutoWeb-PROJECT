@@ -1,13 +1,14 @@
 import "../../../App.css";
-import styles from "./redefinirSenha.module.css";
+import styles from "./redefinirSenhaPage.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation, faX } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch } from "react-redux";
 import { emailParaRedefinirSenha } from "../../../redux/sliceRedefinirSenha";
+import Background from "../../../components/telaDeFundo/background";
+
 
 function RedefinirSenhaPage() {
     const email = useRef(null);
@@ -34,13 +35,8 @@ function RedefinirSenhaPage() {
 
     return (
         <div className={styles.containerRedefinirSenha}>
-            <div className={styles.backgroundAzul}></div>
-            <div className={styles.backgroundBranco}>
-                <div className={styles.containerText}>
-                    <FontAwesomeIcon icon={faCircleQuestion} className={styles.circuloDeInterrogacao} />
-                    <p className={classNames("fonte", styles.comentario)}>Precisa de ajuda? <a className={styles.link}>Fale com a gente</a></p>
-                </div>
-            </div>
+            <Background pageAtual="RedefinirSenha" />
+
             <div className={styles.containerForm}>
                 <div className={styles.containerX}>
                     <FontAwesomeIcon icon={faX} className={styles.x} onClick={voltarPagina} />

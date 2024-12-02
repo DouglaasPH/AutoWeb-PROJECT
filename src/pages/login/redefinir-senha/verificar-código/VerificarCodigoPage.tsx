@@ -1,11 +1,11 @@
-import styles from "./verificarCodigo.module.css";
+import styles from "./verificarCodigoPage.module.css";
 import "../../../../App.css";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
-import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 import { useSelector } from "react-redux";
+import Background from "../../../../components/telaDeFundo/background";
 
 function VerificarCodigoPage() {
     const emailParaEnviarCodigo = useSelector(state => state.email);
@@ -22,13 +22,8 @@ function VerificarCodigoPage() {
 
     return (
         <div className={styles.containerVerificarCodigo}>
-            <div className={styles.backgroundAzul}></div>
-            <div className={styles.backgroundBranco}>
-                <div className={styles.containerText}>
-                    <FontAwesomeIcon icon={faCircleQuestion} className={styles.circuloDeInterrogacao} />
-                    <p className={classNames("fonte", styles.comentario)}>Precisa de ajuda? <a className={styles.link}>Fale com a gente</a></p>
-                </div>
-            </div>
+            <Background pageAtual="VerificarCodigo" />
+
             <div className={styles.containerPrincipal}>
                 <div className={styles.containerX}>
                     <FontAwesomeIcon icon={faX} className={styles.x} onClick={voltarPagina} />

@@ -1,6 +1,5 @@
 import styles from "./login.module.css";
 import "../../App.css";
-import FooterBar from "../../components/footerBar/FooterBar.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import classNames from "classnames";
@@ -10,8 +9,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../components/spinner/spinner.tsx";
 import { useNavigate } from "react-router-dom";
-
-
+import Background from "../../components/telaDeFundo/background.tsx";
 
 function LoginPage() {
     const navigate = useNavigate();
@@ -63,11 +61,16 @@ function LoginPage() {
         navigate("redefinir-senha");
     }
 
+    function irParaRegistrarPage(event: { preventDefault: () => void; }) {
+        event.preventDefault();
+        navigate("registrar");
+    };
+
     return (
         <div>
             {girarSpinner ? <Spinner /> : null}
-            <div className={styles.backgroundAzul}></div>
-            <div className={styles.backgroundBranco}></div>
+            <Background pageAtual="Login" />
+
             <div className={styles.containerForm}>
                 <div className={styles.containerLogin}>
                     <div className={styles.legenda}>
@@ -110,22 +113,18 @@ function LoginPage() {
                             </button>
                             <button className={styles.buttonMeioLoginExterior}>
                                 <FontAwesomeIcon icon={faApple} className={styles.icone} />
-                                <p className={classNames("fonte", styles.descricaoLogin)}>Entrar com Apple</p>
+                                <p className={classNames("fonte", styles.descricao)}>Entrar com Apple</p>
                             </button>
                         </section>
                     </article>
 
-                    <article className={styles.containerEqueceuENaoTemContaOuSenha}>
+                    <article className={styles.containerEsqueceuENaoTemContaOuSenha}>
                         <a href="" className={classNames("fonte", styles.descricaoEsqueceuSenha)} onClick={irParaRedefinirSenhaPage}>Esqueceu a senha?</a>
-                        <p className={classNames("fonte", styles.descricaoNaoTemConta)}>Você não tem conta? <a href="" className={classNames("fonte", styles.criarConta)}>Criar conta</a></p>
+                        <p className={classNames("fonte", styles.descricaoNaoTemConta)}>Você não tem conta? <a href="" className={classNames("fonte", styles.criarConta)} onClick={irParaRegistrarPage}>Criar conta</a></p>
                     </article>
                 </div>
             </div>
-            <div className={styles.rodape}>
-                <FooterBar />
-            </div>
         </div >
-
     )
 }
 

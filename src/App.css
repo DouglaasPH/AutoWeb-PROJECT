@@ -21,6 +21,10 @@ body {
   font-size: 3vh;
 }
 
+p {
+  color: #686868;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -7,16 +7,20 @@ import CarrosPage from "./pages/carros/CarrosPage.tsx";
 import RedefinirSenhaPage from "./pages/login/redefinir-senha/RedefinirSenhaPage.tsx";
 import { login } from "./system/login.ts";
 import VerificarCodigoPage from "./pages/login/redefinir-senha/verificar-código/VerificarCodigoPage.tsx";
+import RegistrarPage from "./pages/login/criar-conta/RegistrarPage.tsx";
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
   <Route>
     <Route path="/">
       <Route index element={<> <NavBar /> <HomePage /> <FooterBar /> </>} />
       <Route path="login">
-        <Route index element={<> <NavBar /> <LoginPage /> </>} />
+        <Route index element={<> <NavBar /> <LoginPage /> <FooterBar /> </>} />
         <Route path="redefinir-senha">
           <Route index element={<> <NavBar /> <RedefinirSenhaPage /> <FooterBar /> </>} />
           <Route path="verificar-codigo" element={<> <NavBar /> <VerificarCodigoPage /> <FooterBar /> </>} />
+        </Route>
+        <Route path="registrar">
+          <Route index element={<> <NavBar /> <RegistrarPage /> <FooterBar /> </>} />
         </Route>
       </Route>
       <Route path="carros" element={<> <NavBar /> <CarrosPage /> </>} />
