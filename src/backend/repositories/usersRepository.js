@@ -23,6 +23,15 @@ class usersRepository {
       "Não foi possível verificar o usuário!"
     );
   }
+
+  verificarEmail(email) {
+    const sql = "select * users where email =?";
+    return consulta(
+      sql,
+      email,
+      "Não foi possível localizar o email no banco de dados!"
+    );
+  }
 }
 
 export default new usersRepository();

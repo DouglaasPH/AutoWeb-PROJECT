@@ -19,6 +19,8 @@ const rootReducer = (state = initialState, action: { type: string; payload: stri
             return { ...state, modeloAtual: action.payload };
         case "redefinir-senha/emailParaRedefinirSenha":
             return { ...state, email: action.payload };
+        case "criar-conta/emailParaCriarConta":
+            return { ...state, email: action.payload };
         default:
             return state;
     }

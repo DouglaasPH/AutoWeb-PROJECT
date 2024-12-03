@@ -8,6 +8,8 @@ import RedefinirSenhaPage from "./pages/login/redefinir-senha/RedefinirSenhaPage
 import { login } from "./system/login.ts";
 import VerificarCodigoPage from "./pages/login/redefinir-senha/verificar-código/VerificarCodigoPage.tsx";
 import RegistrarPage from "./pages/login/criar-conta/RegistrarPage.tsx";
+import SenhaPage from "./pages/login/criar-conta/senhaPage/SenhaPage.tsx";
+import Background from "./components/telaDeFundo/background.tsx";
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
   <Route>
@@ -21,6 +23,7 @@ const browserRouter = createBrowserRouter(createRoutesFromElements(
         </Route>
         <Route path="registrar">
           <Route index element={<> <NavBar /> <RegistrarPage /> <FooterBar /> </>} />
+          <Route path="senha" element={<> <NavBar /> <Background pageAtual="Senha" /> <SenhaPage /> <FooterBar />  </>} />
         </Route>
       </Route>
       <Route path="carros" element={<> <NavBar /> <CarrosPage /> </>} />

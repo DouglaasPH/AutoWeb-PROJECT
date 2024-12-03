@@ -8,6 +8,7 @@ router.get(
   "/verificarNomeDeUsuario",
   usersController.verificacaoDoNomeDeUsuario
 );
+router.get("/verificarEmail", usersController.verificarEmail);
 router.post("/cadastro", usersController.store);
 
 export default router;

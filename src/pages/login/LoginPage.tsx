@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import classNames from "classnames";
 import { useRef, useState } from "react";
-import requisicaoEntrar from "./requisicoesLogin.ts";
+import { requisicaoEntrar } from "./requisicoesLogin.ts";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../components/spinner/spinner.tsx";

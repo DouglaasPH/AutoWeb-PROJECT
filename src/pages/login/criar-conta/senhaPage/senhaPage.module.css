@@ -1,0 +1,166 @@
+.containerPrincipal {
+    position: absolute;
+    top: 24%;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}
+
+.containerSenhaPage {
+    background: white;
+    border-radius: 2%;
+    padding: 1.5% 1.5% 1.5% 3%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.containerX {
+    display: flex;
+    justify-content: end;
+}
+
+.x {
+    font-size: 130%;
+}
+
+.x:hover {
+    cursor: pointer;
+}
+
+.containerInformacoes {
+    height: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titulo {
+    font-size: 160%;
+    font-weight: 400;
+}
+
+.descricao {
+    font-size: 75%;
+}
+
+.containerInput {
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input {
+    width: 94%;
+    height: 2.3rem;
+    border: 0.4vh solid #e0e0e0;
+    border-radius: 1vh;
+    padding-left: 3.4%;
+    font-size: 80%;
+}
+
+.input:focus {
+    border-color: #c700c7;
+    outline: none;
+}
+
+.labelSenha {
+    position: absolute;
+    top: 27.2%;
+    left: 28.7%;
+    background-color: white;
+    color: #858585;
+    font-size: 52%;
+    padding: 0 0.5% 0 0.5%;
+}
+
+.labelConfirmarSenha {
+    position: absolute;
+    top: 39.8%;
+    left: 28.7%;
+    background-color: white;
+    color: #858585;
+    font-size: 52%;
+    padding: 0 0.5% 0 0.5%;
+}
+
+.olhinhoSenha {
+    position: absolute;
+    top: 30.3%;
+    padding: 0.2%;
+}
+
+.olhinhoConfirmarSenha {
+    position: absolute;
+    top: 42.8%;
+    padding: 0.2%;
+}
+
+.olhinhoSenha:hover,
+.olhinhoConfirmarSenha:hover {
+    cursor: pointer;
+}
+
+.iconeSenha {
+    position: absolute;
+    right: 29%;
+    top: 30%;
+    padding: 0.2%;
+    color: #c700c7;
+}
+
+.iconeConfirmarSenha {
+    position: absolute;
+    right: 29%;
+    top: 42.5%;
+    padding: 0.2%;
+    color: #c700c7;
+}
+
+.paragrafoSenhaInvalido,
+.paragrafoConfirmarSenhaInvalido {
+    margin-left: 2%;
+    font-size: 60%;
+    font-weight: 500;
+    color: #c700c7;
+}
+
+.containerRequitosDaSenha {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerDeUmRequisito {
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+    gap: 0.5rem;
+}
+
+.indicarDoRequisito {
+    font-size: 65%;
+}
+
+.requisito {
+    font-size: 65%;
+}
+
+
+.buttonCriarConta {
+    height: 2.5rem;
+    width: 5.8rem;
+    border-radius: 0.4rem;
+    background-color: #1e90ff;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.buttonCadastrar:hover {
+    cursor: pointer;
+}

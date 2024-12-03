@@ -16,6 +16,11 @@ class usersController {
     const row = await usersRepository.verificarNomeDeUsuario(nomeDeUsuario);
     return res.json(row);
   }
+  async verificarEmail(req, res) {
+    const email = req.query;
+    const row = await usersRepository.verificarEmail(email);
+    return res.json(row);
+  }
 }
 
 export default new usersController();

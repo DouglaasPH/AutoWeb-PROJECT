@@ -10,13 +10,14 @@ function Background(props: { pageAtual: string; }) {
         Registrar: string;
         RedefinirSenha: string;
         VerificarCodigo: string;
+        Senha: string;
     }
     const tamanhoDoBackgroundBrancoParaCadaPage: tipagemDoObjeto = {
         Login: "70",
         Registrar: "70",
         RedefinirSenha: "50",
         VerificarCodigo: "50",
-
+        Senha: "80",
     };
     const chaveT = Object.keys(tamanhoDoBackgroundBrancoParaCadaPage);
 

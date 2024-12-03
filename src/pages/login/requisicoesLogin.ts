@@ -14,4 +14,17 @@ async function requisicaoEntrar(dados: { email: string; senha: string; }) {
     }
 }
 
-export default requisicaoEntrar;
+async function requisicaoCriarConta(email: string) {
+    try {
+        const response = await fetch(`${API_URL}/verificarEmail?email=${email}`, {
+            method: "GET",
+        });
+
+        const result = await response.text();
+        console.log(result);
+    } catch (error) {
+        console.log(error)
+   }
+}
+
+export {requisicaoEntrar, requisicaoCriarConta};

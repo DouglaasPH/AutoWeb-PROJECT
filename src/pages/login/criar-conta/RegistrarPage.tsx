@@ -6,14 +6,17 @@ import { faTriangleExclamation, faX } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
 import Background from "../../../components/telaDeFundo/background";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { emailParaCriarConta } from "../../../redux/sliceCriarConta";
 
 function RegistrarPage() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const email = useRef(null);
     const nome = useRef(null);
     const [emailValido, setEmailValido] = useState(true);
     const [senhaValido, setSenhaValido] = useState(true);
-    const [labelSenha, setLabelSenha] = useState("Campo obrigatório")
+    const [labelSenha, setLabelSenha] = useState("Campo obrigatório");
 
     function validarSenha() {
         const partesDoNome = nome.current.value.split(" ");
@@ -27,19 +30,23 @@ function RegistrarPage() {
             if (partesDoNome.length >= 2 && verificarNome) setSenhaValido(true)
             else setSenhaValido(false);
         }
-    }
+    };
 
     function validarEmail() {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!regex.test(email.current.value)) {
             setEmailValido(false);
         } else setEmailValido(true);
-    }
+    };
 
     function voltarPagina() {
         navigate(-1);
-    }
+    };
 
+    function IrParaSenhaPage() {
+        dispatch(emailParaCriarConta(email.current.value));
+        navigate("senha");
+    };
 
     return (
         <div>
@@ -75,7 +82,7 @@ function RegistrarPage() {
                                 <p className={classNames("fonte", styles.certificacaoMaioridade)} >Ao me cadastrar, eu declaro ter ciência de que este cadastro é somente para maiores de 18 anos.</p>
                             </div>
 
-                            <button className={classNames("fonte", styles.buttonCadastrar)}>Criar conta</button>
+                            <button className={classNames("fonte", styles.buttonCadastrar)} onClick={IrParaSenhaPage}>Criar conta</button>
                         </form>
 
                     </article>

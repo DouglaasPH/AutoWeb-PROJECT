@@ -9,7 +9,6 @@ import Background from "../../../../components/telaDeFundo/background";
 
 function VerificarCodigoPage() {
     const emailParaEnviarCodigo = useSelector(state => state.email);
-    console.log(emailParaEnviarCodigo)
     const navigate = useNavigate();
 
     function voltarPagina() {
