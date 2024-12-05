@@ -6,6 +6,7 @@ const initialState = {
     marcaAtual: "",
     modeloAtual: "",
     email: "",
+    user: "",
 }
 
 
@@ -21,6 +22,8 @@ const rootReducer = (state = initialState, action: { type: string; payload: stri
             return { ...state, email: action.payload };
         case "criar-conta/emailParaCriarConta":
             return { ...state, email: action.payload };
+        case "criar-conta/nomeDeUserParaCriarConta":
+            return { ...state, user: action.payload };
         default:
             return state;
     }

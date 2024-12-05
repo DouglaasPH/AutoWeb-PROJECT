@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 import Background from "../../../components/telaDeFundo/background";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { emailParaCriarConta } from "../../../redux/sliceCriarConta";
+import { emailParaCriarConta, nomeDeUserParaCriarConta } from "../../../redux/sliceCriarConta";
 
 function RegistrarPage() {
     const navigate = useNavigate();
@@ -45,6 +45,7 @@ function RegistrarPage() {
 
     function IrParaSenhaPage() {
         dispatch(emailParaCriarConta(email.current.value));
+        dispatch(nomeDeUserParaCriarConta(nome.current.value));
         navigate("senha");
     };
 

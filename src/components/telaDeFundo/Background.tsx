@@ -14,7 +14,7 @@ function Background(props: { pageAtual: string; }) {
     }
     const tamanhoDoBackgroundBrancoParaCadaPage: tipagemDoObjeto = {
         Login: "70",
-        Registrar: "70",
+        Registrar: "75",
         RedefinirSenha: "50",
         VerificarCodigo: "50",
         Senha: "80",

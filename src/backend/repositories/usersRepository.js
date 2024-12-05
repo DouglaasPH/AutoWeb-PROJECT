@@ -25,8 +25,8 @@ class usersRepository {
   }
 
   verificarEmail(email) {
-    const sql = "select * users where email =?";
-    return consulta(
+    const sql = "select * from users where email =?";
+    return verificarDados(
       sql,
       email,
       "Não foi possível localizar o email no banco de dados!"
