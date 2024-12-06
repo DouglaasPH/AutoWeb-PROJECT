@@ -8,25 +8,38 @@ import RedefinirSenhaPage from "./pages/login/redefinir-senha/RedefinirSenhaPage
 import { login } from "./system/login.ts";
 import VerificarCodigoPage from "./pages/login/redefinir-senha/verificar-código/VerificarCodigoPage.tsx";
 import RegistrarPage from "./pages/login/criar-conta/RegistrarPage.tsx";
-import SenhaPage from "./pages/login/criar-conta/senhaPage/SenhaPage.tsx";
-import Background from "./components/telaDeFundo/background.tsx";
+import CriarSenhaPage from "./pages/login/criar-conta/senhaPage/CriarSenhaPage.tsx";
+import Background from "./components/telaDeFundo/Background.tsx";
+import SenhaPage from "./pages/login/redefinir-senha/senha/SenhaPage.tsx";
+import RedefinicaoDeSenhaSucessoPage from "./pages/login/redefinir-senha/senha/sucesso/RedefinicaoDeSenhaSucessoPage.tsx";
+
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
   <Route>
     <Route path="/">
       <Route index element={<> <NavBar /> <HomePage /> <FooterBar /> </>} />
+
       <Route path="login">
-        <Route index element={<> <NavBar /> <LoginPage /> <FooterBar /> </>} />
+        <Route index element={<> <NavBar /> <Background pageAtual="Login" /> <LoginPage /> <FooterBar /> </>} />
         <Route path="redefinir-senha">
-          <Route index element={<> <NavBar /> <RedefinirSenhaPage /> <FooterBar /> </>} />
-          <Route path="verificar-codigo" element={<> <NavBar /> <VerificarCodigoPage /> <FooterBar /> </>} />
+          <Route index element={<> <NavBar /> <Background pageAtual="RedefinirSenha" /> <RedefinirSenhaPage /> <FooterBar /> </>} />
+          <Route path="verificar-codigo" element={<> <NavBar /> <Background pageAtual="VerificarCodigo" /> <VerificarCodigoPage /> <FooterBar /> </>} />
+          <Route path="senha">
+            <Route index element={<> <NavBar /> <Background pageAtual="Senha" /> <SenhaPage />  <FooterBar />  </>} />
+            <Route path="sucesso" element={<> <NavBar /> <Background pageAtual="RedefinicaoDeSenhaSucessoPage" /> <RedefinicaoDeSenhaSucessoPage /> <FooterBar />  </>} />
+          </Route>
+
         </Route>
+
         <Route path="registrar">
-          <Route index element={<> <NavBar /> <RegistrarPage /> <FooterBar /> </>} />
-          <Route path="senha" element={<> <NavBar /> <Background pageAtual="Senha" /> <SenhaPage /> <FooterBar />  </>} />
+          <Route index element={<> <NavBar /> <Background pageAtual="Registrar" /> <RegistrarPage /> <FooterBar /> </>} />
+          <Route path="senha" element={<> <NavBar /> <Background pageAtual="Senha" /> <CriarSenhaPage /> <FooterBar />  </>} />
         </Route>
+
       </Route>
+
       <Route path="carros" element={<> <NavBar /> <CarrosPage /> </>} />
+
     </Route>
   </Route>
 ))

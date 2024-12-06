@@ -22,6 +22,12 @@ class usersController {
     const row = await usersRepository.verificarEmail(email);
     return res.json(row);
   }
+  async redefinicaoDeSenha(req, res) {
+    const { email, senha } = req.body;
+    console.log(email, senha);
+    const row = await usersRepository.redefinirSenha(email, senha);
+    return res.json(row);
+  }
 }
 
 export default new usersController();

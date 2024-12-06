@@ -44,7 +44,7 @@ function NavBar() {
             return console.log("estado de login = true", estadoDeLogin)
         } else {
             console.log("ir para redefinir senha")
-            navigate("login");
+            navigate("/login");
         }
     }
 
@@ -52,7 +52,7 @@ function NavBar() {
         <nav className={styles.navBar}>
             <div className={styles.divLogo}>
                 <img src={imagens["logoMarcaDoSite"]} alt="logo marca do site" className={styles.logoMarcaImg} />
-                <h1 className="fonteLogo" >AutoWeb</h1>
+                <h1 className={classNames("fonteLogo", styles.logoMarcaTitulo)} >AutoWeb</h1>
             </div>
 
             <div className={styles.divInfo}>
@@ -74,13 +74,13 @@ function NavBar() {
             </div>
 
             <div className={styles.divLogin} onClick={irParaContaOuLogin}>
-                <button className={classNames("fonte", styles.b)}>
+                <button className={classNames("fonte", styles.buttonIrParaConta)}>
                     <FontAwesomeIcon icon={faUser} className={styles.fontUser} />
                     {estadoDeLogin === "true" ? dadosDaConta.user : "Entrar"}
                 </button>
                 {estadoDeLogin === "true" ? <DropDownMinhaConta /> : null}
 
-                <button className={classNames("fonte", styles.b)}>
+                <button className={classNames("fonte", styles.buttonFavoritos)}>
                     <FontAwesomeIcon icon={faHeart} className={styles.fontHeart} />
                 </button>
             </div>

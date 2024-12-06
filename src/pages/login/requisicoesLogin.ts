@@ -32,6 +32,21 @@ async function requisicaoCriarConta(user: string, email: string, senha: string) 
     }
 }
 
+async function requisicaoRedefinirSenha(email: string, senha: string) {
+    console.log(email, senha)
+    try {
+        const response = await axios.put(`${API_URL}/redefinir-senha`, {
+            email,
+            senha,
+        }); 
+        console.log(response);
+        return response;
+    } catch (error) {
+        console.log("Resposta ao erro em requisicaoRedefinirSenha:",error);
+    }
+}
+
+
 async function requisicaoVerificarEmail(user: string, email: string, senha: string) {
     try {
         const response = await axios.get(`${API_URL}/verificarEmail`, {
@@ -47,4 +62,4 @@ async function requisicaoVerificarEmail(user: string, email: string, senha: stri
     }
 }
 
-export { requisicaoEntrar, requisicaoVerificarEmail, requisicaoCriarConta };
+export { requisicaoEntrar, requisicaoVerificarEmail, requisicaoCriarConta, requisicaoRedefinirSenha };

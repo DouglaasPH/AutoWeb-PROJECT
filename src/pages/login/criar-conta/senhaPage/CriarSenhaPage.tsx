@@ -1,4 +1,4 @@
-import styles from "./senhaPage.module.css";
+import styles from "./criarSenhaPage.module.css";
 import "../../../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTriangleExclamation, faX } from "@fortawesome/free-solid-svg-icons";
@@ -6,15 +6,15 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { requisicaoCriarConta, requisicaoVerificarEmail } from "../../requisicoesLogin";
+import { requisicaoVerificarEmail } from "../../requisicoesLogin";
 import { useSelector } from "react-redux";
-import SenhaPageModal from "./modal/senhaPageModal";
+import CriarContaErrorModal from "./modal/erro/CriarContaErrorModal";
 import Spinner from "../../../../components/spinner/spinner";
+import CriarContaSucessoModal from "./modal/sucesso/CriarContaSucessoModal";
 
-const bodyElment = document.getElementsByTagName("body");
-
-function SenhaPage() {
-    const [emailJaPossuiCadastro, setEmailJaPossuiCadastro] = useState(false);
+function CriarSenhaPage() {
+    const [exibirSucessoModal, setExibirSucessoModal] = useState(false);
+    const [exibirErroModal, setExibirErroModal] = useState(false);
     const emailParaEnviarCodigo = useSelector(state => state.email);
     const nomeDeUser = useSelector(state => state.user);
     const navigate = useNavigate();
@@ -36,7 +36,7 @@ function SenhaPage() {
 
     // Ao aparecer o modal ou ao aparecer o spinner, trave o scroll
     useEffect(() => {
-        if (emailJaPossuiCadastro || aparecerSpinner) document.body.classList.add('no-scroll')
+        if (exibirErroModal || exibirSucessoModal || aparecerSpinner) document.body.classList.add('no-scroll')
         else document.body.classList.remove('no-scroll');
     });
 
@@ -106,12 +106,14 @@ function SenhaPage() {
             if (value === "o email já possui um cadastro!") {
                 setTimeout(() => {
                     setAparecerSpinner(false);
-                    setEmailJaPossuiCadastro(true);
+                    setExibirErroModal(true);
                 }, 1000);
             } else {
                 setTimeout(() => {
                     setAparecerSpinner(false);
-                    setEmailJaPossuiCadastro(false);
+                    setExibirErroModal(false);
+                    setExibirSucessoModal(true);
+                    //navigate("conta-criada")
                 }, 1000);
             }
         }
@@ -120,7 +122,8 @@ function SenhaPage() {
     return (
         <>
             {aparecerSpinner ? <Spinner /> : null}
-            {emailJaPossuiCadastro ? <SenhaPageModal /> : null}
+            {exibirErroModal ? <CriarContaErrorModal /> : null}
+            {exibirSucessoModal ? <CriarContaSucessoModal /> : null}
 
             <div className={styles.containerPrincipal}>
                 <div className={styles.containerSenhaPage}>
@@ -289,4 +292,4 @@ function SenhaPage() {
     )
 }
 
-export default SenhaPage
+export default CriarSenhaPage;

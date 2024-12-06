@@ -1,9 +1,9 @@
-import styles from "./senhaPageModal.module.css";
-import "../../../../../App.css";
+import styles from "./criarContaErrorModal.module.css";
+import "../../../../../../App.css";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 
-function SenhaPageModal() {
+function CriarContaErrorModal() {
     const navigate = useNavigate();
 
     function irParaRedefinirSenhaPage(event: { preventDefault: () => void; }) {
@@ -29,4 +29,4 @@ function SenhaPageModal() {
     )
 }
 
-export default SenhaPageModal;
+export default CriarContaErrorModal;

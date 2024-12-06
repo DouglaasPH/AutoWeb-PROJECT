@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
-import Background from "../../../../components/telaDeFundo/background";
 
 function VerificarCodigoPage() {
     const emailParaEnviarCodigo = useSelector(state => state.email);
@@ -21,8 +20,6 @@ function VerificarCodigoPage() {
 
     return (
         <div className={styles.containerVerificarCodigo}>
-            <Background pageAtual="VerificarCodigo" />
-
             <div className={styles.containerPrincipal}>
                 <div className={styles.containerX}>
                     <FontAwesomeIcon icon={faX} className={styles.x} onClick={voltarPagina} />

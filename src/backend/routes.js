@@ -10,5 +10,6 @@ router.get(
 );
 router.get("/verificarEmail", usersController.verificarEmail);
 router.post("/cadastrar", usersController.criarConta);
+router.put("/redefinir-senha", usersController.redefinicaoDeSenha);
 
 export default router;

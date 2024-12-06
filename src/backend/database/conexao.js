@@ -58,7 +58,7 @@ export const criarConta = (sql, valores = "", mensagemReject) => {
       console.log("Erro na consulta SQL:", error);
       return reject(mensagemReject);
     }
-    const row = JOSN.parse(JSON.stringify(result));
+    const row = JSON.parse(JSON.stringify(result));
 
     // Conta criada ou não
     if (row.length == 0) {
@@ -67,6 +67,25 @@ export const criarConta = (sql, valores = "", mensagemReject) => {
         mensagem: "Conta não criado!",
       });
     } else resolve({ sucesso: true, mensagem: "Conta criado!" });
+  });
+};
+export const redefinirSenha = (sql, valores = "", mensagemReject) => {
+  return new Promise((resolve, reject) => {
+    conexao.query(sql, valores, (error, result) => {
+      if (error) {
+        console.log("Erro na consulta SQL:", error);
+        return reject(mensagemReject);
+      }
+      const row = JSON.parse(JSON.stringify(result));
+      console.log(row.data, row.length, row.length == 0);
+      // senha redefinida ou não
+      if (row.length == undefined) {
+        return resolve({
+          sucesso: false,
+          mensagem: "Senha não foi redefinida!",
+        });
+      } else resolve({ sucesso: true, mensagem: "Senha redefinida!" });
+    });
   });
 };
 

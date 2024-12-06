@@ -1,7 +1,6 @@
-import styles from "./login.module.css";
+import styles from "./loginPage.module.css";
 import "../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faApple, faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import classNames from "classnames";
 import { useRef, useState } from "react";
 import { requisicaoEntrar } from "./requisicoesLogin.ts";
@@ -9,7 +8,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../components/spinner/spinner.tsx";
 import { useNavigate } from "react-router-dom";
-import Background from "../../components/telaDeFundo/background.tsx";
+import LoginErrorModal from "./login-erro/LoginErrorModal.tsx";
 
 function LoginPage() {
     const navigate = useNavigate();
@@ -20,6 +19,7 @@ function LoginPage() {
     const [labelSenha, setLabelSenha] = useState("Campo obrigatório")
     const [tipoDeIconeOlhinho, setTipoDeIconeOlhinho] = useState(faEyeSlash);
     const [girarSpinner, setGirarSpinner] = useState(false);
+    const [exibirModalDeError, setExibirModalDeError] = useState("false");
 
     function validarEmail() {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -47,12 +47,13 @@ function LoginPage() {
     function fazerRequisicaoEntrar(event: { preventDefault: () => void; }) {
         event.preventDefault();
         if (emailValido && senhaValido && email.current.value !== "" && senha.current.value !== "") {
-            const value = requisicaoEntrar({ email: email.current.value, senha: senha.current.value });
+            const request = requisicaoEntrar({ email: email.current.value, senha: senha.current.value });
             setGirarSpinner(true);
             setTimeout(() => {
                 setGirarSpinner(false);
-                console.log(value);
-            }, 1000);
+                if (request.encontrado) navigate("/");
+                else setExibirModalDeError("true");
+            }, 1500);
         }
     }
 
@@ -66,10 +67,14 @@ function LoginPage() {
         navigate("registrar");
     };
 
+    function abrirOuFecharLoginErrorModal(condicao: string) {
+        setExibirModalDeError(condicao);
+    }
+
     return (
         <div>
+            {exibirModalDeError === "true" ? <LoginErrorModal exibirOuNao={abrirOuFecharLoginErrorModal} /> : null}
             {girarSpinner ? <Spinner /> : null}
-            <Background pageAtual="Login" />
 
             <div className={styles.containerForm}>
                 <div className={styles.containerLogin}>
@@ -94,32 +99,21 @@ function LoginPage() {
                                 }}>Senha</label>
                                 <input type={tipoDeIconeOlhinho.iconName === "eye-slash" ? "password" : "text"} autoComplete="on" ref={senha} onChange={validarSenha} className={classNames("fonte", styles.input)} style={{ borderColor: senhaValido ? "#e0e0e0" : "#c700c7" }} />
                                 <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconeSenha} style={{ opacity: senhaValido ? 0 : 1 }} />
-                                <FontAwesomeIcon icon={tipoDeIconeOlhinho} className={styles.olhinho} onClick={verSenha} style={{ right: senhaValido ? "36.7%" : "38.6%" }} />
+                                <FontAwesomeIcon icon={tipoDeIconeOlhinho} className={styles.olhinho} onClick={verSenha} style={{ right: senhaValido ? "35.5%" : "37.5%" }} />
                                 <p className={classNames("fonte", styles.paragrafoSenhaInvalido)} style={{ opacity: senhaValido ? 0 : 1 }}>{labelSenha}</p>
                             </div>
-                            <button className={classNames("fonte", styles.buttonLogin)} onClick={fazerRequisicaoEntrar}>Entrar</button>
+
+                            <div className={styles.containerEsqueciMinhaSenha}>
+                                <a href="" className={classNames("fonte", styles.descricaoEsqueceuSenha)} onClick={irParaRedefinirSenhaPage}>Esqueceu a senha?</a>
+                            </div>
+
+                            <div className={styles.containerButtonEntrar}>
+                                <button className={classNames("fonte", styles.buttonLogin)} onClick={fazerRequisicaoEntrar}>Entrar</button>
+                            </div>
                         </form>
 
                     </article>
-                    <article className={styles.articleLoginExterior}>
-                        <section className={styles.containerOutrosMeioslogin}>
-                            <button className={styles.buttonMeioLoginExterior}>
-                                <FontAwesomeIcon icon={faFacebook} className={styles.icone} />
-                                <p className={classNames("fonte", styles.descricao)}>Entrar com Facebook</p>
-                            </button>
-                            <button className={styles.buttonMeioLoginExterior}>
-                                <FontAwesomeIcon icon={faGoogle} className={styles.icone} />
-                                <p className={classNames("fonte", styles.descricao)}>Entrar com Google</p>
-                            </button>
-                            <button className={styles.buttonMeioLoginExterior}>
-                                <FontAwesomeIcon icon={faApple} className={styles.icone} />
-                                <p className={classNames("fonte", styles.descricao)}>Entrar com Apple</p>
-                            </button>
-                        </section>
-                    </article>
-
                     <article className={styles.containerEsqueceuENaoTemContaOuSenha}>
-                        <a href="" className={classNames("fonte", styles.descricaoEsqueceuSenha)} onClick={irParaRedefinirSenhaPage}>Esqueceu a senha?</a>
                         <p className={classNames("fonte", styles.descricaoNaoTemConta)}>Você não tem conta? <a href="" className={classNames("fonte", styles.criarConta)} onClick={irParaRegistrarPage}>Criar conta</a></p>
                     </article>
                 </div>

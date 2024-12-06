@@ -1,0 +1,72 @@
+.containerFixo {
+    position: fixed;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.4);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerErroModal {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28%;
+    padding: 2% 2.5% 2% 2.5%;
+    height: 30%;
+    border-radius: 0.5rem;
+}
+
+.containerX {
+    display: flex;
+    justify-content: end;
+    height: 10%;
+}
+
+.x {
+    height: 100%;
+}
+
+
+.erro {
+    color: #ffc862;
+    font-size: 180%;
+    margin-left: 2%;
+}
+
+.containerDescricao {
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titulo {
+    font-size: 135%;
+    font-weight: 400;
+}
+
+.paragrafo {
+    font-size: 80%;
+}
+
+.containerButton {
+    display: flex;
+    justify-content: start;
+    height: 20%;
+}
+
+.button {
+
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    font-size: 90%;
+    width: 45%;
+    font-weight: 600;
+    border-radius: 0.5rem;
+}

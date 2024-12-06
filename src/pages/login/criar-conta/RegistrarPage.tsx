@@ -4,7 +4,6 @@ import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation, faX } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
-import Background from "../../../components/telaDeFundo/background";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { emailParaCriarConta, nomeDeUserParaCriarConta } from "../../../redux/sliceCriarConta";
@@ -51,7 +50,6 @@ function RegistrarPage() {
 
     return (
         <div>
-            <Background pageAtual="Registrar" />
             <div className={styles.containerPrincipal}>
                 <div className={styles.containerRegistro}>
                     <div className={styles.containerX}>

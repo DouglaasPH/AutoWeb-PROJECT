@@ -9,7 +9,7 @@ const app = express();
 app.use(
   cors({
     origin: "http://localhost:5173", // Substitua pela URL do seu frontend
-    methods: "GET, POST", // Métodos que você permite
+    methods: ["GET, POST", "PUT", "DELETE"], // Métodos que você permite
     allowedHeaders: "Content-Type, Authorization", // Cabeçalhos permitidos
   })
 );

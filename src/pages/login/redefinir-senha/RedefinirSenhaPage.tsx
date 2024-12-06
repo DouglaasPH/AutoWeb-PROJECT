@@ -7,7 +7,6 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { emailParaRedefinirSenha } from "../../../redux/sliceRedefinirSenha";
-import Background from "../../../components/telaDeFundo/background";
 
 
 function RedefinirSenhaPage() {
@@ -29,14 +28,14 @@ function RedefinirSenhaPage() {
     }
 
     function irParaVerificarCodigoPage() {
-        dispatch(emailParaRedefinirSenha(email.current.value));
-        navigate("verificar-codigo")
+        if (emailValido) {
+            dispatch(emailParaRedefinirSenha(email.current.value));
+            navigate("senha")
+        } else return;
     }
 
     return (
         <div className={styles.containerRedefinirSenha}>
-            <Background pageAtual="RedefinirSenha" />
-
             <div className={styles.containerForm}>
                 <div className={styles.containerX}>
                     <FontAwesomeIcon icon={faX} className={styles.x} onClick={voltarPagina} />
@@ -53,8 +52,8 @@ function RedefinirSenhaPage() {
                     <p className={classNames("fonte", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
                 </div>
                 <div className={styles.containerButtons}>
-                    <button className={classNames("fonte", styles.buttonCancelar)} onClick={voltarPagina}>Cancelar</button>
                     <button className={classNames("fonte", styles.buttonRedefinirSenha)} onClick={irParaVerificarCodigoPage}>Redefinir Senha</button>
+                    <button className={classNames("fonte", styles.buttonCancelar)} onClick={voltarPagina}>Cancelar</button>
                 </div>
             </div>
         </div >

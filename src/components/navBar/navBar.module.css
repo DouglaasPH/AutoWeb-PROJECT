@@ -6,19 +6,17 @@
     display: flex;    
     flex-direction: row;
     justify-content: space-between;
-    padding: 2vh;
     background-color: white;
-    height: 6vh;
+    height: 10%;
     width: 98%;
+    padding: 0 1% 0 1%;    
 }
 
 .divLogo {
-    width: 10%;
+    width: 12%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: 3%;
-    gap: 0.4vh;
+    gap: 2%;
 }
 
 .divLogo:hover {
@@ -27,51 +25,57 @@
 
 
 .logoMarcaImg {
-    height: 80%;
-    width: 35%;
-    border-radius: 5vh;
+    height: 50%;
+    width: 25%;
+    border-radius: 5rem;
 }
 
-/*.logoMarcaName {
-    font-family: "Orbitron", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 3vh;
-}*/
+.logoMarcaTitulo {
+    font-size: 150%;
+}
 
 .divLogin {
-    margin-right: 5%;
-    width: 9%;
+    width: 8%;
     display: flex;
-    justify-content: space-evenly;
-    gap: 0.7vh;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
-.b {
+.buttonIrParaConta {
     font-weight: 600;
     display: flex;
-    width: 8vh;
-    justify-content: center;
+    width: 60%;
+    height: 35%;
+    justify-content: space-between;
     align-items: center;
     border: none;
     background-color: white;
-    gap: 0.5vh;
 }
 
-.b:hover {
+.buttonFavoritos {
+    font-weight: 600;
+    width: 30%;
+    height: 35%;
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonIrParaConta:hover,
+.buttonFavoritos:hover {
     cursor: pointer;
 }
 
 .fontHeart {
-    padding-top: 2%;
-    font-size: 3vh;;
+    font-size: 130%;;
 }
 
 .fontUser {
-    font-size: 2.5vh;
-    padding-bottom: 0.5vh;
+    font-size: 130%;
+    padding-bottom: 8%;
 }
 
 .divInfo {
@@ -79,7 +83,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 10vh;
+    background-color: #1e90ff;
 }
 
 .buttonInfo {
@@ -88,24 +92,24 @@
     justify-content: center;
     border: none;
     background-color: white;
+    border-bottom: 0.15rem solid white;
     height: 100%;
     width: 100%;
 }
 
 
 .divButtonInfo {
-    height: 160%;
+    height: 100%;
     width: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
     background-color: white;
-    border-bottom: 2px solid white;
     transition: all 0.3s;
 }
 
 .buttonInfo:hover {
-    border-bottom: 2px solid #1e90ff;
+    border-bottom: 0.15rem solid #1e90ff;
     cursor: pointer;
 }

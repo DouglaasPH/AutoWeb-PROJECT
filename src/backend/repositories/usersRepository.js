@@ -1,4 +1,8 @@
-import { consulta, verificarDados } from "../database/conexao.js";
+import {
+  consulta,
+  verificarDados,
+  redefinirSenha,
+} from "../database/conexao.js";
 
 class usersRepository {
   criarConta(newUser) {
@@ -30,6 +34,14 @@ class usersRepository {
       sql,
       email,
       "Não foi possível localizar o email no banco de dados!"
+    );
+  }
+  redefinirSenha(email, senha) {
+    const sql = "update users set senha=? where email=?";
+    return redefinirSenha(
+      sql,
+      [email, senha],
+      "Não foi possível redefinir senha!"
     );
   }
 }

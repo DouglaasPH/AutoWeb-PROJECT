@@ -1,0 +1,79 @@
+.containerFixo {
+    position: fixed;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.4);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerErrorModal {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    padding: 2% 2.5% 2% 2.5%;
+    height: 35%;
+    border-radius: 0.5rem;
+}
+
+.containerX {
+    display: flex;
+    justify-content: end;
+}
+
+.x {
+    font-size: 140%;
+}
+
+.containerUm {
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.triangulo {
+    color: #ffc862;
+    font-size: 180%;
+    margin-left: 2%;
+} 
+
+.titulo {
+    font-size: 120%;
+    font-weight: 400;
+}
+
+.paragrafo {
+    font-size: 80%;
+}
+
+.containerDois {
+    height: 15%;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonTentarNovamente {
+    width: 47%;
+    border: 0.1rem #1e90ff solid;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    background-color: #1e90ff;
+    color: white;
+}
+
+.buttonRedefinirSenha {
+    width: 47%;
+    border: 0.1rem #1e90ff solid;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    background-color: white;
+    color: #1e90ff;
+}
