@@ -39,15 +39,26 @@ export const verificarDados = (sql, valores = "", mensagemReject) => {
       }
 
       const row = JSON.parse(JSON.stringify(result));
-
       // E-mail encontrado ou não
+
+      console.log(row);
       if (row.length === 0) {
+        // não retorne a senha
+        const { senha, ...resto } = row[0];
         return resolve({
           encontrado: false,
           mensagem: "Dados não encontrado!",
+          dados_da_conta: resto,
         });
-      } else
-        return resolve({ encontrado: true, mensagem: "Dados encontrado!" });
+      } else {
+        // não retorne a senha
+        const { senha, ...resto } = row[0];
+        return resolve({
+          encontrado: true,
+          mensagem: "Dados encontrado!",
+          dados_da_conta: resto,
+        });
+      }
     });
   });
 };

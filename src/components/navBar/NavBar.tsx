@@ -4,25 +4,16 @@ import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import styles from "./navBar.module.css";
 import '../../App.css';
 import classNames from "classnames";
-import { useEffect, useState } from "react";
 import DropDownComprar from "./dropDownComprar/DropDownComprar";
 import DropDownVender from "./dropDownVender/DropDownVender";
 import DropDownAjuda from "./dropDownAjuda/DropDownAjuda";
 import { useNavigate } from "react-router-dom";
-import { dadosDaConta } from "../../system/login";
-import DropDownMinhaConta from "./dropDownMinhaConta/DropDownMinhaConta";
-
+import { useState } from "react";
 
 function NavBar() {
     const navigate = useNavigate();
-    const [estadoDeLogin, setEstadoDeLogin] = useState("");
-
-    useEffect(() => {
-        const dados = localStorage.getItem("estado-de-login");
-        setEstadoDeLogin(String(dados));
-        console.log(estadoDeLogin, "useEffect", dados)
-    }, []);
-
+    const dados_da_conta = JSON.parse(localStorage.getItem("dados_do_usuário"));
+    console.log(dados_da_conta);
     const [isOpenComprar, setIsOpenComprar] = useState(false);
     const [isOpenVender, setIsOpenVender] = useState(false);
     const [isOpenAjuda, setIsOpenAjuda] = useState(false);
@@ -38,13 +29,10 @@ function NavBar() {
     };
 
     function irParaContaOuLogin() {
-        console.log("jklsdfjkl")
-        if (estadoDeLogin === "true") {
-            // TODO interface para conta
-            return console.log("estado de login = true", estadoDeLogin)
+        if (dados_da_conta !== null) {
+            navigate("/garagem/perfil");
         } else {
-            console.log("ir para redefinir senha")
-            navigate("/login");
+            navigate("login");
         }
     }
 
@@ -73,20 +61,18 @@ function NavBar() {
                 </div>
             </div>
 
-            <div className={styles.divLogin} onClick={irParaContaOuLogin}>
+            <div className={styles.divLogin} onClick={irParaContaOuLogin} style={{ width: dados_da_conta !== null ? `${dados_da_conta.user.length}%` : "60%" }} >
                 <button className={classNames("fonte", styles.buttonIrParaConta)}>
                     <FontAwesomeIcon icon={faUser} className={styles.fontUser} />
-                    {estadoDeLogin === "true" ? dadosDaConta.user : "Entrar"}
+                    {dados_da_conta !== null ? dados_da_conta.user : "Entrar"}
                 </button>
-                {estadoDeLogin === "true" ? <DropDownMinhaConta /> : null}
-
                 <button className={classNames("fonte", styles.buttonFavoritos)}>
                     <FontAwesomeIcon icon={faHeart} className={styles.fontHeart} />
                 </button>
             </div>
 
 
-        </nav>
+        </nav >
     );
 }
 

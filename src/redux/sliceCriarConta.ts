@@ -11,14 +11,14 @@ const initialState: interfaceState = {
 }
 
 const entradaRegistrar = createSlice({
-    name: "criar-conta",
+    name: "CRIAR_CONTA",
     initialState,
     reducers: {
-        emailParaCriarConta: (state, action) => {
+        EMAIL_PARA_CRIAR_CONTA: (state, action) => {
             console.log(state, action.payload);
             state.email = action.payload;
         },
-        nomeDeUserParaCriarConta: (state, action) => {
+        USER_PARA_CRIAR_CONTA: (state, action) => {
             console.log(state, action.payload);
             state.user = action.payload;
         }
@@ -26,5 +26,5 @@ const entradaRegistrar = createSlice({
 });
 
 export default entradaRegistrar.reducer;
-export const { emailParaCriarConta } = entradaRegistrar.actions;
-export const { nomeDeUserParaCriarConta } = entradaRegistrar.actions;
+export const { EMAIL_PARA_CRIAR_CONTA } = entradaRegistrar.actions;
+export const { USER_PARA_CRIAR_CONTA } = entradaRegistrar.actions;

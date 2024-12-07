@@ -6,7 +6,7 @@ import classNames from "classnames";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { emailParaRedefinirSenha } from "../../../redux/sliceRedefinirSenha";
+import { EMAIL_PARA_REDEFINICAO_DE_SENHA } from "../../../redux/sliceRedefinirSenha";
 
 
 function RedefinirSenhaPage() {
@@ -29,7 +29,7 @@ function RedefinirSenhaPage() {
 
     function irParaVerificarCodigoPage() {
         if (emailValido) {
-            dispatch(emailParaRedefinirSenha(email.current.value));
+            dispatch(EMAIL_PARA_REDEFINICAO_DE_SENHA(email.current.value));
             navigate("senha")
         } else return;
     }

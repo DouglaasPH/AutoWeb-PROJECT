@@ -13,20 +13,20 @@ const initialState: interfaceState = {
 };
 
 const entradaDePesquisa = createSlice({
-    name: "pesquisar",
+    name: "PESQUISAR",
     initialState,
     reducers: {
-        tipoDoAutomovelParaPesquisa: (state, action) => {
+        TIPO_DO_AUTOMOVEL: (state, action) => {
             console.log(state, action.payload);
             state.tipoDoAutomovelParaPesquisa = action.payload;
         },
 
-        marca: (state, action) => {
+        TIPO_DA_MARCA: (state, action) => {
             console.log(state, action.payload);
             state.marca = action.payload;
         },
 
-        modelo: (state, action) => {
+        TIPO_DO_MODELO: (state, action) => {
             console.log(state, action.payload);
             state.modelo = action.payload;
         },
@@ -34,7 +34,7 @@ const entradaDePesquisa = createSlice({
     },
 });
 
-export const { tipoDoAutomovelParaPesquisa } = entradaDePesquisa.actions;
-export const { marca } = entradaDePesquisa.actions;
-export const { modelo } = entradaDePesquisa.actions;
+export const { TIPO_DO_AUTOMOVEL } = entradaDePesquisa.actions;
+export const { TIPO_DA_MARCA } = entradaDePesquisa.actions;
+export const { TIPO_DO_MODELO } = entradaDePesquisa.actions;
 export default entradaDePesquisa.reducer;

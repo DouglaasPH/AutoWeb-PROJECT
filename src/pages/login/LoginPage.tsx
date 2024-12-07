@@ -2,7 +2,7 @@ import styles from "./loginPage.module.css";
 import "../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
-import { useRef, useState } from "react";
+import { SetStateAction, useState } from "react";
 import { requisicaoEntrar } from "./requisicoesLogin.ts";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
@@ -12,8 +12,8 @@ import LoginErrorModal from "./login-erro/LoginErrorModal.tsx";
 
 function LoginPage() {
     const navigate = useNavigate();
-    const email = useRef(null);
-    const senha = useRef(null);
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
     const [emailValido, setEmailValido] = useState(true);
     const [senhaValido, setSenhaValido] = useState(true);
     const [labelSenha, setLabelSenha] = useState("Campo obrigatório")
@@ -21,20 +21,22 @@ function LoginPage() {
     const [girarSpinner, setGirarSpinner] = useState(false);
     const [exibirModalDeError, setExibirModalDeError] = useState("false");
 
-    function validarEmail() {
+    function validarEmail(event: { target: { value: SetStateAction<string>; }; }) {
+        setEmail(event.target.value)
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!regex.test(email.current.value)) {
+        if (!regex.test(event.target.value)) {
             setEmailValido(false);
         } else setEmailValido(true);
     }
 
-    function validarSenha() {
-        if (senha.current.value === "") {
+    function validarSenha(event: { target: { value: SetStateAction<string>; }; }) {
+        setSenha(event.target.value)
+        if (event.target.value === "") {
             setSenhaValido(false);
             setLabelSenha("Campo obrigatório");
-        } else if (senha.current.value !== "") {
+        } else if (event.target.value !== "") {
             setLabelSenha("Sua senha deve conter ao menos 8 caracteres")
-            if (senha.current.value.split("").length >= 8) setSenhaValido(true)
+            if (event.target.value.split("").length >= 8) setSenhaValido(true)
             else setSenhaValido(false);
         }
     }
@@ -44,15 +46,18 @@ function LoginPage() {
         else return setTipoDeIconeOlhinho(faEyeSlash)
     }
 
-    function fazerRequisicaoEntrar(event: { preventDefault: () => void; }) {
+    async function fazerRequisicaoEntrar(event: { preventDefault: () => void; }) {
         event.preventDefault();
-        if (emailValido && senhaValido && email.current.value !== "" && senha.current.value !== "") {
-            const request = requisicaoEntrar({ email: email.current.value, senha: senha.current.value });
+        if (emailValido && senhaValido && email !== "" && senha !== "") {
+            const request = await requisicaoEntrar({ email: email, senha: senha });
             setGirarSpinner(true);
             setTimeout(() => {
                 setGirarSpinner(false);
-                if (request.encontrado) navigate("/");
-                else setExibirModalDeError("true");
+                if (request?.data.encontrado) {
+                    console.log(request.data.dados_da_conta);
+                    localStorage.setItem("dados_do_usuário", JSON.stringify(request.data.dados_da_conta));
+                    navigate("/")
+                } else setExibirModalDeError("true");
             }, 1500);
         }
     }
@@ -88,7 +93,7 @@ function LoginPage() {
                                 <label className={classNames("fonte", styles.labelEmail)} style={{
                                     color: emailValido ? "#858585" : "#c700c7"
                                 }}>E-mail</label>
-                                <input type="email" autoComplete="on" ref={email} onChange={validarEmail} className={classNames("fonte", styles.input)} style={{ borderColor: emailValido ? "#e0e0e0" : "#c700c7" }} />
+                                <input type="email" autoComplete="on" value={email} onChange={validarEmail} className={classNames("fonte", styles.input)} style={{ borderColor: emailValido ? "#e0e0e0" : "#c700c7" }} />
                                 <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconeEmail} style={{ opacity: emailValido ? 0 : 1 }} />
                                 <p className={classNames("fonte", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
                             </div>
@@ -97,7 +102,7 @@ function LoginPage() {
                                 <label className={classNames("fonte", styles.labelSenha)} style={{
                                     color: senhaValido ? "#858585" : "#c700c7"
                                 }}>Senha</label>
-                                <input type={tipoDeIconeOlhinho.iconName === "eye-slash" ? "password" : "text"} autoComplete="on" ref={senha} onChange={validarSenha} className={classNames("fonte", styles.input)} style={{ borderColor: senhaValido ? "#e0e0e0" : "#c700c7" }} />
+                                <input type={tipoDeIconeOlhinho.iconName === "eye-slash" ? "password" : "text"} autoComplete="on" value={senha} onChange={validarSenha} className={classNames("fonte", styles.input)} style={{ borderColor: senhaValido ? "#e0e0e0" : "#c700c7" }} />
                                 <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconeSenha} style={{ opacity: senhaValido ? 0 : 1 }} />
                                 <FontAwesomeIcon icon={tipoDeIconeOlhinho} className={styles.olhinho} onClick={verSenha} style={{ right: senhaValido ? "35.5%" : "37.5%" }} />
                                 <p className={classNames("fonte", styles.paragrafoSenhaInvalido)} style={{ opacity: senhaValido ? 0 : 1 }}>{labelSenha}</p>

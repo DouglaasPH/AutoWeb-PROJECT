@@ -11,8 +11,7 @@ async function requisicaoEntrar(dados: { email: string; senha: string; }) {
                 senha: dados.senha,
             },
         });
-        console.log(response.data);        
-
+        return response;   
     } catch (error) {
         console.log(error);
     }
@@ -39,7 +38,6 @@ async function requisicaoRedefinirSenha(email: string, senha: string) {
             email,
             senha,
         }); 
-        console.log(response);
         return response;
     } catch (error) {
         console.log("Resposta ao erro em requisicaoRedefinirSenha:",error);

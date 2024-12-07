@@ -5,7 +5,6 @@ import LoginPage from "./pages/login/LoginPage.tsx";
 import FooterBar from "./components/footerBar/FooterBar";
 import CarrosPage from "./pages/carros/CarrosPage.tsx";
 import RedefinirSenhaPage from "./pages/login/redefinir-senha/RedefinirSenhaPage.tsx";
-import { login } from "./system/login.ts";
 import VerificarCodigoPage from "./pages/login/redefinir-senha/verificar-código/VerificarCodigoPage.tsx";
 import RegistrarPage from "./pages/login/criar-conta/RegistrarPage.tsx";
 import CriarSenhaPage from "./pages/login/criar-conta/senhaPage/CriarSenhaPage.tsx";
@@ -45,7 +44,6 @@ const browserRouter = createBrowserRouter(createRoutesFromElements(
 ))
 
 function App() {
-  login();
 
   return (
     <RouterProvider router={browserRouter} />

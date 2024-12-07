@@ -9,14 +9,14 @@ const initialState: interfaceState = {
 }
 
 const redefinirSenha = createSlice({
-    name: "redefinir-senha",
+    name: "REDEFINIR_SENHA",
     initialState,
     reducers: {
-        emailParaRedefinirSenha: (state, action) => {
+        EMAIL_PARA_REDEFINICAO_DE_SENHA: (state, action) => {
             state.email = action.payload;
         }
     }
 })
 
-export const { emailParaRedefinirSenha } = redefinirSenha.actions;
+export const { EMAIL_PARA_REDEFINICAO_DE_SENHA } = redefinirSenha.actions;
 export default redefinirSenha.reducer;

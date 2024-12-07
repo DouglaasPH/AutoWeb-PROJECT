@@ -6,7 +6,7 @@ import { faTriangleExclamation, faX } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { emailParaCriarConta, nomeDeUserParaCriarConta } from "../../../redux/sliceCriarConta";
+import { EMAIL_PARA_CRIAR_CONTA, USER_PARA_CRIAR_CONTA } from "../../../redux/sliceCriarConta";
 
 function RegistrarPage() {
     const navigate = useNavigate();
@@ -43,8 +43,8 @@ function RegistrarPage() {
     };
 
     function IrParaSenhaPage() {
-        dispatch(emailParaCriarConta(email.current.value));
-        dispatch(nomeDeUserParaCriarConta(nome.current.value));
+        dispatch(EMAIL_PARA_CRIAR_CONTA(email.current.value));
+        dispatch(USER_PARA_CRIAR_CONTA(nome.current.value));
         navigate("senha");
     };
 

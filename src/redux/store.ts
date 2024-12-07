@@ -12,18 +12,21 @@ const initialState = {
 
 const rootReducer = (state = initialState, action: { type: string; payload: string; }) => {
     switch (action.type) {
-        case "pesquisar/tipoDoAutomovelParaPesquisa":
-            return { ...state, tipoDoAutomovelParaPesquisaAtual: action.payload };
-        case "pesquisar/marca":
-            return { ...state, marcaAtual: action.payload };
-                case "pesquisar/modelo":
-            return { ...state, modeloAtual: action.payload };
-        case "redefinir-senha/emailParaRedefinirSenha":
+        // SISTEMA DE LOGIN
+        case "REDEFINIR_SENHA/EMAIL_PARA_REDEFINICAO_DE_SENHA":
             return { ...state, email: action.payload };
-        case "criar-conta/emailParaCriarConta":
+        case "CRIAR_CONTA/EMAIL_PARA_CRIAR_CONTA":
             return { ...state, email: action.payload };
-        case "criar-conta/nomeDeUserParaCriarConta":
+        case "CRIAR_CONTA/USER_PARA_CRIAR_CONTA":
             return { ...state, user: action.payload };
+
+        // PESQUISA DE AUTOMÓVEIS
+        case "PESQUISAR/TIPO_DO_AUTOMOVEL":
+            return { ...state, tipoDoAutomovelParaPesquisaAtual: action.payload };
+        case "PESQUISAR/TIPO_DA_MARCA":
+            return { ...state, marcaAtual: action.payload };
+        case "PESQUISAR/TIPO_DO_MODELO":
+            return { ...state, modeloAtual: action.payload };        
         default:
             return state;
     }
