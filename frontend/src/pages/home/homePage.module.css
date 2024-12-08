@@ -1,16 +1,11 @@
 .containerHome {
-    position: relative;
-    width: 98.79vw;
-    /*height: 100vh;*/
-}
-
-.containerContent {
-    height: 150vh;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1%;
-    margin-top: 16%;
-    margin-bottom: 8%;
+    top: 52%;
+    width: 100%;
+    height: 200%;
+    z-index: 999999999999999999999999;
 }

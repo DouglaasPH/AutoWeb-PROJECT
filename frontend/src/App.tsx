@@ -8,16 +8,17 @@ import RedefinirSenhaPage from "./pages/login/redefinir-senha/RedefinirSenhaPage
 import VerificarCodigoPage from "./pages/login/redefinir-senha/verificar-código/VerificarCodigoPage.tsx";
 import RegistrarPage from "./pages/login/criar-conta/RegistrarPage.tsx";
 import CriarSenhaPage from "./pages/login/criar-conta/senhaPage/CriarSenhaPage.tsx";
-import Background from "./components/telaDeFundo/Background.tsx";
+import Background from "./components/telaDeFundo/backgroundUniversal/Background.tsx";
 import SenhaPage from "./pages/login/redefinir-senha/senha/SenhaPage.tsx";
 import RedefinicaoDeSenhaSucessoPage from "./pages/login/redefinir-senha/senha/sucesso/RedefinicaoDeSenhaSucessoPage.tsx";
 import { useEffect } from "react";
 import { VERIFICAR_ESTADO_DE_LOGIN } from "./dados da conta/dados_da_conta.ts";
+import BackgroundParaHomePage from "./components/telaDeFundo/backgroundParaHomePage/backgroundHomePage.tsx";
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
   <Route>
     <Route path="/">
-      <Route index element={<> <NavBar /> <HomePage /> <FooterBar /> </>} />
+      <Route index element={<> <NavBar /> <BackgroundParaHomePage /> <HomePage /> <FooterBar /> </>} />
 
       <Route path="login">
         <Route index element={<> <NavBar /> <Background pageAtual="Login" /> <LoginPage /> <FooterBar /> </>} />

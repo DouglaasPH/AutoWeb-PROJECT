@@ -1,0 +1,19 @@
+.containerBackground {
+    height: 260vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerPassarAnuncio {
+    width: 100%;
+    height: 22%;
+}
+
+.backgroundCinza {
+    background-color: #ebebeb;
+    z-index: 999999999;
+    height: 78%;
+    width: 100%;
+}

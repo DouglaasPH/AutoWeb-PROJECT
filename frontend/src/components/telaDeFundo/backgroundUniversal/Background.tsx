@@ -1,5 +1,5 @@
 import styles from "./background.module.css";
-import "../../App.css";
+import "../../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";

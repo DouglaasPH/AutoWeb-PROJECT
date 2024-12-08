@@ -1,14 +1,15 @@
 .containerDePesquisa {
-    position: absolute;
+    /*position: absolute;*/
     background-color: white;
     border-radius: 1vh;
     width: 74%;
-    height: 14%;
-    top: 22%;
-    left: 13%;
+    height: 18%;
+    /*top: 22%;*/
+    /*left: 13%;*/
     display: flex;
     flex-direction: column;
-    gap: 8%;
+    justify-content: space-between;
+    /*gap: 8%;*/
 }
 
 .agrupamentoUm {
