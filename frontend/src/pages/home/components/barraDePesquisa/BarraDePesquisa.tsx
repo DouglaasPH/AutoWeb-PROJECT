@@ -3,32 +3,29 @@ import "../../../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
-import { SetStateAction, useRef, useState } from "react";
+import { SetStateAction, useState } from "react";
 import { nomesDasMarcasDeCarros } from "../../../../assets/logo-marca/carro/objetoComLogoDeCarro";
-
-
 
 function Pesquisa() {
   const [indexButtonBorderAtivo, setIndexButtonBorderAtivo] = useState(0);
   const [indexButtonBackgroundAtivo, setIndexBackgroundAtivo] = useState(0);
-  const [placeholder, setPlaceholder] = useState("do carro");
-  //const [valorInput, setValorInput] = useState("");
-  const [tipoDePesquisa, setTipoDePesquisa] = useState("");
-  const inputRef = useRef(null);
+  const [tipoDePesquisa, setTipoDePesquisa] = useState("do carro");
+  const [inputValue, setInputValue] = useState("");
 
   function colorirBorderButton(index: SetStateAction<number>) {
     setIndexButtonBorderAtivo(index);
   }
-
   function colorirBackgroundButton(index: SetStateAction<number>) {
     setIndexBackgroundAtivo(index);
   }
 
-  function buscarAutomovel(event) {
+  function buscarAutomovel(event: { target: { value: string; }; }) {
+    setInputValue(event.target.value)
     // TODO BACKEND: FAZER COM QUE VERIFIQUE APENAS AS MARCAS E MODELOS DE VEÍCULOS QUE JÁ ESTEJAM ANUNCIADOS.
-    const valorInput = inputRef.current.value;
+    const valorInput = event.target.value;
     const marca = valorInput.split(" ")[0]; // pega a parte antes do primeiro espaço (marca)
-    const modelo = valorInput.split(" ")[1]; // pegar a parte depois do primeiro espaço (modelo)
+    // TODO
+    //const modelo = valorInput.split(" ")[1]; // pegar a parte depois do primeiro espaço (modelo)
     nomesDasMarcasDeCarros.filter((marcaAtual) => {
       if (marcaAtual.indexOf(marca, 0) != -1) {
         console.log(marcaAtual, marca)
@@ -37,17 +34,15 @@ function Pesquisa() {
   }
 
   function limparInput() {
-    inputRef.current.value("");
+    setInputValue("");
   }
 
   function mudarPlaceholder(index: number) {
     if (index === 0) {
-      setPlaceholder("do carro");
-      setTipoDePesquisa("carro");
+      setTipoDePesquisa("do carro");
     };
     if (index >= 1) {
-      setPlaceholder("da moto");
-      setTipoDePesquisa("moto");
+      setTipoDePesquisa("da moto");
     };
   }
 
@@ -90,10 +85,10 @@ function Pesquisa() {
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
           <input
-            ref={inputRef}
+            value={inputValue}
             type="text"
             className={classNames("fonte", styles.inputEntradaDeTexto)}
-            placeholder={`Digite marca ou modelo ${placeholder}`}
+            placeholder={`Digite marca ou modelo ${tipoDePesquisa}`}
             onBlur={limparInput}
             onChange={buscarAutomovel}
           />

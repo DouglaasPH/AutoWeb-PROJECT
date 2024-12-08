@@ -2,14 +2,14 @@ import styles from "./loginPage.module.css";
 import "../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { requisicaoEntrar } from "./requisicoesLogin.ts";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../components/spinner/spinner.tsx";
 import { useNavigate } from "react-router-dom";
 import LoginErrorModal from "./login-erro/LoginErrorModal.tsx";
-import DADOS_DO_USUARIO, { VERIFICAR_ESTADO_DE_LOGIN } from "../../dados da conta/dados_da_conta.ts";
+import { VERIFICAR_ESTADO_DE_LOGIN } from "../../dados da conta/dados_da_conta.ts";
 
 function LoginPage() {
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ function LoginPage() {
     const [girarSpinner, setGirarSpinner] = useState(false);
     const [exibirModalDeError, setExibirModalDeError] = useState("false");
 
-    function validarEmail(event: { target: { value: SetStateAction<string>; }; }) {
+    function validarEmail(event: { target: { value: string; }; }) {
         setEmail(event.target.value)
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!regex.test(event.target.value)) {
@@ -30,7 +30,7 @@ function LoginPage() {
         } else setEmailValido(true);
     }
 
-    function validarSenha(event: { target: { value: SetStateAction<string>; }; }) {
+    function validarSenha(event: { target: { value: string; }; }) {
         setSenha(event.target.value)
         if (event.target.value === "") {
             setSenhaValido(false);

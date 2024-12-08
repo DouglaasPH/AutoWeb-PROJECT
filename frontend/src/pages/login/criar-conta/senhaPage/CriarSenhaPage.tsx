@@ -15,8 +15,8 @@ import CriarContaSucessoModal from "./modal/sucesso/CriarContaSucessoModal";
 function CriarSenhaPage() {
     const [exibirSucessoModal, setExibirSucessoModal] = useState(false);
     const [exibirErroModal, setExibirErroModal] = useState(false);
-    const emailParaEnviarCodigo = useSelector(state => state.email);
-    const nomeDeUser = useSelector(state => state.user);
+    const emailParaEnviarCodigo = useSelector((state: { email: string }) => state.email);
+    const nomeDeUser = useSelector((state: { user: string }) => state.user);
     const navigate = useNavigate();
     const [senha, setSenha] = useState("");
     const [confirmarSenha, setConfirmarSenha] = useState("");

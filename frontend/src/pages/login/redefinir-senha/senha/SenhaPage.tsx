@@ -12,7 +12,7 @@ import Spinner from "../../../../components/spinner/spinner";
 import RedefinicaoDeSenhaErroModal from "./erro/RedefinicaoDeSenhaErroModal";
 
 function SenhaPage() {
-    const emailParaEnviarCodigo = useSelector(state => state.email);
+    const emailParaEnviarCodigo = useSelector((state: { email: string }) => state.email);
     const navigate = useNavigate();
     const [senha, setSenha] = useState("");
     const [confirmarSenha, setConfirmarSenha] = useState("");
@@ -100,8 +100,8 @@ function SenhaPage() {
 
             // se o e-mail já possui um cadastro, então vá para sucesso na redefinição de senha
             // enquanto faz a requisição, exiba um spinner para simular modo carregamento
-            console.log(request.data)
-            if (request.data.sucesso) {
+            //console.log(request.data)
+            if (typeof request !== "undefined" && request.data.sucesso) {
                 setTimeout(() => {
                     setAparecerSpinner(false);
                     navigate("sucesso");

@@ -7,7 +7,7 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 
 function VerificarCodigoPage() {
-    const emailParaEnviarCodigo = useSelector(state => state.email);
+    const emailParaEnviarCodigo = useSelector((state: { email: string }) => state.email);
     const navigate = useNavigate();
 
     function voltarPagina() {

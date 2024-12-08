@@ -3,22 +3,24 @@ import styles from "./redefinirSenhaPage.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation, faX } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { EMAIL_PARA_REDEFINICAO_DE_SENHA } from "../../../redux/sliceRedefinirSenha";
 
 
 function RedefinirSenhaPage() {
-    const email = useRef(null);
+    const [email, setEmail] = useState("");
     const [emailValido, setEmailValido] = useState(true);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    function validarEmail() {
-        console.log(email.current.value)
+    function validarEmail(event: { target: { value: string; }; }) {
+        const emailDigitado = event.target.value;
+        setEmail(emailDigitado);
+
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!regex.test(email.current.value)) {
+        if (!regex.test(emailDigitado)) {
             setEmailValido(false);
         } else setEmailValido(true);
     }
@@ -29,7 +31,7 @@ function RedefinirSenhaPage() {
 
     function irParaVerificarCodigoPage() {
         if (emailValido) {
-            dispatch(EMAIL_PARA_REDEFINICAO_DE_SENHA(email.current.value));
+            dispatch(EMAIL_PARA_REDEFINICAO_DE_SENHA(email));
             navigate("senha")
         } else return;
     }
@@ -47,7 +49,7 @@ function RedefinirSenhaPage() {
                     <label className={classNames("fonte", styles.labelEmail)} style={{
                         color: emailValido ? "#858585" : "#c700c7"
                     }}>E-mail</label>
-                    <input type="email" autoComplete="on" ref={email} onChange={validarEmail} className={classNames("fonte", styles.input)} style={{ borderColor: emailValido ? "#e0e0e0" : "#c700c7" }} />
+                    <input type="email" autoComplete="on" value={email} onChange={validarEmail} className={classNames("fonte", styles.input)} style={{ borderColor: emailValido ? "#e0e0e0" : "#c700c7" }} />
                     <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconeEmail} style={{ opacity: emailValido ? 0 : 1 }} />
                     <p className={classNames("fonte", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
                 </div>
