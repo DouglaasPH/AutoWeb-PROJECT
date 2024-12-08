@@ -8,8 +8,8 @@
     justify-content: space-between;
     background-color: white;
     height: 10%;
-    width: 98%;
-    padding: 0 1% 0 1%;    
+    width: 94%;
+    padding: 0 3% 0 3%;    
 }
 
 .divLogo {
@@ -35,10 +35,15 @@
 }
 
 .divLogin {
-    width: 8%;
+    width: 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.divButtonIrParaConta {
+    height: 100%;
+    width: 80%;
 }
 
 
@@ -46,8 +51,8 @@
     font-weight: 400;
     font-size: 80%;
     display: flex;
-    width: 85%;
-    height: 35%;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     gap: 3%;
@@ -57,8 +62,8 @@
 
 .buttonFavoritos {
     font-weight: 600;
-    width: 10%;
-    height: 35%;
+    width: 15%;
+    height: 100%;
     border: none;
     background-color: white;
     display: flex;
@@ -77,7 +82,7 @@
 
 .fontUser {
     font-size: 130%;
-    padding-bottom: 4%;
+    background-color: red;
 }
 
 .divInfo {
@@ -85,7 +90,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1e90ff;
 }
 
 .buttonInfo {
@@ -94,9 +98,9 @@
     justify-content: center;
     border: none;
     background-color: white;
-    border-bottom: 0.15rem solid white;
     height: 100%;
     width: 100%;
+    /* border-bottom definido no componente react*/
 }
 
 
@@ -112,6 +116,5 @@
 }
 
 .buttonInfo:hover {
-    border-bottom: 0.15rem solid #1e90ff;
     cursor: pointer;
 }

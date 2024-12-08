@@ -3,10 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./dropDownComprar.module.css";
 import "../../../App.css";
 import classNames from "classnames";
+import stylesNavBar from "../navBar.module.css";
 
 export default function DropDownComprar() {
+    const buttonComprarNavBar = document.querySelectorAll(`.${stylesNavBar.buttonInfo}`)[1].getBoundingClientRect();
+
     return (
-        <div className={styles.containerComprar}>
+        <div className={styles.containerComprar} style={{ left: `${buttonComprarNavBar.left}px` }}>
             <button className={classNames("fontes", styles.buttonCarroUsado)}>
                 <FontAwesomeIcon icon={faCar} className={styles.icone} />
                 Carros usados

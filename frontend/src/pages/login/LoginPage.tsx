@@ -9,6 +9,7 @@ import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../components/spinner/spinner.tsx";
 import { useNavigate } from "react-router-dom";
 import LoginErrorModal from "./login-erro/LoginErrorModal.tsx";
+import DADOS_DO_USUARIO, { VERIFICAR_ESTADO_DE_LOGIN } from "../../dados da conta/dados_da_conta.ts";
 
 function LoginPage() {
     const navigate = useNavigate();
@@ -56,6 +57,7 @@ function LoginPage() {
                 if (request?.data.encontrado) {
                     console.log(request.data.dados_da_conta);
                     localStorage.setItem("dados_do_usuário", JSON.stringify(request.data.dados_da_conta));
+                    VERIFICAR_ESTADO_DE_LOGIN();
                     navigate("/")
                 } else setExibirModalDeError("true");
             }, 1500);

@@ -9,14 +9,15 @@ import DropDownVender from "./dropDownVender/DropDownVender";
 import DropDownAjuda from "./dropDownAjuda/DropDownAjuda";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import DropDownMinhaConta from "./dropDownMinhaConta/DropDownMinhaConta";
+import DADOS_DO_USUARIO, { LOGGINED } from "../../dados da conta/dados_da_conta";
 
 function NavBar() {
     const navigate = useNavigate();
-    const dados_da_conta = JSON.parse(localStorage.getItem("dados_do_usuário"));
-    console.log(dados_da_conta);
     const [isOpenComprar, setIsOpenComprar] = useState(false);
     const [isOpenVender, setIsOpenVender] = useState(false);
     const [isOpenAjuda, setIsOpenAjuda] = useState(false);
+    const [isOpenMinhaConta, setIsOpenMinhaConta] = useState(false);
 
     function chamarDropDownComprar() {
         setIsOpenComprar(!isOpenComprar);
@@ -25,11 +26,15 @@ function NavBar() {
         setIsOpenVender(!isOpenVender);
     };
     function chamarDropDownAjuda() {
-        setIsOpenAjuda(!isOpenAjuda);
+        setIsOpenAjuda(isOpenAtual => !isOpenAtual);
+    };
+    function chamarDropDownMinhaConta() {
+        if (LOGGINED) setIsOpenMinhaConta(!isOpenMinhaConta)
+        else return setIsOpenMinhaConta(false);
     };
 
     function irParaContaOuLogin() {
-        if (dados_da_conta !== null) {
+        if (LOGGINED) {
             navigate("/garagem/perfil");
         } else {
             navigate("login");
@@ -45,27 +50,39 @@ function NavBar() {
 
             <div className={styles.divInfo}>
                 <div className={styles.divButtonInfo} onMouseEnter={chamarDropDownVender} onMouseLeave={chamarDropDownVender}>
-                    <button className={classNames("fonte", styles.buttonInfo)}>Vender</button>
+                    <button className={classNames("fonte", styles.buttonInfo)} style={{
+                        borderBottom: "0.15rem solid",
+                        borderBottomColor: isOpenVender ? "#1e90ff" : "white"
+                    }}>Vender</button>
                     {isOpenVender ? <DropDownVender /> : null}
                 </div>
 
                 <div className={styles.divButtonInfo} onMouseEnter={chamarDropDownComprar} onMouseLeave={chamarDropDownComprar}>
-                    <button className={classNames("fonte", styles.buttonInfo)}>Comprar</button>
+                    <button className={classNames("fonte", styles.buttonInfo)} style={{
+                        borderBottom: "0.15rem solid",
+                        borderBottomColor: isOpenComprar ? "#1e90ff" : "white"
+                    }}>Comprar</button>
                     {isOpenComprar ? <DropDownComprar /> : null}
                 </div>
 
 
                 <div className={styles.divButtonInfo} onMouseEnter={chamarDropDownAjuda} onMouseLeave={chamarDropDownAjuda}>
-                    <button className={classNames("fonte", styles.buttonInfo)}>Ajuda</button>
+                    <button className={classNames("fonte", styles.buttonInfo)} style={{
+                        borderBottom: "0.15rem solid",
+                        borderBottomColor: isOpenAjuda ? "#1e90ff" : "white"
+                    }}>Ajuda</button>
                     {isOpenAjuda ? <DropDownAjuda /> : null}
                 </div>
             </div>
 
-            <div className={styles.divLogin} onClick={irParaContaOuLogin} style={{ width: dados_da_conta !== null ? `${dados_da_conta.user.length}%` : "60%" }} >
-                <button className={classNames("fonte", styles.buttonIrParaConta)}>
-                    <FontAwesomeIcon icon={faUser} className={styles.fontUser} />
-                    {dados_da_conta !== null ? dados_da_conta.user : "Entrar"}
-                </button>
+            <div className={styles.divLogin} onClick={irParaContaOuLogin} style={{ width: LOGGINED && typeof DADOS_DO_USUARIO === "object" ? `${DADOS_DO_USUARIO.user.length + 5}%` : "10%" }} >
+                <div className={styles.divButtonIrParaConta} onMouseEnter={chamarDropDownMinhaConta} onMouseLeave={chamarDropDownMinhaConta}>
+                    <button className={classNames("fonte", styles.buttonIrParaConta)}>
+                        <FontAwesomeIcon icon={faUser} className={styles.fontUser} />
+                        {LOGGINED && typeof DADOS_DO_USUARIO === "object" ? DADOS_DO_USUARIO.user : "Entrar"}
+                    </button>
+                </div>
+                {LOGGINED && isOpenMinhaConta ? <DropDownMinhaConta /> : null}
                 <button className={classNames("fonte", styles.buttonFavoritos)}>
                     <FontAwesomeIcon icon={faHeart} className={styles.fontHeart} />
                 </button>

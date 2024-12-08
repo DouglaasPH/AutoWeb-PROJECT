@@ -11,7 +11,8 @@ import CriarSenhaPage from "./pages/login/criar-conta/senhaPage/CriarSenhaPage.t
 import Background from "./components/telaDeFundo/Background.tsx";
 import SenhaPage from "./pages/login/redefinir-senha/senha/SenhaPage.tsx";
 import RedefinicaoDeSenhaSucessoPage from "./pages/login/redefinir-senha/senha/sucesso/RedefinicaoDeSenhaSucessoPage.tsx";
-
+import { useEffect } from "react";
+import { VERIFICAR_ESTADO_DE_LOGIN } from "./dados da conta/dados_da_conta.ts";
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
   <Route>
@@ -44,7 +45,9 @@ const browserRouter = createBrowserRouter(createRoutesFromElements(
 ))
 
 function App() {
-
+  useEffect(() => {
+    VERIFICAR_ESTADO_DE_LOGIN();
+  })
   return (
     <RouterProvider router={browserRouter} />
   )

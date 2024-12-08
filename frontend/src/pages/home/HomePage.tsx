@@ -6,9 +6,7 @@ import UltimasPesquisas from "./components/ultimasPesquisas/UltimasPesquisas";
 import Categorias from "./components/barraCategorias/Categorias";
 import Recomendados from "./components/barraRecomendados/BarraRecomendados";
 
-
 function HomePage() {
-
     return (
         <div className={styles.containerHome}>
             <Carrossel />
