@@ -12,7 +12,7 @@ import Spinner from "../../../../components/spinner/spinner";
 import RedefinicaoDeSenhaErroModal from "./erro/RedefinicaoDeSenhaErroModal";
 
 function SenhaPage() {
-    const emailParaEnviarCodigo = useSelector((state: { email: string }) => state.email);
+    const id_do_usuario = useSelector((state: { id_de_usuario: string }) => state.id_de_usuario);
     const navigate = useNavigate();
     const [senha, setSenha] = useState("");
     const [confirmarSenha, setConfirmarSenha] = useState("");
@@ -95,22 +95,20 @@ function SenhaPage() {
     async function fazerRequisicaoRedefinirSenha(event: { preventDefault: () => void; }) {
         event.preventDefault();
         setAparecerSpinner(true);
-        if (senhaValido && confirmarSenhaValido && todosRequisitos) {
-            const request = await requisicaoRedefinirSenha(emailParaEnviarCodigo, confirmarSenha);
+        let request: undefined | { data: { sucesso: boolean } } = undefined;
 
-            // se o e-mail já possui um cadastro, então vá para sucesso na redefinição de senha
-            // enquanto faz a requisição, exiba um spinner para simular modo carregamento
-            //console.log(request.data)
-            if (typeof request !== "undefined" && request.data.sucesso) {
-                setTimeout(() => {
-                    setAparecerSpinner(false);
+        if (senhaValido && confirmarSenhaValido && todosRequisitos) {
+            try {
+                request = await requisicaoRedefinirSenha(confirmarSenha, id_do_usuario);
+            } finally {
+                setAparecerSpinner(false);
+                // se o e-mail já possui um cadastro, então vá para sucesso na redefinição de senha
+                // enquanto faz a requisição, exiba um spinner para simular modo carregamento
+                if (typeof request !== "undefined" && request.data.sucesso) {
                     navigate("sucesso");
-                }, 1000);
-            } else {
-                setTimeout(() => {
+                } else {
                     setExibirModalDeErro(true);
-                    setAparecerSpinner(false);
-                }, 1000);
+                }
             }
         }
     }

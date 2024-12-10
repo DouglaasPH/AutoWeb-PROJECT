@@ -2,7 +2,7 @@ import styles from "./loginPage.module.css";
 import "../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { requisicaoEntrar } from "./requisicoesLogin.ts";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +12,12 @@ import LoginErrorModal from "./login-erro/LoginErrorModal.tsx";
 import { VERIFICAR_ESTADO_DE_LOGIN } from "../../dados da conta/dados_da_conta.ts";
 
 function LoginPage() {
+    useEffect(() => {
+        if (aparecerSpinner) document.body.classList.add('no-scroll')
+        else document.body.classList.remove('no-scroll');
+    });
+
+    const [aparecerSpinner, setAparecerSpinner] = useState(false);
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
@@ -19,7 +25,6 @@ function LoginPage() {
     const [senhaValido, setSenhaValido] = useState(true);
     const [labelSenha, setLabelSenha] = useState("Campo obrigatório")
     const [tipoDeIconeOlhinho, setTipoDeIconeOlhinho] = useState(faEyeSlash);
-    const [girarSpinner, setGirarSpinner] = useState(false);
     const [exibirModalDeError, setExibirModalDeError] = useState("false");
 
     function validarEmail(event: { target: { value: string; }; }) {
@@ -50,17 +55,23 @@ function LoginPage() {
     async function fazerRequisicaoEntrar(event: { preventDefault: () => void; }) {
         event.preventDefault();
         if (emailValido && senhaValido && email !== "" && senha !== "") {
-            const request = await requisicaoEntrar({ email: email, senha: senha });
-            setGirarSpinner(true);
-            setTimeout(() => {
-                setGirarSpinner(false);
-                if (request?.data.encontrado) {
-                    console.log(request.data.dados_da_conta);
-                    localStorage.setItem("dados_do_usuário", JSON.stringify(request.data.dados_da_conta));
+            setAparecerSpinner(true);
+            let request: { sucesso: boolean; dados_da_conta: undefined | number } = {
+                sucesso: false,
+                dados_da_conta: undefined,
+            };
+
+            try {
+                request = await requisicaoEntrar({ email: email, senha: senha });
+            } finally {
+                console.log(request);
+                setAparecerSpinner(false)
+                if (request.sucesso) {
+                    localStorage.setItem("dados_do_usuário", JSON.stringify(request.dados_da_conta));
                     VERIFICAR_ESTADO_DE_LOGIN();
                     navigate("/")
                 } else setExibirModalDeError("true");
-            }, 1500);
+            }
         }
     }
 
@@ -79,9 +90,9 @@ function LoginPage() {
     }
 
     return (
-        <div>
+        <>
             {exibirModalDeError === "true" ? <LoginErrorModal exibirOuNao={abrirOuFecharLoginErrorModal} /> : null}
-            {girarSpinner ? <Spinner /> : null}
+            {aparecerSpinner ? <Spinner /> : null}
 
             <div className={styles.containerForm}>
                 <div className={styles.containerLogin}>
@@ -125,7 +136,8 @@ function LoginPage() {
                     </article>
                 </div>
             </div>
-        </div >
+
+        </>
     )
 }
 

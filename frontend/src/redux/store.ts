@@ -7,6 +7,7 @@ const initialState = {
     modeloAtual: "",
     email: "",
     user: "",
+    id_de_usuario: "",
 }
 
 
@@ -15,6 +16,8 @@ const rootReducer = (state = initialState, action: { type: string; payload: stri
         // SISTEMA DE LOGIN
         case "REDEFINIR_SENHA/EMAIL_PARA_REDEFINICAO_DE_SENHA":
             return { ...state, email: action.payload };
+        case "REDEFINIR_SENHA/ID_DO_USUARIO_PARA_REDEFINICAO_DE_SENHA":
+            return { ...state, id_de_usuario: action.payload };
         case "CRIAR_CONTA/EMAIL_PARA_CRIAR_CONTA":
             return { ...state, email: action.payload };
         case "CRIAR_CONTA/USER_PARA_CRIAR_CONTA":

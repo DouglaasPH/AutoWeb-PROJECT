@@ -20,12 +20,29 @@ conexao.connect();
  * @returns objeto da Promise
  */
 
-export const consulta = (sql, valores = "", mensagemReject) => {
+export const login = (sql, valores = "", mensagemReject) => {
   return new Promise((resolve, reject) => {
     conexao.query(sql, valores, (error, result) => {
-      if (error) return reject(mensagemReject);
-      const row = JSON.parse(JSON.stringify(result));
-      return resolve(row);
+      if (error) {
+        console.log("Erro na consulta SQL:", error);
+        return reject(mensagemReject);
+      }
+
+      const row = JSON.parse(JSON.stringify(result))[0];
+      if (row !== undefined) {
+        // retorne apenas o id de usuário
+        const { senha, ...resto } = row;
+        return resolve({
+          sucesso: true,
+          mensagem: "login com sucesso!",
+          dados_da_conta: resto,
+        });
+      } else {
+        return resolve({
+          sucesso: false,
+          mensagem: "login falhou!",
+        });
+      }
     });
   });
 };
@@ -38,25 +55,19 @@ export const verificarDados = (sql, valores = "", mensagemReject) => {
         return reject(mensagemReject);
       }
 
-      const row = JSON.parse(JSON.stringify(result));
-      // E-mail encontrado ou não
-
-      console.log(row);
-      if (row.length === 0) {
-        // não retorne a senha
-        const { senha, ...resto } = row[0];
-        return resolve({
-          encontrado: false,
-          mensagem: "Dados não encontrado!",
-          dados_da_conta: resto,
-        });
-      } else {
-        // não retorne a senha
-        const { senha, ...resto } = row[0];
+      const row = JSON.parse(JSON.stringify(result))[0];
+      if (row !== undefined) {
+        // retorne apenas o id de usuário
+        const { id, ...resto } = row;
         return resolve({
           encontrado: true,
           mensagem: "Dados encontrado!",
-          dados_da_conta: resto,
+          dados_da_conta: { id: id },
+        });
+      } else {
+        return resolve({
+          encontrado: false,
+          mensagem: "Dados não encontrado!",
         });
       }
     });
@@ -65,21 +76,26 @@ export const verificarDados = (sql, valores = "", mensagemReject) => {
 
 export const criarConta = (sql, valores = "", mensagemReject) => {
   return new Promise((resolve, reject) => {
-    if (error) {
-      console.log("Erro na consulta SQL:", error);
-      return reject(mensagemReject);
-    }
-    const row = JSON.parse(JSON.stringify(result));
-
-    // Conta criada ou não
-    if (row.length == 0) {
-      return resolve({
-        sucesso: false,
-        mensagem: "Conta não criado!",
-      });
-    } else resolve({ sucesso: true, mensagem: "Conta criado!" });
+    conexao.query(sql, valores, (error, result) => {
+      if (error) {
+        console.log("Erro na consulta SQL:", error);
+        return reject(mensagemReject);
+      }
+      const row = JSON.parse(JSON.stringify(result));
+      console.log(row);
+      // Conta criada ou não
+      if (row.affectedRows !== 0) {
+        const { insertId, ...resto } = row;
+        return resolve({
+          sucesso: true,
+          mensagem: "Conta criada!",
+          dados_da_conta: { id: insertId },
+        });
+      } else resolve({ sucesso: false, mensagem: "Conta não criada!" });
+    });
   });
 };
+
 export const redefinirSenha = (sql, valores = "", mensagemReject) => {
   return new Promise((resolve, reject) => {
     conexao.query(sql, valores, (error, result) => {
@@ -113,7 +129,12 @@ export const atualizarDados = (
         return reject(mensagemReject);
       }
       const row = JSON.parse(JSON.stringify(result));
-      console.log(result.affectedRows, row.length == 0, row.length);
+      console.log(
+        result.affectedRows,
+        row.length == 0,
+        row.length,
+        result.affectedRows
+      );
       // dados não atualizados ou dados atualizados
       if (row.affectedRows === 0) {
         return resolve({

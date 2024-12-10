@@ -26,9 +26,10 @@ function NavBar() {
         setIsOpenVender(!isOpenVender);
     };
     function chamarDropDownAjuda() {
-        setIsOpenAjuda(isOpenAtual => !isOpenAtual);
+        setIsOpenAjuda(!isOpenAjuda);
     };
     function chamarDropDownMinhaConta() {
+        console.log(isOpenMinhaConta);
         if (LOGGINED) setIsOpenMinhaConta(!isOpenMinhaConta)
         else return setIsOpenMinhaConta(false);
     };
@@ -81,8 +82,8 @@ function NavBar() {
                         <FontAwesomeIcon icon={faUser} className={styles.fontUser} />
                         {LOGGINED && typeof DADOS_DO_USUARIO === "object" ? DADOS_DO_USUARIO.user : "Entrar"}
                     </button>
+                    {LOGGINED && isOpenMinhaConta ? <DropDownMinhaConta /> : null}
                 </div>
-                {LOGGINED && isOpenMinhaConta ? <DropDownMinhaConta /> : null}
                 <button className={classNames("fonte", styles.buttonFavoritos)}>
                     <FontAwesomeIcon icon={faHeart} className={styles.fontHeart} />
                 </button>

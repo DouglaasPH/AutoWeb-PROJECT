@@ -1,22 +1,23 @@
 import {
-  consulta,
   verificarDados,
   redefinirSenha,
   atualizarDados,
+  criarConta,
+  login,
 } from "../database/conexao.js";
 
 class usersRepository {
   criarConta(newUser) {
     const sql = "insert into users set ?";
-    return consulta(sql, newUser, "Não foi possível cadastrar!");
+    return criarConta(sql, newUser, "Não foi possível cadastrar!");
   }
 
-  verificarEmailESenha(email, senha) {
+  entrarConta(email, senha) {
     const sql = "select * from users where email =? and senha = ?";
-    return verificarDados(
+    return login(
       sql,
       [email, senha],
-      "Não foi possível verificar o email!"
+      "Não foi possível consulta o e-mail e senha fornecido pelo usuário!"
     );
   }
 
@@ -29,11 +30,13 @@ class usersRepository {
     );
   }
 
-  verificarEmail(email) {
-    const sql = "select * from users where email = ?";
+  verificarDados(email) {
+    const nome = Object.keys(email)[0];
+    const valor = email[nome];
+    const sql = `select * from users where ?? = ?`;
     return verificarDados(
       sql,
-      email,
+      [nome, valor],
       "Não foi possível localizar o email no banco de dados!"
     );
   }
@@ -46,7 +49,7 @@ class usersRepository {
     );
   }
   atualizarConta(dados, id) {
-    const sql = `update users set ?  where id =${id}`;
+    const sql = "update users set ?  where id = ?";
     return atualizarDados(
       sql,
       [dados, id],

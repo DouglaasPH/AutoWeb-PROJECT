@@ -6,29 +6,18 @@ class usersController {
     const row = await usersRepository.criarConta(newUser);
     res.json(row);
   }
-  async verificarEmailESenha(req, res) {
+  async entrarConta(req, res) {
     const { email, senha } = req.query;
-    const row = await usersRepository.verificarEmailESenha(email, senha);
+    const row = await usersRepository.entrarConta(email, senha);
     return res.json(row);
   }
-  async verificacaoDoNomeDeUsuario(req, res) {
-    const nomeDeUsuario = req.body;
-    const row = await usersRepository.verificarNomeDeUsuario(nomeDeUsuario);
-    return res.json(row);
-  }
-  async verificarEmail(req, res) {
-    const email = req.query.email;
-    const row = await usersRepository.verificarEmail(email);
-    return res.json(row);
-  }
-  async redefinicaoDeSenha(req, res) {
-    const { email, senha } = req.body;
-    const row = await usersRepository.redefinirSenha(email, senha);
+  async verificarDados(req, res) {
+    const dados = req.query;
+    const row = await usersRepository.verificarDados(dados);
     return res.json(row);
   }
   async atualizarConta(req, res) {
     let { id, ...dados } = req.body;
-    id = Number(id);
     const row = await usersRepository.atualizarConta(dados, id);
     return res.json(row);
   }

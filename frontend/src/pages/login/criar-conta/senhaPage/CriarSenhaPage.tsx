@@ -6,13 +6,14 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { requisicaoVerificarEmail } from "../../requisicoesLogin";
+import { requisicaoCriarConta, requisicaoVerificarDados } from "../../requisicoesLogin";
 import { useSelector } from "react-redux";
 import CriarContaErrorModal from "./modal/erro/CriarContaErrorModal";
 import Spinner from "../../../../components/spinner/spinner";
 import CriarContaSucessoModal from "./modal/sucesso/CriarContaSucessoModal";
 
 function CriarSenhaPage() {
+    const [aparecerSpinner, setAparecerSpinner] = useState(false);
     const [exibirSucessoModal, setExibirSucessoModal] = useState(false);
     const [exibirErroModal, setExibirErroModal] = useState(false);
     const emailParaEnviarCodigo = useSelector((state: { email: string }) => state.email);
@@ -32,7 +33,6 @@ function CriarSenhaPage() {
     const [validarRequisitoQuatro, setValidarRequisitoQuatro] = useState(false);
     const [validarRequisitoCinco, setValidarRequisitoCinco] = useState(false);
     const [validarRequisitoSeis, setValidarRequisitoSeis] = useState(false);
-    const [aparecerSpinner, setAparecerSpinner] = useState(false);
 
     // Ao aparecer o modal ou ao aparecer o spinner, trave o scroll
     useEffect(() => {
@@ -99,22 +99,30 @@ function CriarSenhaPage() {
         event.preventDefault();
         setAparecerSpinner(true);
         if (senhaValido && confirmarSenhaValido && todosRequisitos) {
-            const value = await requisicaoVerificarEmail(nomeDeUser, emailParaEnviarCodigo, confirmarSenha);
+            let requestVerificarDados: { encontrado: boolean; dados_da_conta: { id: number | undefined } } = {
+                encontrado: false,
+                dados_da_conta: { id: undefined },
+            };
+            let requestCriarConta: { sucesso: boolean; } = { sucesso: false };
 
-            // se o e-mail já possui um cadastro, então exiba um componente de aviso
-            // enquanto faz a requisição, exiba um spinner para simular modo carregamento
-            if (value === "o email já possui um cadastro!") {
-                setTimeout(() => {
-                    setAparecerSpinner(false);
-                    setExibirErroModal(true);
-                }, 1000);
-            } else {
-                setTimeout(() => {
+            try {
+                requestVerificarDados = await requisicaoVerificarDados("email", emailParaEnviarCodigo);
+                // se o e-mail não for encontrado no banco de dados, então crie um usuário com este e-mail e exiba um componente de aviso
+                if (!requestVerificarDados.encontrado) {
+                    requestCriarConta = await requisicaoCriarConta(nomeDeUser, emailParaEnviarCodigo, confirmarSenha);
+                }
+            } finally {
+                setAparecerSpinner(false);
+
+                if (requestCriarConta.sucesso) {
                     setAparecerSpinner(false);
                     setExibirErroModal(false);
                     setExibirSucessoModal(true);
-                    //navigate("conta-criada")
-                }, 1000);
+                } else {
+                    setAparecerSpinner(false);
+                    setExibirErroModal(true);
+                    setExibirSucessoModal(false);
+                }
             }
         }
     }

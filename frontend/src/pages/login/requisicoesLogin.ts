@@ -5,38 +5,36 @@ const API_URL = "http://localhost:3000";
 
 async function requisicaoEntrar(dados: { email: string; senha: string; }) {
     try {
-        const response = await axios.get(`${API_URL}/verificarEmailESenha`, {
+        const response = await axios.get(`${API_URL}/entrar`, {
             params: {
                 email: dados.email,
                 senha: dados.senha,
             },
         });
-        return response;   
+        return response.data;   
     } catch (error) {
         console.log(error);
     }
 }
 
 async function requisicaoCriarConta(user: string, email: string, senha: string) {
-    
     try {
         const response = await axios.post(`${API_URL}/cadastrar`, {
             user,
             email,
             senha,
         }); 
-        console.log(response);
+        return response.data;
     } catch (error) {
         console.log("Resposta ao erro em requisicaoCriarConta:",error);
     }
 }
 
-async function requisicaoRedefinirSenha(email: string, senha: string) {
-    console.log(email, senha)
+async function requisicaoRedefinirSenha(senha: string, id: string) {
     try {
-        const response = await axios.put(`${API_URL}/redefinir-senha`, {
-            email,
+        const response = await axios.put(`${API_URL}/atualizar-conta`, {
             senha,
+            id,
         }); 
         return response;
     } catch (error) {
@@ -44,20 +42,15 @@ async function requisicaoRedefinirSenha(email: string, senha: string) {
     }
 }
 
-
-async function requisicaoVerificarEmail(user: string, email: string, senha: string) {
+async function requisicaoVerificarDados(tipoDeDados: string, valorDosDados: string) {
+    const params = { [tipoDeDados]: valorDosDados };
     try {
-        const response = await axios.get(`${API_URL}/verificarEmail`, {
-            params: { email }
-        });
-
-        // se o e-mail não for encontrado em algum cadastro no banco de dados, então crie um
-        if (!response.data.encontrado) requisicaoCriarConta(user, email, senha);
-        else return "o email já possui um cadastro!";
+        const response = await axios.get(`${API_URL}/verificar-dados`, { params });
+        // se os dados forem encontrados ou não, envie o estado da requisição
         return response.data;
     } catch (error) {
-        console.log("Resposta ao erro em requisicaoVerificarEmail:",error);
+        console.log("Resposta ao erro em requisicaoVerificarDados:",error);
     }
 }
 
-export { requisicaoEntrar, requisicaoVerificarEmail, requisicaoCriarConta, requisicaoRedefinirSenha };
+export { requisicaoEntrar, requisicaoCriarConta, requisicaoRedefinirSenha, requisicaoVerificarDados };

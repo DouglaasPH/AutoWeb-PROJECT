@@ -5,8 +5,14 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function RedefinicaoDeSenhaSucessoPage() {
+    useEffect(() => {
+        document.body.classList.remove('no-scroll');
+    });
+
+
     const navigate = useNavigate();
 
     function irParaLogin() {
