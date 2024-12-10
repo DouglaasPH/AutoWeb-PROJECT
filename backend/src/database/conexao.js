@@ -100,4 +100,33 @@ export const redefinirSenha = (sql, valores = "", mensagemReject) => {
   });
 };
 
+export const atualizarDados = (
+  sql,
+  valores = "",
+  mensagemReject,
+  mensagemResolve
+) => {
+  return new Promise((resolve, reject) => {
+    conexao.query(sql, valores, (error, result) => {
+      if (error) {
+        console.log("Erro na consulta SQL:", error);
+        return reject(mensagemReject);
+      }
+      const row = JSON.parse(JSON.stringify(result));
+      console.log(result.affectedRows, row.length == 0, row.length);
+      // dados não atualizados ou dados atualizados
+      if (row.affectedRows === 0) {
+        return resolve({
+          sucesso: false,
+          mensagem: mensagemReject,
+        });
+      } else
+        resolve({
+          sucesso: true,
+          mensagem: mensagemResolve,
+        });
+    });
+  });
+};
+
 export default conexao;

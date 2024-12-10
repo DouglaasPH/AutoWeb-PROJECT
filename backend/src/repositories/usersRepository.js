@@ -2,6 +2,7 @@ import {
   consulta,
   verificarDados,
   redefinirSenha,
+  atualizarDados,
 } from "../database/conexao.js";
 
 class usersRepository {
@@ -11,7 +12,7 @@ class usersRepository {
   }
 
   verificarEmailESenha(email, senha) {
-    const sql = "select * from users where email =? and senha =?";
+    const sql = "select * from users where email =? and senha = ?";
     return verificarDados(
       sql,
       [email, senha],
@@ -20,7 +21,7 @@ class usersRepository {
   }
 
   verificarNomeDeUsuario(user) {
-    const sql = "select * from users where user =?;";
+    const sql = "select * from users where user = ?;";
     return verificarDados(
       sql,
       user.user,
@@ -29,7 +30,7 @@ class usersRepository {
   }
 
   verificarEmail(email) {
-    const sql = "select * from users where email =?";
+    const sql = "select * from users where email = ?";
     return verificarDados(
       sql,
       email,
@@ -37,11 +38,20 @@ class usersRepository {
     );
   }
   redefinirSenha(email, senha) {
-    const sql = "update users set senha=? where email=?";
+    const sql = "update users set senha=? where email = ?";
     return redefinirSenha(
       sql,
       [email, senha],
       "Não foi possível redefinir senha!"
+    );
+  }
+  atualizarConta(dados, id) {
+    const sql = `update users set ?  where id =${id}`;
+    return atualizarDados(
+      sql,
+      [dados, id],
+      `Não foi possível atualizar os dados de usuário com id ${id}`,
+      `Os dados de usuário com id ${id} foram atualizados!`
     );
   }
 }

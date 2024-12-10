@@ -3,7 +3,6 @@ import usersRepository from "../repositories/usersRepository.js";
 class usersController {
   async criarConta(req, res) {
     const newUser = req.body;
-    console.log(newUser);
     const row = await usersRepository.criarConta(newUser);
     res.json(row);
   }
@@ -24,8 +23,13 @@ class usersController {
   }
   async redefinicaoDeSenha(req, res) {
     const { email, senha } = req.body;
-    console.log(email, senha);
     const row = await usersRepository.redefinirSenha(email, senha);
+    return res.json(row);
+  }
+  async atualizarConta(req, res) {
+    let { id, ...dados } = req.body;
+    id = Number(id);
+    const row = await usersRepository.atualizarConta(dados, id);
     return res.json(row);
   }
 }
