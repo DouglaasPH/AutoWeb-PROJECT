@@ -10,7 +10,7 @@ function FooterBar() {
             <section className={styles.sectionInfo}>
                 <div className={styles.divLogo}>
                     <img src={imagens["logoMarcaDoSite"]} alt="logo marca do site" className={styles.imgLogo} />
-                    <p className={classNames("fonteLogo", styles.nameLogo)}>AutoWeb</p>
+                    <p className={classNames("fonteLogo", "colorDefault", styles.nameLogo)}>AutoWeb</p>
                 </div>
 
                 <div className={styles.divLinks}>
@@ -22,7 +22,7 @@ function FooterBar() {
             </section>
 
             <section className={styles.sectionCopyright}>
-                <p className={classNames("fonte", styles.pCopyright)}>© 2024 AutoWeb S.A. Todos os direitos reservados.</p>
+                <p className={classNames("fonte", "colorDefault", styles.pCopyright)}>© 2024 AutoWeb S.A. Todos os direitos reservados.</p>
                 <a href="" className={classNames("fonte", styles.linkCopyright)}>Termos de uso e Política de Privacidade</a>
             </section>
         </footer>

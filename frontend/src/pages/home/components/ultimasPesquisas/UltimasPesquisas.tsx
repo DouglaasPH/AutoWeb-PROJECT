@@ -18,7 +18,7 @@ function UltimasPesquisas() {
                         <h4 className={classNames("fonte", styles.modeloDoVeiculo)}>FOX</h4>
                     </div>
                     <div className={styles.containerEstado}>
-                        <p className={classNames("fonte", styles.nomeDoEstado)}>Pernambuco</p>
+                        <p className={classNames("fonte", "colorDefault", styles.nomeDoEstado)}>Pernambuco</p>
                     </div>
                 </div>
 
@@ -28,7 +28,7 @@ function UltimasPesquisas() {
                         <h4 className={classNames("fonte", styles.modeloDoVeiculo)}>FOX</h4>
                     </div>
                     <div className={styles.containerEstado}>
-                        <p className={classNames("fonte", styles.nomeDoEstado)}>Pernambuco</p>
+                        <p className={classNames("fonte", "colorDefault", styles.nomeDoEstado)}>Pernambuco</p>
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@ function UltimasPesquisas() {
                         <h4 className={classNames("fonte", styles.modeloDoVeiculo)}>FOX</h4>
                     </div>
                     <div className={styles.containerEstado}>
-                        <p className={classNames("fonte", styles.nomeDoEstado)}>Pernambuco</p>
+                        <p className={classNames("fonte", "colorDefault", styles.nomeDoEstado)}>Pernambuco</p>
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@ function UltimasPesquisas() {
                         <h4 className={classNames("fonte", styles.modeloDoVeiculo)}>FOX</h4>
                     </div>
                     <div className={styles.containerEstado}>
-                        <p className={classNames("fonte", styles.nomeDoEstado)}>Pernambuco</p>
+                        <p className={classNames("fonte", "colorDefault", styles.nomeDoEstado)}>Pernambuco</p>
                     </div>
                 </div>
 
@@ -58,7 +58,7 @@ function UltimasPesquisas() {
                         <h4 className={classNames("fonte", styles.modeloDoVeiculo)}>FOX</h4>
                     </div>
                     <div className={styles.containerEstado}>
-                        <p className={classNames("fonte", styles.nomeDoEstado)}>Pernambuco</p>
+                        <p className={classNames("fonte", "colorDefault", styles.nomeDoEstado)}>Pernambuco</p>
                     </div>
                 </div>
             </div>

@@ -69,20 +69,20 @@ function Recomendados() {
 
                                 <div className={styles.containerInformacoesDoRecomendado}>
                                     <div className={styles.containerEspecificacaoMaisPesquisada}>
-                                        <p className={classNames("fonte", styles.modeloDoCarro)}>{especificacoesMaisPesquisadas.marcaEModelo}</p>
-                                        <p className={classNames("fonte", styles.especificacaDoCarro)}>{especificacoesMaisPesquisadas.especificacao}</p>
-                                        <p className={classNames("fonte", styles.tipoDeTransmissao)}>{especificacoesMaisPesquisadas.tipoDeTransmissao}</p>
+                                        <p className={classNames("fonte", "colorDefault", styles.modeloDoCarro)}>{especificacoesMaisPesquisadas.marcaEModelo}</p>
+                                        <p className={classNames("fonte", "colorDefault", styles.especificacaDoCarro)}>{especificacoesMaisPesquisadas.especificacao}</p>
+                                        <p className={classNames("fonte", "colorDefault", styles.tipoDeTransmissao)}>{especificacoesMaisPesquisadas.tipoDeTransmissao}</p>
                                     </div>
                                     <div className={styles.containerEspecificacoesDoCarro}>
                                         <h5 className={classNames("fonte", styles.valorDoCarro)}>{`R$ ${recomendadosObjeto[recomendadoAtual].valor}`}</h5>
                                         <div className={styles.containerAnoEKilometragemDoAutomovel}>
-                                            <p className={classNames("fonte", styles.anoDoAutomovel)}>{recomendadosObjeto[recomendadoAtual].ano}</p>
-                                            <p className={classNames("fonte", styles.kilometragemDoAutomovel)}>{`${recomendadosObjeto[recomendadoAtual].kilometragem} km`}</p>
+                                            <p className={classNames("fonte", "colorDefault", styles.anoDoAutomovel)}>{recomendadosObjeto[recomendadoAtual].ano}</p>
+                                            <p className={classNames("fonte", "colorDefault", styles.kilometragemDoAutomovel)}>{`${recomendadosObjeto[recomendadoAtual].kilometragem} km`}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className={styles.containerLocalDoAutomovelEAddFavoritos}>
-                                    <p className={classNames("fonte", styles.localDoAutomovel)}>
+                                    <p className={classNames("fonte", "colorDefault", styles.localDoAutomovel)}>
                                         <FontAwesomeIcon icon={faLocationDot} />
                                         {recomendadosObjeto[recomendadoAtual].local}
                                     </p>

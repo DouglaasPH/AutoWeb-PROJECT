@@ -35,7 +35,7 @@ function Background(props: { pageAtual: string; }) {
             }}>
                 <div className={styles.containerText}>
                     <FontAwesomeIcon icon={faCircleQuestion} className={styles.circuloDeInterrogacao} />
-                    <p className={classNames("fonte", styles.comentario)}>Precisa de ajuda? <a className={styles.link}>Fale com a gente</a></p>
+                    <p className={classNames("fonte", "colorDefault", styles.comentario)}>Precisa de ajuda? <a className={styles.link}>Fale com a gente</a></p>
                 </div>
             </div>
         </div>

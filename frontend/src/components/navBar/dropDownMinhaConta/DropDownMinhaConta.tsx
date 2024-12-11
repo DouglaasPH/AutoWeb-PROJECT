@@ -31,15 +31,15 @@ function DropDownMinhaConta() {
         <>
             {aparecerSpinner ? <Spinner /> : null}
             <div className={styles.containerMinhaConta} style={{ left: `${buttonMinhaContaNavBar.left}px` }}>
-                <button className={classNames("fonte", styles.buttonMeusAnuncios)}>
+                <button className={classNames("fonte", "colorDefault", styles.buttonMeusAnuncios)}>
                     <FontAwesomeIcon icon={faWarehouse} className={styles.icone} />
                     Meus Anúncios
                 </button>
-                <button className={classNames("fonte", styles.buttonMinhaConta)} onClick={irParaGaragemPage}>
+                <button className={classNames("fonte", "colorDefault", styles.buttonMinhaConta)} onClick={irParaGaragemPage}>
                     <FontAwesomeIcon icon={faPen} className={styles.icone} />
                     Minha Conta
                 </button>
-                <button className={classNames("fonte", styles.buttonSair)} onClick={sairDaConta}>
+                <button className={classNames("fonte", "colorDefault", styles.buttonSair)} onClick={sairDaConta}>
                     <FontAwesomeIcon icon={faArrowRightFromBracket} className={styles.icone} />
                     Sair
                 </button>

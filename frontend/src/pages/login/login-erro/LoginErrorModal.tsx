@@ -29,7 +29,7 @@ function LoginErrorModal({ exibirOuNao }: LoginErrorModalProps) {
                 <div className={styles.containerUm}>
                     <FontAwesomeIcon icon={faTriangleExclamation} className={styles.triangulo} />
                     <h4 className={classNames("fonte", styles.titulo)}>E-mail ou senhas inválidos! :(</h4>
-                    <p className={classNames("fonte", styles.paragrafo)}>Revise seu e-mail ou senha e tente novamente ou redifina sua senha e evite o bloqueio da sua conta.</p>
+                    <p className={classNames("fonte", "colorDefault", styles.paragrafo)}>Revise seu e-mail ou senha e tente novamente ou redifina sua senha e evite o bloqueio da sua conta.</p>
                 </div>
 
                 <div className={styles.containerDois} >
