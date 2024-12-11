@@ -14,7 +14,6 @@ import RedefinicaoDeSenhaSucessoPage from "./pages/login/redefinir-senha/senha/s
 import { useEffect } from "react";
 import { VERIFICAR_ESTADO_DE_LOGIN } from "./dados da conta/dados_da_conta.ts";
 import BackgroundParaHomePage from "./components/telaDeFundo/backgroundParaHomePage/backgroundHomePage.tsx";
-import GaragemAside from "./pages/garagem/components/aside/GaragemAside.tsx";
 import GaragemPage from "./pages/garagem/GaragemPage.tsx";
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
@@ -41,9 +40,9 @@ const browserRouter = createBrowserRouter(createRoutesFromElements(
       </Route>
 
       <Route path="garagem">
-        <Route path="meus-anuncios" element={<> <GaragemAside /> <GaragemPage /> <FooterBar /> </>} />
-        <Route path="favoritos" element={<> <GaragemAside /> <GaragemPage /> <FooterBar /> </>} />
-        <Route path="perfil" element={<> <GaragemAside /> <GaragemPage /> <FooterBar /> </>} />
+        <Route path="meus-anuncios" element={<> <GaragemPage /> <FooterBar /> </>} />
+        <Route path="favoritos" element={<> <GaragemPage /> <FooterBar /> </>} />
+        <Route path="perfil" element={<> <GaragemPage /> <FooterBar /> </>} />
 
       </Route>
 

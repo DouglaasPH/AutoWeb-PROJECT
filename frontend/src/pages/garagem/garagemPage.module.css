@@ -1,0 +1,16 @@
+
+.containerGaragemPage {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.garagemAside {
+    background-color: white;
+    width: 19%;
+}
+
+.garagemPage {
+    background-color: #ebebeb;
+    width: 81%;
+}
