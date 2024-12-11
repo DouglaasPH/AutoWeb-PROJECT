@@ -29,7 +29,6 @@ function NavBar() {
         setIsOpenAjuda(!isOpenAjuda);
     };
     function chamarDropDownMinhaConta() {
-        console.log(isOpenMinhaConta);
         if (LOGGINED) setIsOpenMinhaConta(!isOpenMinhaConta)
         else return setIsOpenMinhaConta(false);
     };
@@ -42,9 +41,13 @@ function NavBar() {
         }
     }
 
+    function irParaHomePage() {
+        navigate("/");
+    }
+
     return (
         <nav className={styles.navBar}>
-            <div className={styles.divLogo}>
+            <div className={styles.divLogo} onClick={irParaHomePage}>
                 <img src={imagens["logoMarcaDoSite"]} alt="logo marca do site" className={styles.logoMarcaImg} />
                 <h1 className={classNames("fonteLogo", styles.logoMarcaTitulo)} >AutoWeb</h1>
             </div>
@@ -76,9 +79,9 @@ function NavBar() {
                 </div>
             </div>
 
-            <div className={styles.divLogin} onClick={irParaContaOuLogin} style={{ width: LOGGINED && typeof DADOS_DO_USUARIO === "object" ? `${DADOS_DO_USUARIO.user.length + 5}%` : "10%" }} >
+            <div className={styles.divLogin} style={{ width: LOGGINED && typeof DADOS_DO_USUARIO === "object" ? `${DADOS_DO_USUARIO.user.length + 1}%` : "9%" }} >
                 <div className={styles.divButtonIrParaConta} onMouseEnter={chamarDropDownMinhaConta} onMouseLeave={chamarDropDownMinhaConta}>
-                    <button className={classNames("fonte", styles.buttonIrParaConta)}>
+                    <button className={classNames("fonte", styles.buttonIrParaConta)} onClick={irParaContaOuLogin}>
                         <FontAwesomeIcon icon={faUser} className={styles.fontUser} />
                         {LOGGINED && typeof DADOS_DO_USUARIO === "object" ? DADOS_DO_USUARIO.user : "Entrar"}
                     </button>

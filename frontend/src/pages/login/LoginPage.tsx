@@ -70,6 +70,8 @@ function LoginPage() {
                     localStorage.setItem("dados_do_usuário", JSON.stringify(request.dados_da_conta));
                     VERIFICAR_ESTADO_DE_LOGIN();
                     navigate("/")
+                    window.location.reload();
+                    console.log(localStorage.getItem("dados_do_usuário"))
                 } else setExibirModalDeError("true");
             }
         }

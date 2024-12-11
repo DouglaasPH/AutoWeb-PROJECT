@@ -3,7 +3,7 @@ interface TIPO_DE_DADOS {
 }
 
 const PEGAR_DADOS: null | string = localStorage.getItem("dados_do_usuário");
-let DADOS_DO_USUARIO: string | TIPO_DE_DADOS = "não logado" ;
+let DADOS_DO_USUARIO: string | TIPO_DE_DADOS = "não logado";
 let LOGGINED: boolean = false;
 
 function VERIFICAR_ESTADO_DE_LOGIN() {
@@ -31,5 +31,18 @@ function VERIFICAR_ESTADO_DE_LOGIN() {
 
 VERIFICAR_ESTADO_DE_LOGIN();
 
+/*
+const PEGAR_DADOS: null | string = localStorage.getItem("dados_do_usuário");
+let DADOS_DO_USUARIO: string | TIPO_DE_DADOS = "não logado" ;
+let LOGGINED: boolean = false;
+*/
+function REMOVER_DADOS_DA_CONTA() {
+    localStorage.removeItem("dados_do_usuário");
+    DADOS_DO_USUARIO = "não logado";
+    LOGGINED = false;
+
+}
+
+
 export default DADOS_DO_USUARIO;
-export { VERIFICAR_ESTADO_DE_LOGIN, LOGGINED };
+export { VERIFICAR_ESTADO_DE_LOGIN, REMOVER_DADOS_DA_CONTA, LOGGINED };

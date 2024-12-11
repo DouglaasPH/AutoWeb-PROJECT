@@ -1,0 +1,21 @@
+.containerLogoMarca {
+    width: 12%;
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.containerLogoMarca:hover {
+    cursor: pointer;
+}
+
+
+.logoMarcaImg {
+    height: 50%;
+    width: 25%;
+    border-radius: 5rem;
+}
+
+.logoMarcaTitulo {
+    font-size: 150%;
+}
