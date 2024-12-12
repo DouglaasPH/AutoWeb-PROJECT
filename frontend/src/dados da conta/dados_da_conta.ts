@@ -1,5 +1,5 @@
 interface TIPO_DE_DADOS {
-    [key: string]: string,
+    [key: string]: string | null,
 }
 
 const PEGAR_DADOS: null | string = localStorage.getItem("dados_do_usuário");

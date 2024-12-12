@@ -3,7 +3,7 @@
 .containerFooter {
     display: flex;
     flex-direction: column;
-    background-color: #292929;
+    background-color: #333333;
     height: 40vh;
 }
 

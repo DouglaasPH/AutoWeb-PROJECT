@@ -22,7 +22,7 @@ function DropDownMinhaConta() {
     };
 
     function irParaGaragemPage() {
-        navigate("/garagem");
+        navigate("/garagem/perfil");
     }
 
     const buttonMinhaContaNavBar = document.querySelectorAll(`.${stylesNavBar.buttonIrParaConta}`)[0].getBoundingClientRect();
