@@ -77,6 +77,15 @@
     background-color: white;
 }
 
+.inputComValueDefinido {
+    background-color: #f4f4f4;
+    color: #909090;
+}
+
+.inputComValueDefinido::placeholder {
+    color: #909090;
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -112,6 +121,7 @@ input[type="number"] {
     color: #858585;
     background-color: white;
     padding: 0 0.5% 0 0.5%;
+    border-radius: 10rem;
 }
 
 .labelEmail {
@@ -213,6 +223,11 @@ input[type="number"] {
     color: #1e90ff;
     font-weight: 700;
     font-size: 75%;
+}
+
+.labelComValueDefinido {
+    background-color: #f4f4f4;
+    color: #868686;
 }
 
 .containerInputMeuEnderecoEContato>.containerInput {

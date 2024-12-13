@@ -268,7 +268,38 @@ function GaragemMinhaConta() {
     useEffect(() => verificarDados());
 
     function enviarAlteracoes() {
-        // TODO
+        //const dados = DADOS_DO_USUARIO;
+        let dadosParaAlterar = {};
+        console.log(DADOS_DO_USUARIO)
+        Object.entries(DADOS_DO_USUARIO).forEach(([chave, valor]) => {
+            if (valor === null) {
+                switch (chave) {
+                    case "genero":
+                        dadosParaAlterar[chave] = valueInputGenero;
+                        break;
+                    case "data_de_nascimento":
+                        dadosParaAlterar[chave] = valueInputDataDeNascimento;
+                        break;
+                    case "cpf":
+                        dadosParaAlterar[chave] = valueInputCpf;
+                        break;
+                    case "cep":
+                        dadosParaAlterar[chave] = valueInputCep;
+                        break;
+                    case "estado":
+                        dadosParaAlterar[chave] = valueInputEstado;
+                        break;
+                    case "cidade":
+                        dadosParaAlterar[chave] = valueInputCidade;
+                        break;
+                    case "telefone":
+                        dadosParaAlterar[chave] = valueInputTelefone;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        })
     };
 
     return (
@@ -285,23 +316,30 @@ function GaragemMinhaConta() {
                     </div>
 
                     <div className={styles.containerInputMeusDados}>
-                        <div className={styles.containerInput}>
-                            <label className={classNames("fonte", styles.labelEmail)}>Email*</label>
-                            <input type="text" placeholder={emailDoUsuario ? DADOS_DO_USUARIO.email : ""} disabled={emailDoUsuario ? true : false} className={classNames("fonte", styles.input)} />
+                        <div className={styles.containerInput} >
+                            <label className={emailDoUsuario ? classNames("fonte", styles.labelEmail, styles.labelComValueDefinido) : classNames("fonte", styles.labelEmail)}
+                            >Email*</label>
+                            <input type="text"
+                                placeholder={emailDoUsuario ? DADOS_DO_USUARIO.email : ""}
+                                disabled={emailDoUsuario}
+                                className={emailDoUsuario ? classNames("fonte", styles.input, styles.inputComValueDefinido) : classNames("fonte", styles.input)} />
                         </div>
                         <div className={styles.containerInput}>
-                            <label className={classNames("fonte", styles.labelNomeCompleto)}>Nome completo*</label>
-                            <input type="text" placeholder={nomeDoUsuario ? DADOS_DO_USUARIO.user : ""} disabled={nomeDoUsuario ? true : false} className={classNames("fonte", styles.input)} />
+                            <label className={nomeDoUsuario ? classNames("fonte", styles.labelNomeCompleto, styles.labelComValueDefinido) : classNames("fonte", styles.labelNomeCompleto)}>Nome completo*</label>
+                            <input type="text"
+                                placeholder={nomeDoUsuario ? DADOS_DO_USUARIO.user : ""}
+                                disabled={nomeDoUsuario}
+                                className={nomeDoUsuario ? classNames("fonte", styles.input, styles.inputComValueDefinido) : classNames("fonte", styles.input)} />
                         </div>
                         <div className={styles.containerInput}>
-                            <label className={classNames("fonte", styles.labelGenero)}>Gênero*</label>
+                            <label className={generoDoUsuario ? classNames("fonte", styles.labelGenero, styles.labelComValueDefinido) : classNames("fonte", styles.labelGenero)}>Gênero*</label>
                             {mudarArrow ? <FontAwesomeIcon icon={faAngleUp} className={styles.fontArrowGenero} /> : <FontAwesomeIcon icon={faAngleDown} className={styles.fontArrowGenero} />}
                             <select name="Gênero"
                                 onClick={selectMudarArrow}
                                 onChange={inputGenero}
                                 disabled={generoDoUsuario}
                                 value={valueInputGenero ? valueInputGenero : ""}
-                                className={classNames("fonte", styles.inputSelect)}>
+                                className={generoDoUsuario ? classNames("fonte", styles.inputSelect, styles.inputComValueDefinido) : classNames("fonte", styles.inputSelect)}>
                                 <option value="" selected disabled></option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Feminino">Feminino</option>
@@ -310,27 +348,27 @@ function GaragemMinhaConta() {
                             </select>
                         </div>
                         <div className={styles.containerInput}>
-                            <label className={classNames("fonte", styles.labelDataDeNascimento)}>Data de nascimento*</label>
+                            <label className={dataDeNascimentoDoUsuario ? classNames("fonte", styles.labelDataDeNascimento, styles.labelComValueDefinido) : classNames("fonte", styles.labelDataDeNascimento)}>Data de nascimento*</label>
                             {dataDeNascimentoValido[0] ? null : <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconDataDeNascimento} />}
                             <input type="text"
                                 onChange={inputDataDeNascimento}
                                 placeholder={dataDeNascimentoDoUsuario ? DADOS_DO_USUARIO.data_de_nascimento : "00/00/0000"}
                                 value={dataDeNascimentoDoUsuario ? DADOS_DO_USUARIO.data_de_nascimento : valueInputDataDeNascimento}
                                 disabled={dataDeNascimentoDoUsuario ? true : false}
-                                className={classNames("fonte", styles.input)} />
+                                className={dataDeNascimentoDoUsuario ? classNames("fonte", styles.input, styles.inputComValueDefinido) : classNames("fonte", styles.input)} />
                             <p className={classNames("fonte", styles.pAlertaDataDeNascimento)}>
                                 {dataDeNascimentoValido[1]}
                             </p>
                         </div>
                         <div className={styles.containerInput}>
-                            <label className={classNames("fonte", styles.labelCpf)}>CPF*</label>
+                            <label className={cpfDoUsuario ? classNames("fonte", styles.labelCpf, styles.labelComValueDefinido) : classNames("fonte", styles.labelCpf)}>CPF*</label>
                             {cpfValido[0] ? null : <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconCpf} />}
                             <input type="text"
                                 onChange={inputCpf}
                                 placeholder={cpfDoUsuario ? DADOS_DO_USUARIO.cpf : "000.000.000-00"}
                                 value={cpfDoUsuario ? DADOS_DO_USUARIO.cpf : valueInputCpf}
                                 disabled={cpfDoUsuario}
-                                className={classNames("fonte", styles.input)} />
+                                className={cpfDoUsuario ? classNames("fonte", styles.input, styles.inputComValueDefinido) : classNames("fonte", styles.input)} />
                             <p className={classNames("fonte", styles.pAlertaCpf)}>
                                 {cpfValido[1]}
                             </p>
@@ -350,38 +388,38 @@ function GaragemMinhaConta() {
 
                     <div className={styles.containerInputMeuEnderecoEContato}>
                         <div className={styles.containerInput}>
-                            <label className={classNames("fonte", styles.labelCep)}>Cep*</label>
+                            <label className={cepDoUsuario ? classNames("fonte", styles.labelCep, styles.labelComValueDefinido) : classNames("fonte", styles.labelCep)}>Cep*</label>
                             {cepValido[0] ? null : <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconCep} />}
                             <input type="text"
                                 onChange={inputCep}
                                 placeholder={cepDoUsuario ? DADOS_DO_USUARIO.cep : "00000-000"}
                                 value={cepDoUsuario ? DADOS_DO_USUARIO.cep : valueInputCep}
                                 disabled={cepDoUsuario}
-                                className={classNames("fonte", styles.input)} />
+                                className={cepDoUsuario ? classNames("fonte", styles.input, styles.inputComValueDefinido) : classNames("fonte", styles.input)} />
                             <p className={classNames("fonte", styles.pAlertaCep)}>
                                 {cepValido[1]}
                             </p>
                         </div>
                         <div className={styles.containerInputMeuEnderecoEContatoDuasDiv}>
-                            <label className={classNames("fonte", styles.labelCidade)}>Estado*</label>
+                            <label className={estadoDoUsuario ? classNames("fonte", styles.labelCidade, styles.labelComValueDefinido) : classNames("fonte", styles.labelCidade)}>Estado*</label>
                             <input type="text"
                                 placeholder={estadoDoUsuario ? DADOS_DO_USUARIO.estado : valueInputEstado}
                                 disabled={true}
-                                className={classNames("fonte", styles.inputDuasDiv)} />
-                            <label className={classNames("fonte", styles.labelEstado)}>Cidade*</label>
+                                className={estadoDoUsuario ? classNames("fonte", styles.inputDuasDiv, styles.inputComValueDefinido) : classNames("fonte", styles.inputDuasDiv)} />
+                            <label className={cidadeDoUsuario ? classNames("fonte", styles.labelEstado, styles.labelComValueDefinido) : classNames("fonte", styles.labelEstado)}>Cidade*</label>
                             <input type="text"
                                 placeholder={cidadeDoUsuario ? DADOS_DO_USUARIO.cidade : valueInputCidade}
                                 disabled={true}
-                                className={classNames("fonte", styles.inputDuasDiv)} />
+                                className={cidadeDoUsuario ? classNames("fonte", styles.inputDuasDiv, styles.inputComValueDefinido) : classNames("fonte", styles.inputDuasDiv)} />
                         </div>
                         <div className={styles.containerInput}>
-                            <label className={classNames("fonte", styles.labelTelefone)}>Telefone*</label>
+                            <label className={telefoneDoUsuario ? classNames("fonte", styles.labelTelefone, styles.labelComValueDefinido) : classNames("fonte", styles.labelTelefone)}>Telefone*</label>
                             {telefoneValido[0] ? null : <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconTelefone} />}
                             {telefoneDoUsuario ? <label className={classNames("fonte", styles.labelEditar)}>Editar</label> : null}
                             <input type="text"
                                 placeholder={telefoneDoUsuario ? DADOS_DO_USUARIO.telefone : "(00) 00000-0000"}
                                 disabled={telefoneDoUsuario}
-                                className={classNames("fonte", styles.input)}
+                                className={telefoneDoUsuario ? classNames("fonte", styles.input, styles.inputComValueDefinido) : classNames("fonte", styles.input)}
                                 onChange={inputTelefone}
                                 value={valueInputTelefone}
                             />
@@ -404,9 +442,9 @@ function GaragemMinhaConta() {
             </div>
 
             <div className={styles.containerButtonSalvarAlteracao}>
-                <button className={classNames("fonte", styles.buttonSalvarAlteracao)} onclick={enviarAlteracoes}>Salvar alterações</button>
+                <button className={classNames("fonte", styles.buttonSalvarAlteracao)} onClick={enviarAlteracoes}>Salvar alterações</button>
             </div>
-        </div>
+        </div >
     )
 }
 
