@@ -196,11 +196,11 @@ input[type="number"] {
 
 .labelCidade {
     top: 35.02%;
-    left: 81.5%;
 }
 
 .labelEstado {
     top: 35.02%;
+    left: 81.5%;
 }
 
 .labelTelefone {
@@ -264,4 +264,69 @@ input[type="number"] {
     background-color: #6cb7ff;
     color: white;
     font-weight: 600;
+}
+
+.pAlertaDataDeNascimento, .pAlertaCpf, .pAlertaCep, .pAlertaTelefone {
+    position: absolute;
+    color: #c700c7;
+    font-size: 55%;
+    font-weight: 500;
+}
+
+.pAlertaDataDeNascimento,
+.pAlertaCpf {
+    left: 24%;
+}
+
+.pAlertaDataDeNascimento {
+    top: 61.55%;
+}
+
+.pAlertaCpf {
+    top: 71.5%;
+}
+
+.pAlertaCep,
+.pAlertaTelefone {
+    left: 63.7%;
+}
+
+.pAlertaCep {
+    top: 31.2%;
+}
+
+.pAlertaTelefone {
+    top: 54%;
+}
+
+.iconDataDeNascimento, .iconCpf, .iconCep, .iconTelefone {
+    position: absolute;
+    color: #c700c7;
+    height: 2.5%;
+}
+
+.iconDataDeNascimento,
+.iconCpf {
+    left: 53.7%;
+}
+
+.iconDataDeNascimento {
+    top: 56.7%;
+}
+
+.iconCpf {
+    top: 66.6%;
+}
+
+.iconCep,
+.iconTelefone {
+    left: 93%;
+}
+
+.iconCep {
+    top: 26.4%;
+}
+
+.iconTelefone {
+    top: 49.2%;
 }

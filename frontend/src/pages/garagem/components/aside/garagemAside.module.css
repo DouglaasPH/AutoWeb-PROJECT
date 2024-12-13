@@ -110,6 +110,16 @@
     color: #858585;
     background-color: white;
     gap: 1rem;
+    transition: color 0.3s, border-left-color 0.3s;
+}
+
+.buttonLinks.focoAtivo {
+    color: #2d2d2d;
+    border-left-color: #1e90ff;
+}
+
+.buttonLinks.focoAtivo:hover {
+    border-left-color: #1e90ff;
 }
 
 .buttonLinks:hover {
