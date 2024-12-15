@@ -70,6 +70,8 @@ function LoginPage() {
                     localStorage.setItem("dados_do_usuário", JSON.stringify(request.dados_da_conta));
                     VERIFICAR_ESTADO_DE_LOGIN();
                     navigate("/")
+                    window.location.reload();
+                    console.log(localStorage.getItem("dados_do_usuário"))
                 } else setExibirModalDeError("true");
             }
         }
@@ -98,7 +100,7 @@ function LoginPage() {
                 <div className={styles.containerLogin}>
                     <div className={styles.legenda}>
                         <h2 className={classNames("fonte", styles.tituloLogin)}>Entrar</h2>
-                        <p className={classNames("fonte", styles.descricaoTitulo)}>Digite o seu e-mail e senha.</p>
+                        <p className={classNames("fonte", "colorDefault", styles.descricaoTitulo)}>Digite o seu e-mail e senha.</p>
                     </div>
                     <article className={styles.articleForm}>
                         <form action="" className={styles.form}>
@@ -108,7 +110,7 @@ function LoginPage() {
                                 }}>E-mail</label>
                                 <input type="email" autoComplete="on" value={email} onChange={validarEmail} className={classNames("fonte", styles.input)} style={{ borderColor: emailValido ? "#e0e0e0" : "#c700c7" }} />
                                 <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconeEmail} style={{ opacity: emailValido ? 0 : 1 }} />
-                                <p className={classNames("fonte", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
+                                <p className={classNames("fonte", "colorDefault", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
                             </div>
 
                             <div className={styles.containerInputSenha}>
@@ -118,7 +120,7 @@ function LoginPage() {
                                 <input type={tipoDeIconeOlhinho.iconName === "eye-slash" ? "password" : "text"} autoComplete="on" value={senha} onChange={validarSenha} className={classNames("fonte", styles.input)} style={{ borderColor: senhaValido ? "#e0e0e0" : "#c700c7" }} />
                                 <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconeSenha} style={{ opacity: senhaValido ? 0 : 1 }} />
                                 <FontAwesomeIcon icon={tipoDeIconeOlhinho} className={styles.olhinho} onClick={verSenha} style={{ right: senhaValido ? "35.5%" : "37.5%" }} />
-                                <p className={classNames("fonte", styles.paragrafoSenhaInvalido)} style={{ opacity: senhaValido ? 0 : 1 }}>{labelSenha}</p>
+                                <p className={classNames("fonte", "colorDefault", styles.paragrafoSenhaInvalido)} style={{ opacity: senhaValido ? 0 : 1 }}>{labelSenha}</p>
                             </div>
 
                             <div className={styles.containerEsqueciMinhaSenha}>
@@ -132,7 +134,7 @@ function LoginPage() {
 
                     </article>
                     <article className={styles.containerEsqueceuENaoTemContaOuSenha}>
-                        <p className={classNames("fonte", styles.descricaoNaoTemConta)}>Você não tem conta? <a href="" className={classNames("fonte", styles.criarConta)} onClick={irParaRegistrarPage}>Criar conta</a></p>
+                        <p className={classNames("fonte", "colorDefault", styles.descricaoNaoTemConta)}>Você não tem conta? <a href="" className={classNames("fonte", styles.criarConta)} onClick={irParaRegistrarPage}>Criar conta</a></p>
                     </article>
                 </div>
             </div>

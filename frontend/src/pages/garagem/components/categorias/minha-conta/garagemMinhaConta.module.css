@@ -1,0 +1,360 @@
+.containerMinhaConta {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerTituloMinhaConta {
+    height: 10%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.tituloMinhaConta {
+    margin-left: 5%;
+}
+
+.containerDuasDiv {
+    height: 80%;
+    display: flex;
+    flex-direction: row;        
+    justify-content: space-evenly;
+}
+
+.containerMeusDados {
+    background-color: white;
+    border-radius: 0.8rem;
+    height: 95%;
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerTituloMeusDados, .containerTituloMeuEnderecoEContato {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 5%;
+}
+
+.tituloMeuEnderecoEContato, .tituloMeusDados {
+    font-weight: 500;
+}
+
+.paragrafoCampoObrigatorio, .paragrafoCampoObrigatorio {
+    font-size: 80%;
+    color: #858585;
+}
+
+.containerInputMeusDados {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerInput {
+    width: 100%;
+    height: 14%;
+    display: flex;
+    justify-content: center;
+}
+
+.input, .inputSelect {
+    width: 84%;
+    height: 100%;
+    border-radius: 0.5rem;
+    border: 0.13rem solid #e0e0e0;
+    padding-left: 4%;
+    font-size: 80%;
+    font-weight: 600;
+    color: #858585;
+    background-color: white;
+}
+
+.inputComValueDefinido {
+    background-color: #f4f4f4;
+    color: #909090;
+}
+
+.inputComValueDefinido::placeholder {
+    color: #909090;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove as setas no Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.inputSelect {
+    width: 89%;
+    appearance: none;
+}
+
+.fontArrowGenero {
+    color: #858585;
+    position: absolute;
+    top: 46.4%;
+    left: 53.5%;
+    height: 3.3%;
+}
+
+.labelEmail, .labelNomeCompleto, .labelGenero, .labelDataDeNascimento, .labelCpf, .labelCep, .labelEstado,
+.labelCidade,
+.labelTelefone,
+.labelEditar {  
+    position: absolute;
+    left: 24.4%;
+    font-size: 60%;
+    font-weight: 500;
+    color: #858585;
+    background-color: white;
+    padding: 0 0.5% 0 0.5%;
+    border-radius: 10rem;
+}
+
+.labelEmail {
+    top: 24.4%;
+}
+
+.labelNomeCompleto {
+    top: 34%;
+}
+
+.labelGenero {
+    top: 43.9%;
+    z-index: 9999;
+}
+
+.labelDataDeNascimento {
+    top: 53.7%;
+}
+
+.labelCpf {
+    top: 63.5%;
+}
+
+.containerAviso {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paragrafoAviso, .paragrafoAvisoMeuEnderecoEContatoSemChecklist, .paragrafoAvisoMeuEnderecoEContatoComChecklist{
+    font-size: 85%;
+    width: 85%;
+    color: #404040;
+}
+
+.containerMeuEnderecoEContato {
+    background-color: white;
+    border-radius: 0.8rem;
+    height: 95%;
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerInputMeuEnderecoEContato {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inputEnderecoEContato {
+    background-color: beige;
+}   
+
+.containerInputMeuEnderecoEContatoDuasDiv {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 20%;
+}
+
+.inputDuasDiv {
+    width: 37%;
+    height: 100%;
+    border-radius: 0.5rem;
+    border: 0.13rem solid #e0e0e0;
+    padding-left: 4%;
+    font-size: 80%;
+    font-weight: 600;
+    color: #858585;
+}
+.labelCep, .labelEstado, .labelCidade, .labelTelefone {
+    left: 63.9%;
+}
+
+.labelCep {
+    top: 23.6%;
+}
+
+.labelCidade {
+    top: 35.02%;
+}
+
+.labelEstado {
+    top: 35.02%;
+    left: 81.5%;
+}
+
+.labelTelefone {
+    top: 46.41%;
+}
+
+.labelEditar {
+    top: 49.2%;
+    left: 91.6%;
+    color: #1e90ff;
+    font-weight: 700;
+    font-size: 75%;
+}
+
+.labelComValueDefinido {
+    background-color: #f4f4f4;
+    color: #868686;
+}
+
+.containerInputMeuEnderecoEContato>.containerInput {
+    height: 21%;
+}
+
+.containerInputMeuEnderecoEContato > .containerInput > .input {
+    height: 100%;
+}
+
+
+
+.containerAvisoMeuEnderecoEContato {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+    padding-top: 5%;
+}
+
+.containerParagrafoComChecklist {
+    width: 85%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.inputCheckedAviso {
+    height: 100%;
+    width: 5%;
+}
+
+
+
+.containerButtonSalvarAlteracao {
+    height: 10%;
+    display: flex;
+    justify-content: end;
+    padding-right: 3%;
+}
+
+.buttonSalvarAlteracao {
+    height: 65%;
+    padding: 0 1.5% 0 1.5%;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #6cb7ff;
+    color: white;
+    font-weight: 600;
+}
+
+.buttonSalvarAlteracao:hover {
+    cursor:default;
+}
+
+.buttonAtivarButton {
+    background-color: #1e90ff;
+}
+
+.buttonAtivarButton:hover {
+    cursor: pointer;
+}
+
+
+.pAlertaDataDeNascimento, .pAlertaCpf, .pAlertaCep, .pAlertaTelefone {
+    position: absolute;
+    color: #c700c7;
+    font-size: 55%;
+    font-weight: 500;
+}
+
+.pAlertaDataDeNascimento,
+.pAlertaCpf {
+    left: 24%;
+}
+
+.pAlertaDataDeNascimento {
+    top: 61.55%;
+}
+
+.pAlertaCpf {
+    top: 71.5%;
+}
+
+.pAlertaCep,
+.pAlertaTelefone {
+    left: 63.7%;
+}
+
+.pAlertaCep {
+    top: 31.2%;
+}
+
+.pAlertaTelefone {
+    top: 54%;
+}
+
+.iconDataDeNascimento, .iconCpf, .iconCep, .iconTelefone {
+    position: absolute;
+    color: #c700c7;
+    height: 2.5%;
+}
+
+.iconDataDeNascimento,
+.iconCpf {
+    left: 53.7%;
+}
+
+.iconDataDeNascimento {
+    top: 56.7%;
+}
+
+.iconCpf {
+    top: 66.6%;
+}
+
+.iconCep,
+.iconTelefone {
+    left: 93%;
+}
+
+.iconCep {
+    top: 26.4%;
+}
+
+.iconTelefone {
+    top: 49.2%;
+}

@@ -10,15 +10,15 @@ export default function DropDownVender() {
 
     return (
         <div className={styles.containerVender} style={{ left: `${buttonVenderNavBar.left}px` }}>
-            <button className={classNames("fonte", styles.buttonCarro)}>
+            <button className={classNames("fonte", "colorDefault", styles.buttonCarro)}>
                 <FontAwesomeIcon icon={faCar} className={styles.icone} />
                 Vender carro
             </button>
-            <button className={classNames("fonte", styles.buttonMoto)}>
+            <button className={classNames("fonte", "colorDefault", styles.buttonMoto)}>
                 <FontAwesomeIcon icon={faMotorcycle} className={styles.icone} />
                 Vender moto
             </button>
-            <button className={classNames("fonte", styles.buttonGerenciar)}>
+            <button className={classNames("fonte", "colorDefault", styles.buttonGerenciar)}>
                 <FontAwesomeIcon icon={faWarehouse} className={styles.icone} />
                 Gerenciar meu anúncio
             </button>

@@ -10,23 +10,23 @@ export default function DropDownComprar() {
 
     return (
         <div className={styles.containerComprar} style={{ left: `${buttonComprarNavBar.left}px` }}>
-            <button className={classNames("fontes", styles.buttonCarroUsado)}>
+            <button className={classNames("fontes", "colorDefault", styles.buttonCarroUsado)}>
                 <FontAwesomeIcon icon={faCar} className={styles.icone} />
                 Carros usados
             </button>
-            <button className={classNames("fontes", styles.buttonCarroNovo)}>
+            <button className={classNames("fontes", "colorDefault", styles.buttonCarroNovo)}>
                 <FontAwesomeIcon icon={faCarOn} className={styles.icone} />
                 Carros novos
             </button>
-            <button className={classNames("fontes", styles.buttonMotoUsada)}>
+            <button className={classNames("fontes", "colorDefault", styles.buttonMotoUsada)}>
                 <FontAwesomeIcon icon={faMotorcycle} className={styles.icone} />
                 Motos usadas
             </button>
-            <button className={classNames("fontes", styles.buttonMotoNova)}>
+            <button className={classNames("fontes", "colorDefault", styles.buttonMotoNova)}>
                 <FontAwesomeIcon icon={faMotorcycle} className={styles.icone} />
                 Motos novas
             </button>
-            <button className={classNames("fontes", styles.buttonVistoriado)}>
+            <button className={classNames("fontes", "colorDefault", styles.buttonVistoriado)}>
                 <FontAwesomeIcon icon={faFileCircleCheck} className={styles.icone} />
                 Vistoriado
             </button>

@@ -4,6 +4,7 @@ import {
   atualizarDados,
   criarConta,
   login,
+  consultarDados,
 } from "../database/conexao.js";
 
 class usersRepository {
@@ -30,16 +31,26 @@ class usersRepository {
     );
   }
 
-  verificarDados(email) {
-    const nome = Object.keys(email)[0];
-    const valor = email[nome];
+  verificarDados(dados) {
+    const nome = Object.keys(dados)[0];
+    const valor = dados[nome];
     const sql = `select * from users where ?? = ?`;
     return verificarDados(
       sql,
       [nome, valor],
-      "Não foi possível localizar o email no banco de dados!"
+      `Não foi possível localizar o ${nome} no banco de dados!`
     );
   }
+
+  consultarDados(id) {
+    const sql = `select * from users where ?? = ?`;
+    return consultarDados(
+      sql,
+      ["id", id],
+      `Não foi possível localizar o id no banco de dados!`
+    );
+  }
+
   redefinirSenha(email, senha) {
     const sql = "update users set senha=? where email = ?";
     return redefinirSenha(

@@ -1,0 +1,139 @@
+.containerGaragemAside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.containerLogoMarca {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    border-bottom: 0.01rem solid #f1f1f1;
+}
+
+.containerLogoMarca:hover {
+    cursor: pointer;
+}
+
+
+.logoMarcaImg {
+    height: 55%;
+    width: 14%;
+    border-radius: 5rem;
+}
+
+.logoMarcaTitulo {
+    font-size: 150%;
+}
+
+.containerUsuario {
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 0.01rem solid #d4d4d4;
+}
+
+.containerFotoDeUsuario {
+    height: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fotoDeUsuario {
+    background-color: black;
+    height: 75%;
+    width: 25%;
+    border-radius: 60%;
+    border: 0.2rem solid #dedede;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fotoDeUsuario  > h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 35%;
+    color: #fbfbfb;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.containerUserEmail {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.nomeDeUser {
+    width: 90%;
+    text-align: center;
+    font-size: 100%;
+    font-weight: 500;
+}
+
+.emailDeUser {
+    width: 90%;
+    font-size: 80%;
+    text-align: center;
+    color: #858585;
+}
+
+.containerLinks {
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 11%;
+}
+
+.buttonLinks {
+    height: 13%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-left: 8%;
+    border: none;
+    border-left: 0.4rem solid white;
+    color: #858585;
+    background-color: white;
+    gap: 1rem;
+    transition: color 0.3s, border-left-color 0.3s;
+}
+
+.buttonLinks.focoAtivo {
+    color: #2d2d2d;
+    border-left-color: #1e90ff;
+}
+
+.buttonLinks.focoAtivo:hover {
+    border-left-color: #1e90ff;
+}
+
+.buttonLinks:hover {
+    cursor: pointer;
+    border-left: 0.4rem solid #2d2d2d;
+    color: #2d2d2d;
+}
+
+.fonteButtonLink {
+    height: 45%;
+}
+
+.descricaoButtonLink {
+    height: 50%;
+    font-size: 100%;
+    font-weight: 500;
+}

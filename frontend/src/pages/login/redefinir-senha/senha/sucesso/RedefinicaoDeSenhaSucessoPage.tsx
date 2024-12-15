@@ -30,7 +30,7 @@ function RedefinicaoDeSenhaSucessoPage() {
                 </div>
                 <div className={styles.containerDescricao}>
                     <h4 className={classNames("fonte", styles.titulo)}>Senha alterada com sucesso!</h4>
-                    <p className={classNames("fonte", styles.paragrafo)}>Agora é só entrar na Autoweb e continuar suas negociações. ;)</p>
+                    <p className={classNames("fonte", "colorDefault", styles.paragrafo)}>Agora é só entrar na Autoweb e continuar suas negociações. ;)</p>
                 </div>
 
                 <div className={styles.containerButton}>

@@ -8,6 +8,7 @@ const initialState = {
     email: "",
     user: "",
     id_de_usuario: "",
+    animar_componente: "",
 }
 
 
@@ -29,7 +30,12 @@ const rootReducer = (state = initialState, action: { type: string; payload: stri
         case "PESQUISAR/TIPO_DA_MARCA":
             return { ...state, marcaAtual: action.payload };
         case "PESQUISAR/TIPO_DO_MODELO":
-            return { ...state, modeloAtual: action.payload };        
+            return { ...state, modeloAtual: action.payload };
+        
+        
+        // ANIMAR COMPONENTES
+        case "animar_barra/animar_componente":
+            return { ...state, animar_componente: action.payload };        
         default:
             return state;
     }

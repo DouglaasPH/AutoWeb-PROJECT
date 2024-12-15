@@ -126,7 +126,7 @@ function SenhaPage() {
 
                     <div className={styles.containerInformacoes}>
                         <h4 className={classNames("fonte", styles.titulo)}>Crie uma senha</h4>
-                        <p className={classNames("fonte", styles.descricao)}>Digite uma senha que cumpra todos os requisitos abaixo: </p>
+                        <p className={classNames("fonte", "colorDefault", styles.descricao)}>Digite uma senha que cumpra todos os requisitos abaixo: </p>
                     </div>
 
                     <div className={styles.containerInput}>
@@ -156,7 +156,7 @@ function SenhaPage() {
                                 style={{ right: senhaValido ? "28.9%" : senha.length === 0 ? "28.9%" : "31.1%" }}
                             />
                             <p
-                                className={classNames("fonte", styles.paragrafoSenhaInvalido)}
+                                className={classNames("fonte", "colorDefault", styles.paragrafoSenhaInvalido)}
                                 style={{ opacity: senhaValido ? 0 : senha.length === 0 ? 0 : 1 }}
                             >
                                 A senha não atende aos requisitos.
@@ -189,7 +189,7 @@ function SenhaPage() {
                                 onClick={verConfirmarSenha}
                                 style={{ right: confirmarSenhaValido ? "28.9%" : "31.1%" }}
                             />
-                            <p className={classNames("fonte", styles.paragrafoConfirmarSenhaInvalido)} style={{ opacity: confirmarSenhaValido ? 0 : 1 }}>
+                            <p className={classNames("fonte", "colorDefault", styles.paragrafoConfirmarSenhaInvalido)} style={{ opacity: confirmarSenhaValido ? 0 : 1 }}>
                                 As senhas estão diferentes.
                             </p>
                         </div>
@@ -204,7 +204,7 @@ function SenhaPage() {
                                 style={{ opacity: exibirValidacao ? 1 : 0, color: validarRequisitoUm ? "#00b100" : "#d80000" }}
                             />
                             <p
-                                className={classNames("fonte", styles.requisito)}
+                                className={classNames("fonte", "colorDefault", styles.requisito)}
                                 style={{ color: validarRequisitoUm && exibirValidacao ? "#00b100" : !exibirValidacao ? "#686868" : !validarRequisitoUm && exibirValidacao ? "#d80000" : "#686868" }}
                             >
                                 Combine letras e números. Ex.: W1
@@ -216,7 +216,7 @@ function SenhaPage() {
                                 className={styles.indicarDoRequisito} style={{ opacity: exibirValidacao ? 1 : 0, color: validarRequisitoDois ? "#00b100" : "#d80000" }}
                             />
                             <p
-                                className={classNames("fonte", styles.requisito)}
+                                className={classNames("fonte", "colorDefault", "colorDefault", styles.requisito)}
                                 style={{ color: validarRequisitoDois && exibirValidacao ? "#00b100" : !exibirValidacao ? "#686868" : !validarRequisitoDois && exibirValidacao ? "#d80000" : "#686868" }}
                             >
                                 Use caracteres especiais. Ex.: @#%
@@ -229,7 +229,7 @@ function SenhaPage() {
                                 style={{ opacity: exibirValidacao ? 1 : 0, color: validarRequisitoTres ? "#00b100" : "#d80000" }}
                             />
                             <p
-                                className={classNames("fonte", styles.requisito)}
+                                className={classNames("fonte", "colorDefault", styles.requisito)}
                                 style={{ color: validarRequisitoTres && exibirValidacao ? "#00b100" : !exibirValidacao ? "#686868" : !validarRequisitoTres && exibirValidacao ? "#d80000" : "#686868" }}
                             >
                                 Use pelo menos 8 caracteres
@@ -242,7 +242,7 @@ function SenhaPage() {
                                 style={{ opacity: exibirValidacao ? 1 : 0, color: validarRequisitoQuatro ? "#00b100" : "#d80000" }}
                             />
                             <p
-                                className={classNames("fonte", styles.requisito)}
+                                className={classNames("fonte", "colorDefault", styles.requisito)}
                                 style={{ color: validarRequisitoQuatro && exibirValidacao ? "#00b100" : !exibirValidacao ? "#686868" : !validarRequisitoQuatro && exibirValidacao ? "#d80000" : "#686868" }}
                             >
                                 Use letras maiúsculas e minúsculas
@@ -255,7 +255,7 @@ function SenhaPage() {
                                 style={{ opacity: exibirValidacao ? 1 : 0, color: validarRequisitoCinco ? "#00b100" : "#d80000" }}
                             />
                             <p
-                                className={classNames("fonte", styles.requisito)}
+                                className={classNames("fonte", "colorDefault", styles.requisito)}
                                 style={{ color: validarRequisitoCinco && exibirValidacao ? "#00b100" : !exibirValidacao ? "#686868" : !validarRequisitoCinco && exibirValidacao ? "#d80000" : "#686868" }}
                             >
                                 Não repita caracteres consecutivos. Ex.: AAA
@@ -268,7 +268,7 @@ function SenhaPage() {
                                 style={{ opacity: exibirValidacao ? 1 : 0, color: validarRequisitoSeis ? "#00b100" : "#d80000" }}
                             />
                             <p
-                                className={classNames("fonte", styles.requisito)}
+                                className={classNames("fonte", "colorDefault", styles.requisito)}
                                 style={{ color: validarRequisitoSeis && exibirValidacao ? "#00b100" : !exibirValidacao ? "#686868" : !validarRequisitoSeis && exibirValidacao ? "#d80000" : "#686868" }}
                             >
                                 Não utilize espaços e sequência de números ou letras. Ex.: ABC ou 123

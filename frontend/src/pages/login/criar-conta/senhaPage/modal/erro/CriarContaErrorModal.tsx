@@ -18,8 +18,8 @@ function CriarContaErrorModal() {
                     <h4 className={classNames("fonte", styles.titulo)}>Que bom te ver de novo, ;)</h4>
                 </div>
                 <div className={styles.containerDescricao}>
-                    <p className={classNames("fonte", styles.descricaoUm)}>Você está tentando criar uma conta com um endereço de e-mail que já está cadastrado no AutoWeb.</p>
-                    <p className={classNames("fonte", styles.descricaoDois)}>Caso você não se lembre da sua senha, é necessário que você redefina sua senha.</p>
+                    <p className={classNames("fonte", "colorDefault", styles.descricaoUm)}>Você está tentando criar uma conta com um endereço de e-mail que já está cadastrado no AutoWeb.</p>
+                    <p className={classNames("fonte", "colorDefault", styles.descricaoDois)}>Caso você não se lembre da sua senha, é necessário que você redefina sua senha.</p>
                 </div>
                 <div className={styles.containerButton}>
                     <button className={classNames("fonte", styles.button)} onClick={irParaRedefinirSenhaPage}>Redefinir senha</button>

@@ -77,7 +77,7 @@ function RedefinirSenhaPage() {
                         }}>E-mail</label>
                         <input type="email" autoComplete="on" value={email} onChange={validarEmail} className={classNames("fonte", styles.input)} style={{ borderColor: emailValido ? "#e0e0e0" : "#c700c7" }} />
                         <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconeEmail} style={{ opacity: emailValido ? 0 : 1 }} />
-                        <p className={classNames("fonte", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
+                        <p className={classNames("fonte", "colorDefault", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
                     </div>
                     <div className={styles.containerButtons}>
                         <button className={classNames("fonte", styles.buttonRedefinirSenha)} onClick={irParaVerificarCodigoPage}>Redefinir Senha</button>

@@ -27,7 +27,7 @@ function RedefinicaoDeSenhaErroModal() {
                 </div>
                 <div className={styles.containerDescricao}>
                     <h4 className={classNames("fonte", styles.titulo)}>E-mail inválido!</h4>
-                    <p className={classNames("fonte", styles.paragrafo)}>Revise seu e-mail e tente novamente. :(</p>
+                    <p className={classNames("fonte", "colorDefault", styles.paragrafo)}>Revise seu e-mail e tente novamente. :(</p>
                 </div>
 
                 <div className={styles.containerButton}>

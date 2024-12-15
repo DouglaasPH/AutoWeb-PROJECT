@@ -11,15 +11,15 @@ function DropDownAjuda() {
 
     return (
         <div className={styles.containerAjuda} style={{ left: `${buttonAjudaNavBar.left}px` }}>
-            <button className={classNames("fonte", styles.buttonParaVoce)}>
+            <button className={classNames("fonte", "colorDefault", styles.buttonParaVoce)}>
                 <FontAwesomeIcon icon={faUser} className={styles.icone} />
                 Para você
             </button>
-            <button className={classNames("fonte", styles.buttonParaSuaLoja)}>
+            <button className={classNames("fonte", "colorDefault", styles.buttonParaSuaLoja)}>
                 <FontAwesomeIcon icon={faPeopleGroup} className={styles.icone} />
                 Para sua loja
             </button>
-            <button className={classNames("fonte", styles.buttonSeguranca)}>
+            <button className={classNames("fonte", "colorDefault", styles.buttonSeguranca)}>
                 <FontAwesomeIcon icon={faShieldHalved} className={styles.icone} />
                 Segurança
             </button>

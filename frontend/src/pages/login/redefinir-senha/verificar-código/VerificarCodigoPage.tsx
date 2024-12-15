@@ -28,8 +28,8 @@ function VerificarCodigoPage() {
                     <label className={classNames("fonte", styles.titulo)}>Quase lá...</label>
                 </div>
                 <div className={styles.containerDescricao}>
-                    <p className={classNames("fonte", styles.paragrafoUm)} >Para recuperar sua senha, digite na próxima tela o <strong>código de 6 dígitos</strong> que enviamos para o e-mail:</p>
-                    <p className={classNames("fonte", styles.email)}>{emailParaEnviarCodigo}</p>
+                    <p className={classNames("fonte", "colorDefault", styles.paragrafoUm)} >Para recuperar sua senha, digite na próxima tela o <strong>código de 6 dígitos</strong> que enviamos para o e-mail:</p>
+                    <p className={classNames("fonte", "colorDefault", styles.email)}>{emailParaEnviarCodigo}</p>
                 </div>
                 <div className={styles.containerButtons}>
                     <button className={classNames("fonte", styles.buttonContinuar)} onClick={irParaSenhaPage}>Continuar</button>

@@ -71,7 +71,7 @@ function RegistrarPage() {
                                 }}>Nome completo</label>
                                 <input type="text" autoComplete="on" value={nome} className={classNames("fonte", styles.input)} onChange={validarSenha} style={{ borderColor: senhaValido ? "#e0e0e0" : "#c700c7" }} />
                                 <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconeNomeCompleto} style={{ opacity: senhaValido ? 0 : 1 }} />
-                                <p className={classNames("fonte", styles.paragrafoSenhaInvalido)} style={{ opacity: senhaValido ? 0 : 1 }}>{labelSenha}</p>
+                                <p className={classNames("fonte", "colorDefault", styles.paragrafoSenhaInvalido)} style={{ opacity: senhaValido ? 0 : 1 }}>{labelSenha}</p>
                             </div>
 
                             <div className={styles.containerInputEmail}>
@@ -80,10 +80,10 @@ function RegistrarPage() {
                                 }}>E-mail</label>
                                 <input type="email" autoComplete="on" value={email} onChange={validarEmail} className={classNames("fonte", styles.input)} style={{ borderColor: emailValido ? "#e0e0e0" : "#c700c7" }} />
                                 <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconeEmail} style={{ opacity: emailValido ? 0 : 1 }} />
-                                <p className={classNames("fonte", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
+                                <p className={classNames("fonte", "colorDefault", styles.paragrafoEmailInvalido)} style={{ opacity: emailValido ? 0 : 1 }}>Digite um email válido. Ex: douglas@gmail.com</p>
                             </div>
                             <div className={styles.containerCertificaoMaioridade}>
-                                <p className={classNames("fonte", styles.certificacaoMaioridade)} >Ao me cadastrar, eu declaro ter ciência de que este cadastro é somente para maiores de 18 anos.</p>
+                                <p className={classNames("fonte", "colorDefault", styles.certificacaoMaioridade)} >Ao me cadastrar, eu declaro ter ciência de que este cadastro é somente para maiores de 18 anos.</p>
                             </div>
 
                             <button className={classNames("fonte", styles.buttonCadastrar)} onClick={IrParaSenhaPage}>Criar conta</button>
@@ -91,8 +91,8 @@ function RegistrarPage() {
 
                     </article>
                     <article className={styles.containerJaTemContaECertificacao}>
-                        <p className={classNames("fonte", styles.descricaoJaTemConta)}>Já tem uma conta? <a href="" className={classNames("fonte", styles.buttonEntrarConta)}>Entrar</a></p>
-                        <p className={classNames("fonte", styles.descricaoCertificaoDoApp)}>Ao prosseguir você está ciente e concorda em receber comunicações da AutoWeb.</p>
+                        <p className={classNames("fonte", "colorDefault", styles.descricaoJaTemConta)}>Já tem uma conta? <a href="" className={classNames("fonte", styles.buttonEntrarConta)}>Entrar</a></p>
+                        <p className={classNames("fonte", "colorDefault", styles.descricaoCertificaoDoApp)}>Ao prosseguir você está ciente e concorda em receber comunicações da AutoWeb.</p>
                     </article>
                 </div>
             </div>

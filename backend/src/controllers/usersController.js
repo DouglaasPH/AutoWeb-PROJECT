@@ -16,6 +16,11 @@ class usersController {
     const row = await usersRepository.verificarDados(dados);
     return res.json(row);
   }
+  async consultarDados(req, res) {
+    let { id, ...dados } = req.query;
+    const row = await usersRepository.consultarDados(id);
+    return res.json(row);
+  }
   async atualizarConta(req, res) {
     let { id, ...dados } = req.body;
     const row = await usersRepository.atualizarConta(dados, id);
