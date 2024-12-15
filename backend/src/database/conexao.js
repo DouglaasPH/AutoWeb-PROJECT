@@ -47,6 +47,7 @@ export const login = (sql, valores = "", mensagemReject) => {
   });
 };
 
+// VERIFICA SE UM DADO EXISTE NO BANCO DE DADOS
 export const verificarDados = (sql, valores = "", mensagemReject) => {
   return new Promise((resolve, reject) => {
     conexao.query(sql, valores, (error, result) => {
@@ -63,6 +64,35 @@ export const verificarDados = (sql, valores = "", mensagemReject) => {
           encontrado: true,
           mensagem: "Dados encontrado!",
           dados_da_conta: { id: id },
+        });
+      } else {
+        return resolve({
+          encontrado: false,
+          mensagem: "Dados não encontrado!",
+        });
+      }
+    });
+  });
+};
+
+// CONSULTA OS DADOS, PEGANDO-OS E LEVANDO AO FRONTEND
+export const consultarDados = (sql, valores = "", mensagemReject) => {
+  return new Promise((resolve, reject) => {
+    conexao.query(sql, valores, (error, result) => {
+      if (error) {
+        console.log("Erro na consulta SQL:", error);
+        return reject(mensagemReject);
+      }
+
+      const row = JSON.parse(JSON.stringify(result))[0];
+
+      if (row !== undefined) {
+        // retorne apenas o id de usuário
+        const { senha, ...resto } = row;
+        return resolve({
+          encontrado: true,
+          mensagem: "Dados encontrado!",
+          dados_da_conta: resto,
         });
       } else {
         return resolve({
@@ -129,12 +159,10 @@ export const atualizarDados = (
         return reject(mensagemReject);
       }
       const row = JSON.parse(JSON.stringify(result));
-      console.log(
-        result.affectedRows,
-        row.length == 0,
-        row.length,
-        result.affectedRows
-      );
+
+      console.log(row);
+      console.log(row.affectedRows);
+
       // dados não atualizados ou dados atualizados
       if (row.affectedRows === 0) {
         return resolve({

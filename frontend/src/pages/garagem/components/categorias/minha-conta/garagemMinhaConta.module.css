@@ -113,7 +113,7 @@ input[type="number"] {
 .labelEmail, .labelNomeCompleto, .labelGenero, .labelDataDeNascimento, .labelCpf, .labelCep, .labelEstado,
 .labelCidade,
 .labelTelefone,
-.labelEditar {
+.labelEditar {  
     position: absolute;
     left: 24.4%;
     font-size: 60%;
@@ -280,6 +280,19 @@ input[type="number"] {
     color: white;
     font-weight: 600;
 }
+
+.buttonSalvarAlteracao:hover {
+    cursor:default;
+}
+
+.buttonAtivarButton {
+    background-color: #1e90ff;
+}
+
+.buttonAtivarButton:hover {
+    cursor: pointer;
+}
+
 
 .pAlertaDataDeNascimento, .pAlertaCpf, .pAlertaCep, .pAlertaTelefone {
     position: absolute;
