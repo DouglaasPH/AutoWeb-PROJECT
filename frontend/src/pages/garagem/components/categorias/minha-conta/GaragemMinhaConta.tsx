@@ -59,7 +59,7 @@ function GaragemMinhaConta() {
         dataDeNascimento: {
             valor: "",
             validarInput: false,
-            mensagemNaoValido: "Não válido",
+            mensagemNaoValido: "",
             valorJaExiste: false,
         },
         cpf: {
@@ -98,8 +98,11 @@ function GaragemMinhaConta() {
     const [enviarAlteracoes, SetEnviarAlteracoes] = useState(false);
     // VERIFICA SE TODOS OS VALORES NÃO PREENCHIDOS JÁ ESTÃO PREENCHIDOS, PARA PODER SALVAR AS ALTERAÇÕES
     useEffect(() => {
-        if (controleDosInputs.email.validarInput && controleDosInputs.user.validarInput && controleDosInputs.dataDeNascimento.validarInput && controleDosInputs.cpf.validarInput && controleDosInputs.cep.validarInput && controleDosInputs.estado.validarInput && controleDosInputs.cidade.validarInput && controleDosInputs.telefone.validarInput) SetEnviarAlteracoes(true);
-        else SetEnviarAlteracoes(false);
+        if (controleDosInputs.email.validarInput && controleDosInputs.user.validarInput && controleDosInputs.dataDeNascimento.validarInput && controleDosInputs.cpf.validarInput && controleDosInputs.cep.validarInput && controleDosInputs.estado.validarInput && controleDosInputs.cidade.validarInput && controleDosInputs.telefone.validarInput) {
+            SetEnviarAlteracoes(true)
+        } else {
+            SetEnviarAlteracoes(false)
+        };
     }, [controleDosInputs.email.validarInput, controleDosInputs.user.validarInput, controleDosInputs.dataDeNascimento.validarInput, controleDosInputs.cpf.validarInput, controleDosInputs.cep.validarInput, controleDosInputs.estado.validarInput, controleDosInputs.cidade.validarInput, controleDosInputs.telefone.validarInput])
 
     // ESTA FUNÇÃO ATUALIZA O OBJETO DE MANEIRA SIMPLES, RÁPIDO E PRÁTICO... DEIXANDO O CÓDIGO MAIS LIMPO
@@ -359,6 +362,10 @@ function GaragemMinhaConta() {
 
     };
 
+    function editarTelefone() {
+        atualizarCampo("telefone", { valorJaExiste: !controleDosInputs.telefone.valorJaExiste, validarInput: !controleDosInputs.telefone.validarInput });
+    }
+
     async function salvarAlteracoes() {
         setAparecerSpinner(true);
 
@@ -594,7 +601,7 @@ function GaragemMinhaConta() {
                             <div className={styles.containerInput}>
                                 <label className={controleDosInputs.telefone.valorJaExiste ? classNames("fonte", styles.labelTelefone, styles.labelComValueDefinido) : classNames("fonte", styles.labelTelefone)}>Telefone*</label>
                                 {controleDosInputs.telefone.validarInput ? null : <FontAwesomeIcon icon={faTriangleExclamation} className={styles.iconTelefone} />}
-                                {controleDosInputs.telefone.valorJaExiste ? <label className={classNames("fonte", styles.labelEditar)}>Editar</label> : null}
+                                {controleDosInputs.telefone.valorJaExiste ? <label className={classNames("fonte", styles.labelEditar)} onClick={editarTelefone}>Editar</label> : null}
                                 <input type="text"
                                     placeholder={controleDosInputs.telefone.valorJaExiste ? DADOS_DO_USUARIO.telefone : "(00) 00000-0000"}
                                     disabled={controleDosInputs.telefone.valorJaExiste}

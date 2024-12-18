@@ -100,6 +100,7 @@ input[type="number"] {
 .inputSelect {
     width: 89%;
     appearance: none;
+    z-index: 0;
 }
 
 .fontArrowGenero {
@@ -134,7 +135,7 @@ input[type="number"] {
 
 .labelGenero {
     top: 43.9%;
-    z-index: 9999;
+    z-index: 9;
 }
 
 .labelDataDeNascimento {
@@ -218,17 +219,23 @@ input[type="number"] {
 }
 
 .labelEditar {
+    background-color: #f4f4f4;
     top: 49.2%;
     left: 91.6%;
     color: #1e90ff;
     font-weight: 700;
-    font-size: 75%;
+    font-size: 80%;
+}
+
+.labelEditar:hover {
+    cursor: pointer;
 }
 
 .labelComValueDefinido {
     background-color: #f4f4f4;
     color: #868686;
 }
+
 
 .containerInputMeuEnderecoEContato>.containerInput {
     height: 21%;

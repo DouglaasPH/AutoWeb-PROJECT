@@ -1,4 +1,21 @@
+@keyframes aumentarOpacidade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 .containerSpinner {
+    animation-name: aumentarOpacidade;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-duration: normal;
+    animation-fill-mode: none;
+
     position: fixed;
     top: 0%;
     left: 0%;
