@@ -100,6 +100,7 @@ input[type="number"] {
 .inputSelect {
     width: 89%;
     appearance: none;
+    z-index: 0;
 }
 
 .fontArrowGenero {
@@ -134,7 +135,7 @@ input[type="number"] {
 
 .labelGenero {
     top: 43.9%;
-    z-index: 9999;
+    z-index: 9;
 }
 
 .labelDataDeNascimento {
