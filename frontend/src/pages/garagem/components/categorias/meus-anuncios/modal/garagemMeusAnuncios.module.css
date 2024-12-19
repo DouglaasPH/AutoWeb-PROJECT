@@ -1,0 +1,25 @@
+.containerMeusAnuncios {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerTituloMeusAnuncios {
+    height: 10%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.tituloMeusAnuncios {
+    margin-left: 5%;
+}
+
+.containerPrincipal {
+    height: 90%;
+    display: flex;
+    flex-direction: row;        
+    justify-content: space-evenly;
+}

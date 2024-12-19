@@ -35,21 +35,11 @@ function GaragemAside() {
     }
 
     function mudarFocoBuscarVeiculos() {
-        setFocoEmBuscarVeiculos(true);
-        setFocoEmVenderMeuVeiculo(false);
-        setFocoEmMeusAnuncios(false);
-        setFocoEmFavoritos(false);
-        setFocoEmMinhaConta(false);
-        setFocoEmSair(false);
+        window.open("/carros", "_blank")
     }
 
     function mudarFocoVenderMeuVeiculo() {
-        setFocoEmBuscarVeiculos(false);
-        setFocoEmVenderMeuVeiculo(true);
-        setFocoEmMeusAnuncios(false);
-        setFocoEmFavoritos(false);
-        setFocoEmMinhaConta(false);
-        setFocoEmSair(false);
+        window.open("/vender-carro", "_blank");
     }
 
     function mudarFocoMeusAnuncios() {
@@ -59,6 +49,7 @@ function GaragemAside() {
         setFocoEmFavoritos(false);
         setFocoEmMinhaConta(false);
         setFocoEmSair(false);
+        navigate("/garagem/meus-anuncios");
     }
 
     function mudarFocoFavoritos() {
@@ -68,6 +59,7 @@ function GaragemAside() {
         setFocoEmFavoritos(true);
         setFocoEmMinhaConta(false);
         setFocoEmSair(false);
+        navigate("/garagem/favoritos");
     }
 
     function mudarFocoMinhaConta() {
@@ -77,15 +69,7 @@ function GaragemAside() {
         setFocoEmFavoritos(false);
         setFocoEmMinhaConta(true);
         setFocoEmSair(false);
-    }
-
-    function mudarFocoSair() {
-        setFocoEmBuscarVeiculos(false);
-        setFocoEmVenderMeuVeiculo(false);
-        setFocoEmMeusAnuncios(false);
-        setFocoEmFavoritos(false);
-        setFocoEmMinhaConta(false);
-        setFocoEmSair(true);
+        navigate("/garagem/perfil");
     }
 
     // funcionalidade para button sair da conta
@@ -146,7 +130,7 @@ function GaragemAside() {
                         />
                         <p className={classNames("fonte", styles.descricaoButtonLink)}>Minha conta</p>
                     </button>
-                    <button className={classNames(styles.buttonLinks, { [styles.focoAtivo]: focoEmSair })} onClick={() => { mudarFocoSair(); sairDaConta(); }}>
+                    <button className={classNames(styles.buttonLinks, { [styles.focoAtivo]: focoEmSair })} onClick={sairDaConta}>
                         <FontAwesomeIcon
                             icon={faArrowRightFromBracket}
                             className={styles.fonteButtonLink} />

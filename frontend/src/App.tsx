@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import { VERIFICAR_ESTADO_DE_LOGIN } from "./dados da conta/dados_da_conta.ts";
 import BackgroundParaHomePage from "./components/telaDeFundo/backgroundParaHomePage/backgroundHomePage.tsx";
 import GaragemPage from "./pages/garagem/GaragemPage.tsx";
+import VenderCarroPage from "./pages/vender-carro/VenderCarroPage.tsx";
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
   <Route>
@@ -43,12 +44,15 @@ const browserRouter = createBrowserRouter(createRoutesFromElements(
         <Route path="meus-anuncios" element={<> <GaragemPage /> <FooterBar /> </>} />
         <Route path="favoritos" element={<> <GaragemPage /> <FooterBar /> </>} />
         <Route path="perfil" element={<> <GaragemPage /> <FooterBar /> </>} />
-
       </Route>
 
-
+      <Route path="vender-carro">
+      <Route index element={<> <VenderCarroPage /> <FooterBar /> </>} />
+      </Route>
 
       <Route path="carros" element={<> <NavBar /> <CarrosPage /> </>} />
+
+
 
     </Route>
   </Route>
