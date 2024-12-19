@@ -6,7 +6,7 @@ const conexao = mysql.createConnection({
   host: "localhost",
   port: "3306",
   user: "root",
-  password: "172441",
+  password: "26042007",
   database: "autoweb",
 });
 
