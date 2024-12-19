@@ -16,7 +16,7 @@ function GaragemMinhaConta() {
     const [aparecerSpinner, setAparecerSpinner] = useState(false);
     const [aparecerModalError, setAparecerModalError] = useState(false);
     const [aparecerModalSucesso, setAparecerModalSucesso] = useState(false);
-
+    
     // OBJETO DE MANIPULAÇÃO E CONTROLE DOS INPUTS/DADOS
     interface CampoControle {
         valor: string;
@@ -106,7 +106,10 @@ function GaragemMinhaConta() {
     }, [controleDosInputs.email.validarInput, controleDosInputs.user.validarInput, controleDosInputs.dataDeNascimento.validarInput, controleDosInputs.cpf.validarInput, controleDosInputs.cep.validarInput, controleDosInputs.estado.validarInput, controleDosInputs.cidade.validarInput, controleDosInputs.telefone.validarInput])
 
     // ESTA FUNÇÃO ATUALIZA O OBJETO DE MANEIRA SIMPLES, RÁPIDO E PRÁTICO... DEIXANDO O CÓDIGO MAIS LIMPO
-    function atualizarCampo(campo: string, novosValores: Partial<typeof controleDosInputs[keyof typeof controleDosInputs]>) {
+    function atualizarCampo<K extends keyof typeof controleDosInputs>(
+        campo: K, 
+        novosValores: Partial<typeof controleDosInputs[K]>
+    ) {
         setControleDosInputs((prevState) => ({
             ...prevState,
             [campo]: {

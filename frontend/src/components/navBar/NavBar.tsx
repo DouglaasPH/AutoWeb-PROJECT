@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { imagens } from "../../assets/images";
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import styles from "./navBar.module.css";
-import '../../App.css';
+import "../../App.css";
 import classNames from "classnames";
 import DropDownComprar from "./dropDownComprar/DropDownComprar";
 import DropDownVender from "./dropDownVender/DropDownVender";
