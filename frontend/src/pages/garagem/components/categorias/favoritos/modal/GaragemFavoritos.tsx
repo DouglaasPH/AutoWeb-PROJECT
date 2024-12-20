@@ -6,7 +6,7 @@ function GaragemFavoritos() {
     return (
         <div className={styles.containerFavoritos}>
             <div className={styles.containerTituloFavoritos}>
-                <h2 className={classNames("fonte", styles.tituloFavoritos)}>Meus Favoritos</h2>
+                <h2 className={classNames("fonte", styles.tituloFavoritos)}>Favoritos</h2>
             </div>            
 
             <div className={styles.containerPrincipal}>

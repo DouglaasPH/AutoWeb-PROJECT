@@ -1,12 +1,24 @@
-import styles from "./venderCarroPage.module.css";
-import "../../App.css";
+import { LOGGINED } from "../../dados da conta/dados_da_conta";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
+
+// PÁGINA DE REDIRECIONAMENTO
 
 function VenderCarroPage() {
-    return (
-        <div className={styles.containerPrincipal}>
-            Vender Carro
-        </div>
-    )
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        if (LOGGINED) {
+            navigate("vender-carro/especificacoes")
+        } else {
+            navigate("/login");
+        };   
+    })
+
+
+    return null;
 }
 
 export default VenderCarroPage;

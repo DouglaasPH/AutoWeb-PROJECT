@@ -1,0 +1,72 @@
+.containerVenderCarroEspecificacoes {
+    height: 120vh;
+    top: 20%;
+    margin-top: 4.4%;
+}
+
+
+
+.containerBarrasDeProgresso {
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.containerBarraDeProgressoUm {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.containerTituloBarraDeProgresso {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+    width: 100%;
+    height: 25%;
+}
+
+.numeradorBarraDeProgresso {
+    background-color: #1e90ff;
+    color: white;
+    width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.descricaoBarraDeProgresso {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #292929;
+}
+
+.barraDeProgresso {
+    background-color: #d6d6d6;
+    width: 100%;
+    height: 13%;
+    border-radius: 20rem;
+}
+
+.containerPrincipal {
+    background-color: #ebebeb;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerFormulario {
+    background-color: #f5f5f5;
+    width: 95%;
+    height: 95%;
+    border: 0.1rem solid #d6d6d6;
+    border-radius: 0.8rem;
+}

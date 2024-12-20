@@ -16,6 +16,8 @@ import { VERIFICAR_ESTADO_DE_LOGIN } from "./dados da conta/dados_da_conta.ts";
 import BackgroundParaHomePage from "./components/telaDeFundo/backgroundParaHomePage/backgroundHomePage.tsx";
 import GaragemPage from "./pages/garagem/GaragemPage.tsx";
 import VenderCarroPage from "./pages/vender-carro/VenderCarroPage.tsx";
+import VenderCarroEspecificacoesPage from "./pages/vender-carro/especificações/VenderCarroEspecificacoesPage.tsx";
+import NavBarApenasLogo from "./components/navBarApenasLogo/navBarApenasLogo.tsx";
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
   <Route>
@@ -47,7 +49,10 @@ const browserRouter = createBrowserRouter(createRoutesFromElements(
       </Route>
 
       <Route path="vender-carro">
-      <Route index element={<> <VenderCarroPage /> <FooterBar /> </>} />
+        <Route index element={<VenderCarroPage />} />
+        <Route path="especificacoes">
+          <Route index element={<> <NavBarApenasLogo /> <VenderCarroEspecificacoesPage /> <FooterBar /> </>} />
+        </Route>
       </Route>
 
       <Route path="carros" element={<> <NavBar /> <CarrosPage /> </>} />
@@ -66,5 +71,4 @@ function App() {
     <RouterProvider router={browserRouter} />
   )
 }
-
 export default App
