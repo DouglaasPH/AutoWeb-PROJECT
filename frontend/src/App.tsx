@@ -16,8 +16,11 @@ import { VERIFICAR_ESTADO_DE_LOGIN } from "./dados da conta/dados_da_conta.ts";
 import BackgroundParaHomePage from "./components/telaDeFundo/backgroundParaHomePage/backgroundHomePage.tsx";
 import GaragemPage from "./pages/garagem/GaragemPage.tsx";
 import VenderCarroPage from "./pages/vender-carro/VenderCarroPage.tsx";
-import VenderCarroEspecificacoesPage from "./pages/vender-carro/especificações/VenderCarroEspecificacoesPage.tsx";
+import VenderCarroEspecificacoesPage from "./pages/vender-carro/especificacoes/VenderCarroEspecificacoesPage.tsx";
 import NavBarApenasLogo from "./components/navBarApenasLogo/navBarApenasLogo.tsx";
+import VenderCarroInformacoesPage from "./pages/vender-carro/informacoes/VenderCarroInformacoesPage.tsx";
+import BarraDeProgresso from "./pages/vender-carro/barraDeProgresso/BarraDeProgreesso.tsx";
+import VenderCarroCaracteristicasPage from "./pages/vender-carro/opcionais/VenderCarroCaracteristicasPage.tsx";
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
   <Route>
@@ -50,9 +53,9 @@ const browserRouter = createBrowserRouter(createRoutesFromElements(
 
       <Route path="vender-carro">
         <Route index element={<VenderCarroPage />} />
-        <Route path="especificacoes">
-          <Route index element={<> <NavBarApenasLogo /> <VenderCarroEspecificacoesPage /> <FooterBar /> </>} />
-        </Route>
+        <Route path="especificacoes" element={<> <NavBarApenasLogo /> <BarraDeProgresso /> <VenderCarroEspecificacoesPage /> <FooterBar /> </>} />
+        <Route path="informacoes" element={<> <NavBarApenasLogo /> <BarraDeProgresso /> <VenderCarroInformacoesPage /> <FooterBar /> </>} />
+        <Route path="caracteristicas" element={<> <NavBarApenasLogo /> <BarraDeProgresso /> <VenderCarroCaracteristicasPage /> <FooterBar /> </>} />
       </Route>
 
       <Route path="carros" element={<> <NavBar /> <CarrosPage /> </>} />

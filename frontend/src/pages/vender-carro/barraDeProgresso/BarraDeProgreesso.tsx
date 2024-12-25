@@ -1,10 +1,9 @@
-import styles from "./venderCarroEspecificacoes.module.css";
+import styles from "./barraDeProgresso.module.css";
 import "../../../App.css";
 import classNames from "classnames";
 
-function VenderCarroEspecificacoesPage() {
-  return (
-    <div className={styles.containerVenderCarroEspecificacoes}>
+function BarraDeProgresso() {
+    return (
       <div className={styles.containerBarrasDeProgresso}>
         <div className={styles.containerBarraDeProgressoUm}>
           <div className={styles.containerTituloBarraDeProgresso}>
@@ -30,19 +29,8 @@ function VenderCarroEspecificacoesPage() {
           </div>
           <div className={styles.barraDeProgresso}></div>
         </div>
-      </div>
-      
-      <div className={styles.containerPrincipal}>
-        <div className={styles.containerFormulario}>
-          <div className={styles.containerFormularioTitulo}>
-            <h3 className={styles.formularioTitulo}>Preencha os dados do veículo</h3>
-          </div>
-        </div>      
-              
-      </div>
-          
-    </div>
-  );
+      </div>        
+    )
 }
 
-export default VenderCarroEspecificacoesPage;
+export default BarraDeProgresso;
