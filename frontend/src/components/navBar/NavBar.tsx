@@ -35,7 +35,7 @@ function NavBar() {
 
     function irParaContaOuLogin() {
         if (LOGGINED) {
-            navigate("/garagem/perfil");
+            return;
         } else {
             navigate("login");
         }

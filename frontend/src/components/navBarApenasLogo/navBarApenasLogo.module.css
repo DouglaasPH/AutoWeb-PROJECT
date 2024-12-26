@@ -1,0 +1,28 @@
+.containerNavBar {
+    position: absolute;
+    display: flex;
+    height: 9%;
+    width: 97.5%;
+    top: 0%;
+    padding-left: 2.5%;    
+    z-index: 1;
+    border-bottom: 0.3vh solid #f1f1f1;
+}
+
+.containerLogo {
+    width: 12%;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+}
+
+.containerLogo:hover {
+    cursor: pointer;
+}
+
+
+.logoMarcaImg {
+    height: 45%;
+    width: 17%;
+    border-radius: 5rem;
+}

@@ -6,11 +6,9 @@ import stylesNavBar from "../navBar.module.css";
 import { REMOVER_DADOS_DA_CONTA } from "../../../dados da conta/dados_da_conta";
 import { useState } from "react";
 import Spinner from "../../spinner/spinner";
-import { useNavigate } from "react-router-dom";
 
 function DropDownMinhaConta() {
     const [aparecerSpinner, setAparecerSpinner] = useState(false);
-    const navigate = useNavigate();
 
     function sairDaConta() {
         try {
@@ -21,9 +19,13 @@ function DropDownMinhaConta() {
         }
     };
 
-    function irParaGaragemPage() {
-        navigate("/garagem/perfil");
+    function irParaGaragemPerfilPage() {
+        window.open("/garagem/perfil", "_blank");
     }
+
+    function irParaGaragemMeusAnunciosPage() {
+        window.open("/garagem/meus-anuncios", "_blank");
+    }    
 
     const buttonMinhaContaNavBar = document.querySelectorAll(`.${stylesNavBar.buttonIrParaConta}`)[0].getBoundingClientRect();
 
@@ -31,11 +33,11 @@ function DropDownMinhaConta() {
         <>
             {aparecerSpinner ? <Spinner /> : null}
             <div className={styles.containerMinhaConta} style={{ left: `${buttonMinhaContaNavBar.left}px` }}>
-                <button className={classNames("fonte", "colorDefault", styles.buttonMeusAnuncios)}>
+                <button className={classNames("fonte", "colorDefault", styles.buttonMeusAnuncios)} onClick={irParaGaragemMeusAnunciosPage}>
                     <FontAwesomeIcon icon={faWarehouse} className={styles.icone} />
                     Meus Anúncios
                 </button>
-                <button className={classNames("fonte", "colorDefault", styles.buttonMinhaConta)} onClick={irParaGaragemPage}>
+                <button className={classNames("fonte", "colorDefault", styles.buttonMinhaConta)} onClick={irParaGaragemPerfilPage}>
                     <FontAwesomeIcon icon={faPen} className={styles.icone} />
                     Minha Conta
                 </button>

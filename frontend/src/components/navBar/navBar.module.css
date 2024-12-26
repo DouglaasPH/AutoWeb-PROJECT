@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 .navBar {
-    z-index: 9999;
+    z-index: 1;
     position: fixed;
     display: flex;    
     flex-direction: row;
@@ -25,13 +25,13 @@
 
 
 .logoMarcaImg {
-    height: 50%;
-    width: 25%;
+    height: 45%;
+    width: 18%;
     border-radius: 5rem;
 }
 
 .logoMarcaTitulo {
-    font-size: 150%;
+    font-size: 117%;
 }
 
 .divLogin {

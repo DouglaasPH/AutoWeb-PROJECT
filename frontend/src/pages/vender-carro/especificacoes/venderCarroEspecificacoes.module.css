@@ -1,0 +1,197 @@
+.containerVenderCarroEspecificacoes {
+    height: 120vh;
+    top: 20%;
+}
+
+.containerPrincipal {
+    background-color: #ebebeb;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerFormulario {
+    background-color: #f5f5f5;
+    width: 95%;
+    height: 95%;
+    border: 0.1rem solid #d6d6d6;
+    border-radius: 0.8rem;
+}
+
+
+.containerFormularioTitulo {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formularioTitulo {
+    color: #282828;
+    font-weight: 700;
+}
+
+
+.containerInputs {
+    height: 73%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.containerInput {
+    height: 12%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 70%;
+    font-weight: 500;
+    color: #313131;
+    opacity: 0.5;
+}
+
+.select {
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 0.1rem solid #313131;
+    font-size: 90%;
+    font-weight: 400;
+    height: 80%;
+    color: #313131;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.option {
+    text-transform: uppercase;
+    font-size: 90%;
+    font-weight: 400;
+    color: #313131;
+}
+
+.optionDisabled {
+    display: none;
+}
+
+
+.containerDoisInputs {
+    height: 12%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-between;
+}
+
+.containerInputAnoDoModelo, .containerInputAnoDeFabricacao {
+    width: 49%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.selectDois {
+    height: 100%;
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 0.1rem solid #313131;
+    font-size: 90%;
+    font-weight: 500;
+    height: 80%;
+    color: #313131;    
+    text-transform: uppercase;
+    overflow-y: auto;
+    opacity: 0.5;
+}
+
+.containerInputBlindado {
+    height: 7%;
+    width: 49%;
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+.inputBlindado {
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.labelBlindado {
+    font-size: 75%;
+    font-weight: 600;
+    color: #313131;
+    opacity: 0.5;
+}
+
+.containerAvisos {
+    height: 14%;
+    width: 40%;
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ebebeb;
+    border: 0.15rem solid #d6d6d6;
+    border-radius: 0.4rem;
+}
+
+.fontAviso {
+    height: 40%;
+    color: #292929;
+}
+
+.pAviso {
+    color: #292929;
+    font-size: 80%;
+    font-weight: 600;
+    width: 80%;
+}
+
+.containerButtons {
+    height: 12%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5% 0 5%;
+}
+
+.fontArrow {
+    font-size: 110%;
+}
+
+.buttonVoltar {
+    border: none;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    height: 50%;
+    width: 7%;
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+        color: #454545;
+}
+
+.buttonContinuar {
+    background-color: #292929;
+    opacity: 0.5;
+    border: none;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    height: 50%;
+    width: 10%;
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #f5f5f5;
+}
