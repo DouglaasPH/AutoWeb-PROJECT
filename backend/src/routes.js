@@ -15,8 +15,8 @@ router.put("/atualizar-conta", usersController.atualizarConta);
 // ROTAS PARA FUNCIONALIDADE VENDER CARROS
 router.get("/vender-carro/consultar-marcas", venderCarrosController.consultarMarcas);
 router.get("/vender-carro/consultar-modelos", venderCarrosController.consultarModelos);
-//router.get("/vender-carro/consultar-ano", venderCarrosController.)consultar;
-
+router.get("/vender-carro/consultar-ano", venderCarrosController.consultarAno);
+router.get("/vender-carro/consultar-versao", venderCarrosController.consultarVersoes);
 
 
 export default router;

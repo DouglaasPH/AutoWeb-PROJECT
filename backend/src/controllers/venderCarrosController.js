@@ -12,9 +12,14 @@ class venderCarrosController {
         return res.json(row);
     }
     async consultarAno(req, res) {
-        const { marca, modelo } = req.quey;
-        const row = await venderCarrosRepository.consultarAnosDoModelo(marca, modelo);
+        const {modelo} = req.query;
+        const row = await venderCarrosRepository.consultarAnosDoModelo(modelo);
         return res.json(row);        
+    }
+    async consultarVersoes(req, res) {
+        const { modelo, anos } = req.query;
+        const row = await venderCarrosRepository.consultarVersoes(modelo, anos);
+        return res.json(row);
     }
 }
 
